@@ -37,9 +37,6 @@ const PROD_CSP = [
   "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com"
 ].join('; ');
 
-function isHtmlRequest(req) {
-  return req.method === 'GET' && (req.path === '/' || req.path.endsWith('.html'));
-}
 
 function sendHtml(fileRelPath, req, res) {
   const absPath = path.join(ROOT, fileRelPath);
