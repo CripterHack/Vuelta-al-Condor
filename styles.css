@@ -37,10 +37,15 @@ body {
   margin: 0;
   min-height: 100%;
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  
+  /* Fallbacks para navegadores sin soporte de variables CSS */
+  background: #0E1F15;
   background: -o-radial-gradient(top, circle, rgba(216, 163, 33, 0.08), transparent 55%), var(--vac-bg);
   background: radial-gradient(circle at top, rgba(216, 163, 33, 0.08), transparent 55%), var(--vac-bg);
+  color: #E7EFE9;
   color: var(--vac-text);
   line-height: 1.65;
+  font-size: 18px;
   font-size: clamp(16px, 1vw + 0.5rem, 18px);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -54,6 +59,7 @@ body {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
+  mix-blend-mode: normal; /* fallback */
   mix-blend-mode: soft-light; /* gentle blend site-wide */
   opacity: 0.85;
   background: transparent !important;
@@ -76,14 +82,26 @@ main, section, footer { position: relative; isolation: isolate; }
 
 main {
   display: block;
+  background: #0E1F15; /* fallback */
   background: var(--vac-bg);
 }
 #contenido-principal {
-  background-image: var(--vac-grad-hero), url("images/valley.jpg");
+  background-image: var(--vac-grad-hero), image-set(
+    url("images/valley-2400.avif") type("image/avif") 1x,
+    url("images/valley-3200.avif") type("image/avif") 2x,
+    url("images/valley-2400.webp") type("image/webp") 1x,
+    url("images/valley-3200.webp") type("image/webp") 2x,
+    url("images/valley.jpg") type("image/jpeg") 1x
+  );
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
   padding-top: 81px;
+}
+ 
+/* Fallback si no se soportan variables en background-image */
+@supports not (background-image: var(--vac-grad-hero)) {
+  #contenido-principal { background-color: #0E1F15; }
 }
 
 img {
@@ -119,6 +137,7 @@ li {
 }
 
 a {
+  color: #79B86A; /* fallback */
   color: var(--vac-link);
   text-decoration: underline;
   text-decoration-thickness: 2px;
@@ -134,6 +153,7 @@ a {
 
 a:hover,
 a:focus-visible {
+  color: #D8A321; /* fallback */
   color: var(--vac-gold);
   -webkit-text-decoration-color: rgba(216, 163, 33, 0.6);
           text-decoration-color: rgba(216, 163, 33, 0.6);
@@ -166,11 +186,13 @@ a:focus-visible {
 }
 
 .button:focus-visible {
+  outline: 2px solid #fff; /* fallback */
   outline: 2px solid var(--vac-outline);
   outline-offset: 3px;
 }
 
 .button.primary {
+  background: linear-gradient(135deg, #D8A321, #f5c95a); /* fallback */
   background: -o-linear-gradient(315deg, var(--vac-gold), #f5c95a);
   background: linear-gradient(135deg, var(--vac-gold), #f5c95a);
   color: #0b150f;
@@ -208,6 +230,7 @@ a:focus-visible {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   padding: 0.75rem 1.5rem;
+  background: #0F4D3A; /* fallback */
   background: var(--vac-green);
   color: #fff;
   border-radius: 12px;
@@ -215,6 +238,14 @@ a:focus-visible {
   -o-transition: top 0.2s ease;
   transition: top 0.2s ease;
   z-index: 1000;
+}
+
+/* Reduce trabajo de render cuando el usuario prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  .fluid-canvas,
+  #fireworks-canvas {
+    display: none !important;
+  }
 }
 
 .skip-link:focus {
@@ -256,6 +287,7 @@ a:focus-visible {
       -ms-flex-align: center;
           align-items: center;
   gap: 0.75rem;
+  color: #E7EFE9; /* fallback */
   color: var(--vac-text);
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -286,6 +318,7 @@ a:focus-visible {
 }
 
 .nav-links a {
+  color: #B9C9C1; /* fallback */
   color: var(--vac-muted);
   text-decoration: none;
   font-weight: 500;
@@ -293,10 +326,12 @@ a:focus-visible {
 
 .nav-links a:hover,
 .nav-links a:focus-visible {
+  color: #D8A321; /* fallback */
   color: var(--vac-gold);
 }
 
 .nav-links a[aria-current="page"] {
+  color: #D8A321; /* fallback */
   color: var(--vac-gold);
   position: relative;
 }
@@ -308,6 +343,7 @@ a:focus-visible {
   bottom: -0.5rem;
   width: 100%;
   height: 2px;
+  background: #D8A321; /* fallback */
   background: var(--vac-gold);
   border-radius: 999px;
 }
@@ -325,6 +361,7 @@ a:focus-visible {
 
 /* Estado activo para enlaces a secciones internas visibles */
 .nav-links a[aria-current="location"] {
+  color: #D8A321; /* fallback */
   color: var(--vac-gold);
   position: relative;
 }
@@ -336,6 +373,7 @@ a:focus-visible {
   bottom: -0.5rem;
   width: 100%;
   height: 2px;
+  background: #D8A321; /* fallback */
   background: var(--vac-gold);
   border-radius: 999px;
 }
