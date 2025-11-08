@@ -1,31 +1,35 @@
-const STATIC_CACHE = 'vac-static-v6';
-const DYNAMIC_CACHE = 'vac-dynamic-v6';
-const APP_VERSION = '2025-11-08';
+const STATIC_CACHE = 'vac-static-v10';
+const DYNAMIC_CACHE = 'vac-dynamic-v10';
+const APP_VERSION = '2025-11-08-4';
 
 const STATIC_ASSETS = [
-  '/',
-  '/index.html',
-  '/guia.html',
-  '/corredores.html',
-  '/styles.min.css?v=202511071103',
-  '/site.webmanifest',
-  '/favicon.svg',
-  '/favicon-96x96.png',
-  '/apple-touch-icon.png',
-  '/images/VAC.png',
-  '/images/valley.jpg',
-  '/images/promo.jpg',
-  '/images/VAC-red.png',
-  '/images/VAC-altimetria-labeled.svg',
-  '/images/VAC-ruta-labeled.svg',
-  '/images/lgbtq_flag.svg',
-  '/data/sponsors.json',
-  '/route/vac.gpx',
-  '/gpu-io.min.js',
-  '/fluid-background.js',
-  '/three.min.js',
-  '/VAC_Checklist_Autosuficiente.pdf',
-  '/VAC_Plantilla_Top_Tube.png'
+  './',
+  'index.html',
+  'guia.html',
+  'corredores.html',
+  'styles.min.css?v=202511080230',
+  'site.webmanifest',
+  'favicon.svg',
+  'favicon-96x96.png',
+  'apple-touch-icon.png',
+  'images/VAC.png',
+  'images/valley.jpg',
+  'images/valley-1600.avif',
+  'images/valley-2400.avif',
+  'images/valley-3200.avif',
+  'images/valley-1600.webp',
+  'images/valley-2400.webp',
+  'images/valley-3200.webp',
+  'images/VAC-red.png',
+  'images/VAC-altimetria-labeled.svg',
+  'images/VAC-ruta-labeled.svg',
+  'images/lgbtq_flag.svg',
+  'data/sponsors.json',
+  'route/vac.gpx',
+  'gpu-io.min.js',
+  'fluid-background.js',
+  'VAC_Checklist_Autosuficiente.pdf',
+  'VAC_Plantilla_Top_Tube.png'
 ];
 
 self.addEventListener('install', event => {
