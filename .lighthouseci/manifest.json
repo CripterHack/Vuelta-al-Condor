@@ -1,0 +1,38 @@
+[
+  {
+    "url": "http://localhost:63140/index.html",
+    "isRepresentativeRun": true,
+    "htmlPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-index_html-2025_11_08_08_18_24.report.html",
+    "jsonPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-index_html-2025_11_08_08_18_24.report.json",
+    "summary": {
+      "performance": 0.56,
+      "accessibility": 1,
+      "best-practices": 0.75,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:63140/guia.html",
+    "isRepresentativeRun": true,
+    "htmlPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-guia_html-2025_11_08_08_18_40.report.html",
+    "jsonPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-guia_html-2025_11_08_08_18_40.report.json",
+    "summary": {
+      "performance": 0.56,
+      "accessibility": 1,
+      "best-practices": 0.75,
+      "seo": 1
+    }
+  },
+  {
+    "url": "http://localhost:63140/corredores.html",
+    "isRepresentativeRun": true,
+    "htmlPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-corredores_html-2025_11_08_08_18_56.report.html",
+    "jsonPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-corredores_html-2025_11_08_08_18_56.report.json",
+    "summary": {
+      "performance": 0.56,
+      "accessibility": 1,
+      "best-practices": 0.75,
+      "seo": 0.69
+    }
+  }
+]

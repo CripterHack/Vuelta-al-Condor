@@ -35,4 +35,7 @@ error_log
 logs/
 
 # ignore lighthouse results
-.lighthouseci/*
+.lighthouseci/lhr-*.json
+.lighthouseci/lhr-*.html
+.lighthouseci/localhost-*.json
+.lighthouseci/localhost-*.html
