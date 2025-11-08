@@ -3,6 +3,7 @@
   "markdown": true,
   "directoryListing": true,
   "skip": [
+    "^https?://",
     "^https?://(www\\.)?google-analytics\\.com",
     "^https?://(www\\.)?googletagmanager\\.com",
     "^https?://fonts\\.googleapis\\.com",
