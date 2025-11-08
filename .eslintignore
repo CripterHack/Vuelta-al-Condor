@@ -1,7 +1,0 @@
-*.min.js
-gpu-io.min.js
-three.min.js
-sw.js
-node_modules/
-dist/
-build/
