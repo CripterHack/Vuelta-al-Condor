@@ -1,0 +1,23 @@
+{
+  "name": "vac_lock_gen",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Lockfile generator mirror for VAC dev dependencies",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@lhci/cli": "0.15.1",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.1.2",
+    "eslint": "^9.13.0",
+    "express": "^5.1.0",
+    "globals": "^16.5.0",
+    "htmlhint": "^1.1.5",
+    "linkinator": "^4.0.2",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "stylelint": "^16.10.0",
+    "stylelint-config-standard": "^36.0.1"
+  }
+}
