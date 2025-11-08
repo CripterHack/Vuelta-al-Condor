@@ -14,17 +14,25 @@
     "lint:css": "stylelint \"**/*.css\"",
     "lint:js": "eslint --ignore-pattern \"*.min.js\" --ignore-pattern \"gpu-io.min.js\" --ignore-pattern \"three.min.js\" --ignore-pattern \"sw.js\" .",
     "check:links": "linkinator . --recurse",
-    "lhci": "lhci autorun"
+    "lhci": "lhci autorun",
+    "css:prefix": "postcss styles.css --use autoprefixer -o styles.prefixed.css",
+    "css:build": "postcss styles.prefixed.css -o styles.min.css",
+    "images:gen": "node tools/image-gen.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
     "@lhci/cli": "0.15.1",
+    "autoprefixer": "^10.4.21",
+    "cssnano": "^7.1.2",
     "eslint": "^9.13.0",
     "express": "^5.1.0",
     "globals": "^16.5.0",
     "htmlhint": "^1.1.5",
     "linkinator": "^4.0.2",
     "nodemon": "^3.1.10",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "sharp": "^0.33.5",
     "stylelint": "^16.10.0",
     "stylelint-config-standard": "^36.0.1"
   }
