@@ -217,3 +217,13 @@ http://localhost:5174/
 - Identidad visual y recursos de marca: propiedad de sus titulares; uso autorizado para este sitio.
 - Logos de patrocinadores y fotografías: publicados con permiso; revisar antes de reutilizar en otros contextos.
 - Desarrollo: IzignaMx. Contribuciones y mejoras son bienvenidas mediante PR.
+
+---
+
+<p align="center">
+  <a href="https://izignamx.com" target="_blank" rel="noopener">
+    <img src="https://izignamx.com/assets/img/logo.png" alt="IzignaMx · Agencia Digital" width="133" height="133" />
+  </a>
+  <br />
+  <sub>Desarrollado por <a href="https://izignamx.com" target="_blank" rel="noopener"><strong>IzignaMx</strong></a></sub>
+</p>
