@@ -39,3 +39,7 @@ logs/
 .lighthouseci/lhr-*.html
 .lighthouseci/localhost-*.json
 .lighthouseci/localhost-*.html
+lhci-report/lhr-*.json
+lhci-report/lhr-*.html
+lhci-report/localhost-*.json
+lhci-report/localhost-*.html
