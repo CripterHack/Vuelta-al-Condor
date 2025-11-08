@@ -9,10 +9,21 @@
   "scripts": {
     "dev": "node dev-server.js",
     "dev:auto": "nodemon --watch . --ext html,css,js,json --exec node dev-server.js",
-    "start": "node dev-server.js"
+    "start": "node dev-server.js",
+    "lint:html": "htmlhint \"**/*.html\" --config .htmlhintrc",
+    "lint:css": "stylelint \"**/*.css\"",
+    "lint:js": "eslint --ignore-pattern \"*.min.js\" --ignore-pattern \"gpu-io.min.js\" --ignore-pattern \"three.min.js\" --ignore-pattern \"sw.js\" .",
+    "check:links": "linkinator --dir .",
+    "lhci": "lhci autorun"
   },
   "devDependencies": {
     "express": "^5.1.0",
-    "nodemon": "^3.1.10"
+    "nodemon": "^3.1.10",
+    "@lhci/cli": "0.15.1",
+    "eslint": "^9.13.0",
+    "htmlhint": "^1.1.5",
+    "linkinator": "^4.0.2",
+    "stylelint": "^16.10.0",
+    "stylelint-config-standard": "^36.0.1"
   }
 }
