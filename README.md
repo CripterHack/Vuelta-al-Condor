@@ -1,5 +1,9 @@
 # Vuelta al Cóndor 2025
 
+<p align="center">
+  <img src="images/VAC.png" alt="Logotipo de Vuelta al Cóndor" width="240" />
+</p>
+
 Sitio estático oficial de la **Vuelta al Cóndor 2025**, un desafío de ciclismo de ruta autosuficiente de 187 km y 3000 m+ organizado por **El Rey de la Montaña**. El proyecto prioriza la accesibilidad (WCAG 2.2 AA), el rendimiento (Core Web Vitals ≥ 95) y la comunicación inclusiva para toda la comunidad LGBTQI+.
 
 ## Estructura del proyecto
@@ -19,8 +23,13 @@ Sitio estático oficial de la **Vuelta al Cóndor 2025**, un desafío de ciclism
 
 ## Requisitos rápidos
 
-- Node.js ≥ 18 (opcional) para minificar CSS.
+- Node.js ≥ 20.19.4 (recomendado). El proyecto incluye `.nvmrc`; usa `nvm use` (macOS/Linux) o `nvm use 20.19.4` (Windows) para fijar versión.
 - Lighthouse (CLI o Chrome DevTools) para validar CWV.
+
+### Entorno Node
+- Versionado local: `.nvmrc` especifica `20.19.4`.
+- macOS/Linux: `nvm install` y luego `nvm use`.
+- Windows (nvm‑windows): `nvm install 20.19.4` y `nvm use 20.19.4`.
 
 ## Desarrollo local
 
