@@ -1,0 +1,1101 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Guía de entrenamiento y nutrición · Vuelta al Cóndor</title>
+  <meta name="description" content="Plan exprés de 21 días y estrategia completa de hidratación y alimentación autosuficiente para los 187 km y 3000 m+ de la Vuelta al Cóndor.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#0E1F15">
+  <meta name="color-scheme" content="dark">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob: https://www.google-analytics.com; style-src-elem 'self' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;">
+  <link rel="canonical" href="https://condor.izignamx.com/guia.html">
+  <link rel="manifest" href="https://condor.izignamx.com/site.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="https://condor.izignamx.com/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="https://condor.izignamx.com/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="https://condor.izignamx.com/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <link rel="preload" as="image" href="https://condor.izignamx.com/images/VAC.png">
+  <link rel="stylesheet" href="https://condor.izignamx.com/styles.min.css?v=202511071103">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta property="og:title" content="Guía de entrenamiento y nutrición · Vuelta al Cóndor">
+  <meta property="og:description" content="Plan exprés de 21 días, taper y estrategia práctica de alimentación e hidratación para completar 187 km autosuficientes.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://condor.izignamx.com/guia.html">
+  <meta property="og:image" content="https://condor.izignamx.com/images/promo.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Vuelta al Cóndor">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Guía de entrenamiento y nutrición · Vuelta al Cóndor">
+  <meta name="twitter:description" content="Estrategias prácticas por fase y por segmento de ruta.">
+  <meta name="twitter:image" content="https://condor.izignamx.com/images/promo.jpg">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://condor.izignamx.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Guía", "item": "https://condor.izignamx.com/guia.html"},
+      {"@type": "ListItem", "position": 3, "name": "Corredores", "item": "https://condor.izignamx.com/corredores.html"}
+    ]
+  }
+  </script>
+
+  <script defer src="./three.min.js"></script>
+  <script>
+    // Silenciar logs ruidosos durante carga (se restaura luego)
+    (function(){
+      var c = window.console || {}; var noop = function(){};
+      window.__consoleOriginal = { log:c.log, info:c.info, debug:c.debug, trace:c.trace, group:c.group, groupCollapsed:c.groupCollapsed, groupEnd:c.groupEnd };
+      c.log = c.info = c.debug = c.trace = noop; c.group = c.groupCollapsed = c.groupEnd = noop;
+    })();
+  </script>
+  <style>
+    /* Ajustes mínimos para la guía y la herramienta, alineados al tema */
+    .guide-section { max-width: 980px; margin: 0 auto; }
+    .guide-section h1, .guide-section h2, .guide-section h3 { color: var(--vac-text); }
+    .guide-lead { color: var(--vac-muted); font-size: 1.05rem; }
+    .guide-card { background: rgba(19, 39, 27, 0.6); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; }
+    .guide-grid { display: grid; gap: 16px; }
+    .guide-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .guide-list { line-height: 1.6; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    @media (max-width: 900px){ .guide-grid-2 { grid-template-columns: 1fr; } }
+
+    /* Herramienta integrada */
+    #tool .card { border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; margin-top: 16px; background: rgba(19, 39, 27, 0.6); }
+    #tool h2, #tool h3 { margin: 0.2rem 0 0.6rem; }
+    #tool label { display:block; margin:.4rem 0 .15rem; font-weight:600 }
+    #tool input, #tool select { width:100%; padding:.6rem; border:1px solid rgba(255,255,255,0.12); border-radius:8px; background: rgba(12,24,17,0.8); color: var(--vac-text); }
+    #tool .grid { display:grid; gap:16px }
+    #tool .grid-2 { grid-template-columns:repeat(2,minmax(0,1fr)) }
+    #tool .grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)) }
+    #tool .muted { color: var(--vac-muted); font-size:.92rem }
+    #tool .kpi { display:flex; gap:10px; flex-wrap:wrap }
+    #tool .kpi div { flex:1 1 140px; background: rgba(12,24,17,0.7); border:1px solid rgba(255,255,255,0.08); border-radius:10px; padding:10px; text-align:center }
+    @media (max-width: 900px){ #tool .grid-2, #tool .grid-3 { grid-template-columns:1fr } }
+
+    /* Estilos del lienzo de fuegos artificiales y botón de rendimiento, replicados de index.html */
+    .fireworks-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 50;
+      display: none;
+    }
+    .perf-toggle.button.secondary {
+      position: relative;
+      width: 64px;
+      height: 32px;
+      min-width: 64px;
+      padding: 0;
+      border-radius: 999px;
+      display: inline-block;
+      border: 1px solid rgba(81, 233, 240, 0.65);
+      background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.12));
+      overflow: hidden;
+      transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+    }
+    .perf-toggle .toggle-track {
+      position: absolute; inset: 0; border-radius: inherit;
+      background: radial-gradient(120% 120% at 0% 50%, rgba(81,233,240,0.12), rgba(0,0,0,0));
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 8px; font-size: 10px; font-weight: 600; letter-spacing: 0.5px;
+      color: rgba(207,239,241,0.45);
+      transition: background .25s ease, color .25s ease;
+    }
+    .perf-toggle .toggle-text { opacity: 0.55; transition: opacity .2s ease, color .2s ease; }
+    .perf-toggle:not([aria-pressed="true"]) .toggle-text.off { opacity: 0.95; color: #cfeff1; }
+    .perf-toggle:not([aria-pressed="true"]) .toggle-text.on { opacity: 0.25; color: rgba(207,239,241,0.35); }
+    .perf-toggle .toggle-knob {
+      position: absolute; top: 2px; left: 2px;
+      width: 28px; height: 28px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: rgba(14, 31, 21, 0.75);
+      color: #cfeff1; font-size: 18px; line-height: 1;
+      box-shadow: 0 0 0 0 rgba(81,233,240,0.0);
+      transform: translateX(0);
+      transition: transform .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
+    }
+    .perf-toggle:focus-visible { outline: none; box-shadow: 0 0 0 2px rgba(81,233,240,0.6); }
+    .perf-toggle[aria-pressed="true"] { border-color: #35d399; }
+    .perf-toggle[aria-pressed="true"] .toggle-track {
+      background: radial-gradient(120% 120% at 100% 50%, rgba(53,211,153,0.20), rgba(0,0,0,0));
+    }
+    .perf-toggle[aria-pressed="true"] .toggle-text.on { opacity: 0.95; color: #9ef59f; }
+    .perf-toggle[aria-pressed="true"] .toggle-text.off { opacity: 0.25; color: rgba(207,239,241,0.35); }
+    .perf-toggle[aria-pressed="true"] .toggle-knob {
+      transform: translateX(32px);
+      background: rgba(53, 211, 153, 0.25);
+      color: #9ef59f;
+      box-shadow: 0 0 8px 2px rgba(53,211,153,0.25);
+    }
+    .guide-toc { position: sticky; top: 64px; z-index: 40; }
+    .guide-toc ol { max-height: 50vh; overflow: auto; padding-left: 22px; margin: 0; }
+    .guide-toc a { display: block; padding: 6px 8px; border-left: 2px solid transparent; color: var(--vac-muted); text-decoration: none; }
+    .guide-toc a:hover { color: var(--vac-text); }
+    .guide-toc a.active { color: var(--vac-text); border-left-color: var(--vac-accent, #51e9f0); }
+    .guide-quickbar { max-width: 980px; margin: 0 auto; display: flex; gap: 8px; align-items: center; justify-content: center;padding: 0 0 3rem}
+    /* Índice colapsable con <details> */
+    .guide-toc details { margin: 0; }
+    .guide-toc summary { font-weight: 600; cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
+    .guide-toc summary::marker { display: none; }
+    .guide-toc summary::after { content: "▾"; font-size: 14px; transform: rotate(0deg); transition: transform 0.2s ease; }
+    .guide-toc details[open] summary::after { transform: rotate(180deg); }
+    /* Animación suave al desplegar el índice */
+    .guide-toc details > ol { opacity: 0; transform: translateY(-4px); transition: opacity .2s ease, transform .2s ease; }
+    .guide-toc details[open] > ol { opacity: 1; transform: none; }
+    /* Layout en desktop: índice en sidebar fijo para evitar solapamientos */
+    .guide-layout { display: block; }
+    .guide-content { min-width: 0; }
+    .guide-content>.guide-card{margin-bottom:2rem}
+    @media (min-width: 1024px){
+      .guide-layout { display: grid; grid-template-columns: 300px 1fr; gap: 20px; align-items: start; }
+      .guide-layout .guide-toc { position: sticky; top: 64px; z-index: 30; }
+      .guide-layout .guide-toc details > ol { max-height: calc(100vh - 64px - 28px); }
+      .guide-layout .guide-content { min-width: 0; }
+    }
+    /* Botón floto Volver al índice */
+    #back-to-index { position: fixed; right: 16px; bottom: 16px; z-index: 20; display: none; padding: 10px 12px; border-radius: 24px; box-shadow: 0 3px 10px rgba(0,0,0,0.2); }
+    /* Colapsar también en tablets para una experiencia más limpia */
+    @media (max-width: 1024px){
+      .guide-toc { top: 58px; }
+      .guide-quickbar { position: sticky; top: 58px; z-index: 45; background: rgba(14,31,21,0.85); padding: 8px; border-bottom: 1px solid rgba(255,255,255,0.06); backdrop-filter: blur(6px); }
+      .guide-toc ol { margin-top: 8px; }
+    }
+    /* Enlace inline “Volver al índice” en secciones largas */
+    .section-footer { margin-top: 12px; text-align: right; }
+    .section-footer .back-inline { display: inline-flex; align-items: center; gap: 6px; }
+    /* Aviso contextual (alerta) dentro de la herramienta */
+    #tool .alert { margin-top: 10px; padding: 10px; border-radius: 10px; border: 1px solid rgba(255, 120, 120, 0.35); background: rgba(255, 120, 120, 0.12); }
+    #tool .alert strong { color: #ffaaaa; }
+  </style>
+</head>
+<body id="inicio">
+  <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Navegación principal">
+      <a class="brand" href="/index.html#inicio">
+        <img src="images/VAC.png" alt="Logotipo de la Vuelta al Cóndor" decoding="async" fetchpriority="high">
+        <span>Vuelta al Cóndor</span>
+      </a>
+      <button class="hamburger" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Abrir menú de navegación">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/index.html#detalles">Detalles</a></li>
+        <li><a href="/index.html#ruta">Ruta</a></li>
+        <li><a href="/index.html#altimetria">Altimetría</a></li>
+        <li><a href="/guia.html" aria-current="page">Guía</a></li>
+        <li><a href="/index.html#patrocinadores">Patrocinadores</a></li>
+        <li><a href="/index.html#faq">FAQ</a></li>
+        <li><a href="/index.html#reglamento">Reglamento</a></li>
+        <li><a href="/index.html#contacto">Contacto</a></li>
+      </ul>
+      <button class="button secondary perf-toggle" type="button" aria-pressed="false" aria-label="Activar modo rendimiento (reducir animaciones)" title="Activar modo rendimiento">
+        <span class="toggle-track" aria-hidden="true">
+          <span class="toggle-text off" aria-hidden="true">NO</span>
+          <span class="toggle-text on" aria-hidden="true">SÍ</span>
+        </span>
+        <span class="toggle-knob" aria-hidden="true">⚡</span>
+      </button>
+    </nav>
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <ul>
+        <li><a href="/index.html#detalles">Detalles</a></li>
+        <li><a href="/index.html#ruta">Ruta</a></li>
+        <li><a href="/index.html#altimetria">Altimetría</a></li>
+        <li><a href="/guia.html" aria-current="page">Guía</a></li>
+        <li><a href="/index.html#patrocinadores">Patrocinadores</a></li>
+        <li><a href="/index.html#faq">FAQ</a></li>
+        <li><a href="/index.html#reglamento">Reglamento</a></li>
+        <li><a href="/index.html#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <canvas id="fluid-bg" class="fluid-canvas" aria-hidden="true"></canvas>
+  <canvas id="fireworks-canvas" class="fireworks-canvas" aria-hidden="true"></canvas>
+
+  <main id="contenido-principal">
+    <!-- Herramienta priorizada al inicio -->
+    <section class="section" id="herramienta" aria-labelledby="tool-title">
+      <div class="section-header">
+        <h2 id="tool-title">Calcula tu estrategia personal</h2>
+        <p>Integra tus datos y obten objetivos por hora y por segmento de la ruta. Nada se guarda; todo el cálculo sucede en tu navegador.</p>
+      </div>
+      <div id="tool" class="guide-section">
+        <div class="card" aria-live="polite">
+          <form id="perfil" class="grid grid-3" autocomplete="off" novalidate>
+            <div>
+              <label for="edad">Edad</label>
+              <input type="number" id="edad" min="14" max="85" placeholder="Ej. 34" required>
+            </div>
+            <div>
+              <label for="estatura">Estatura (cm)</label>
+              <input type="number" id="estatura" min="130" max="220" placeholder="Ej. 175" required>
+            </div>
+            <div>
+              <label for="peso">Peso (kg)</label>
+              <input type="number" id="peso" min="40" max="150" step="0.1" placeholder="Ej. 72.5" required>
+            </div>
+
+            <div>
+              <label for="nivel">Experiencia en fondo</label>
+              <select id="nivel">
+                <option value="nuevo">Nuevo</option>
+                <option value="intermedio" selected>Intermedio</option>
+                <option value="avanzado">Avanzado</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="horas">Horas de entrenamiento/semana</label>
+              <input type="number" id="horas" min="1" max="20" placeholder="Ej. 6" required>
+            </div>
+
+            <div>
+              <label for="objetivo">Tiempo objetivo (h:mm)</label>
+              <input type="text" id="objetivo" pattern="^\\d{1,2}:\\d{2}$" placeholder="Ej. 10:00" aria-describedby="hint-tiempo">
+              <div id="hint-tiempo" class="muted">Si no pones uno, se estimará automáticamente.</div>
+            </div>
+
+            <!-- Selector de modo de cálculo eliminado; se determina automáticamente según si se definió tiempo objetivo -->
+
+            <div>
+              <label for="clima">Clima esperado</label>
+              <select id="clima">
+                <option value="frio">Frío (&lt;15°C)</option>
+                <option value="templado" selected>Templado (15–24°C)</option>
+                <option value="calor">Caluroso (≥25°C)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="sudor">Sudoración</label>
+              <select id="sudor">
+                <option value="baja">Baja</option>
+                <option value="media" selected>Media</option>
+                <option value="alta">Alta</option>
+                <option value="salada">Alta con sal visible</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="tolerancia">Tolerancia a carbohidratos</label>
+              <select id="tolerancia">
+                <option value="baja">Baja</option>
+                <option value="media" selected>Media</option>
+                <option value="alta">Alta (entrenada)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="bidon">Tamaño de bidón</label>
+              <select id="bidon">
+                <option value="500">500 ml</option>
+                <option value="650" selected>650 ml</option>
+                <option value="750">750 ml</option>
+                <option value="1000">1000 ml</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="cafe">Uso de cafeína</label>
+              <select id="cafe">
+                <option value="no" selected>No</option>
+                <option value="si">Sí</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="mgkg">Dosis objetivo de cafeína (mg/kg)</label>
+              <input type="number" id="mgkg" min="1" max="6" step="0.5" value="3">
+              <div class="muted">Referencia de salud: máx. 400 mg totales en el día y ≤200 mg por toma.</div>
+            </div>
+
+            <!-- Datos opcionales de bicicleta para ajustar cálculo -->
+            <div>
+              <label for="tipoBici">Tipo de bicicleta (opcional)</label>
+              <select id="tipoBici">
+                <option value="" selected>—</option>
+                <option value="ruta">Ruta</option>
+                <option value="gravel">Gravel</option>
+                <option value="mtb">MTB</option>
+                <option value="fixie">Fixie</option>
+              </select>
+            </div>
+            <div>
+              <label for="pesoBici">Peso de la bicicleta (kg, opcional)</label>
+              <input type="number" id="pesoBici" min="5" max="25" step="0.1" placeholder="Ej. 9.5">
+              <div class="muted">Rango típico: ruta 7–10 kg, gravel 8–12 kg, MTB 11–15 kg.</div>
+            </div>
+            <div>
+              <label for="rodada">Rodada (diámetro, opcional)</label>
+              <select id="rodada">
+                <option value="" selected>—</option>
+                <option value="700c">700c</option>
+                <option value="650b">650b</option>
+                <option value="26">26"</option>
+                <option value="27.5">27.5"</option>
+                <option value="29">29"</option>
+              </select>
+            </div>
+            <div>
+              <label for="anchoLlanta">Ancho de llanta (mm, opcional)</label>
+              <input type="number" id="anchoLlanta" min="18" max="65" step="1" placeholder="Ej. 28">
+              <div class="muted">Ruta: 23–30 mm · Gravel: 35–50 mm · MTB: 50–65 mm.</div>
+            </div>
+          </form>
+
+          <div class="guide-grid guide-grid-2" style="margin-top:16px">
+            <button id="generar" class="button primary">Generar plan</button>
+            <button id="limpiar" class="button secondary" type="button">Limpiar</button>
+          </div>
+
+          <div id="salida" class="card" style="display:none">
+            <h3 class="text-xl font-semibold">Tu resumen</h3>
+            <div class="kpi" id="kpi"></div>
+
+            <h3 class="text-xl font-semibold" style="margin-top:1rem">Objetivos por hora</h3>
+            <ul class="guide-list mono" id="objetivos"></ul>
+            <div id="avisoCafe" class="alert" style="display:none"></div>
+
+            <h3 class="text-xl font-semibold" style="margin-top:1rem">Plan por segmento</h3>
+            <div id="segmentos" class="guide-list mono"></div>
+
+            <h3 class="text-xl font-semibold" style="margin-top:1rem">Equivalencias de raciones (orientativas)</h3>
+            <p class="muted">Úsalas para armar tus porciones. Ajusta según lo que te caiga mejor.</p>
+            <ul class="guide-list mono" id="raciones"></ul>
+
+            <div class="guide-grid guide-grid-2" style="margin-top:1rem">
+              <button id="descargar" class="button secondary" type="button">Descargar .txt</button>
+            </div>
+
+            <p class="muted" style="margin-top:10px">Cálculos orientativos. Si tienes condiciones de salud, consulta a profesionales. Nada se almacena.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contenido de la guía en HTML semántico -->
+    <section class="section" id="guia" aria-labelledby="guia-title">
+      <div class="section-header">
+        <h1 id="guia-title">Guía de entrenamiento y nutrición</h1>
+        <p class="guide-lead">Objetivo: llegar con energía estable, controlar el esfuerzo en los puertos y terminar en buenas condiciones, respetando el formato autosuficiente. Datos clave: 187 km, 3000 m+, salida 06:00 del Zócalo y meta en Okupache C.U.; segmentos: La Loma (km 50), Cañón de Lobos (km 110) y Tres Marías (km 145).</p>
+      </div>
+
+      <div class="guide-layout">
+      <nav class="guide-section guide-card guide-toc" aria-label="Índice de contenidos">
+        <details id="toc" open>
+          <summary>Índice</summary>
+          <ol class="guide-list">
+          <li><a href="#herramienta">Herramienta y estrategia personalizada</a></li>
+          <li><a href="#principios">Principios rápidos</a></li>
+          <li><a href="#plan-expres">Plan exprés (21 días)</a></li>
+          <li><a href="#nutricion-practica">Nutrición práctica</a></li>
+          <li><a href="#hidratacion-calor">Estrategia de hidratación en clima caluroso</a></li>
+          <li><a href="#checklist">Checklists autosuficientes</a></li>
+          <li><a href="#pacing">Ritmo por sensaciones</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="#descargables">Descargables</a></li>
+          </ol>
+        </details>
+      </nav>
+      <div class="guide-content">
+
+      <div class="guide-section guide-card">
+        <h2 id="principios">1) Principios rápidos</h2>
+        <ul class="guide-list">
+          <li>Con 21 días: consolida lo que ya tienes; 3–5 sesiones/semana con 1–2 estímulos de calidad y una última tirada larga controlada. Evita aumentos bruscos de volumen.</li>
+          <li>Ritmo inteligente: inicia suave (RPE 3–4/10) y sube gradualmente; reserva fuerza para Tres Marías.</li>
+          <li>Hidratos y sales por hora: 60–90 g de carbohidratos/h en esfuerzos ≥150 min, con 300–600 mg de sodio/h (ajusta por sudoración/clima).</li>
+          <li>Hidratación: guía general 500–750 ml/h según temperatura (menos en frío, más en calor).</li>
+          <li>Carga de carbohidratos (36–48 h previas): prioriza cereales, tubérculos, leguminosas y frutas para completar 8–10+ g/kg/día.</li>
+        </ul>
+        <p class="muted">Nota: si usas cafeína, 2–4(–6) mg/kg antes o fraccionada; evita dosis muy altas por efectos secundarios.</p>
+      </div>
+
+      <div class="guide-section guide-card">
+        <h2 id="plan-expres">2) Plan exprés (21 días hasta la carrera)</h2>
+        <p>Objetivo: llegar fresco, con energía estable y piernas “despiertas”, practicando nutrición y ritmo específicos. Conserva 1–2 toques de calidad/semana y evita añadir volumen.</p>
+
+        <h3>Bloque 1 — Consolidación (Semana del 8 al 14 de noviembre)</h3>
+        <ul class="guide-list">
+          <li>Lunes: movilidad + core 20–30’ (ligero).</li>
+          <li>Martes: 60–90’ Z2 con 4×5’ Z3 en subida (rec 3’).</li>
+          <li>Miércoles: 60–75’ técnica: cadencia alta + 6×1’ Z4 cortos; fuerza fuera de la bici 15–20’.</li>
+          <li>Jueves: 75–90’ Z2 ondulado; come y bebe cada 20–30’.</li>
+          <li>Viernes: descanso activo 30–45’ muy suave.</li>
+          <li>Sábado (clave): tirada 3–4.5 h con 1–2 puertos/Z3; practicar 60–90 g CHO/h, 300–600 mg Na/h y 500–750 ml/h.</li>
+          <li>Domingo: 60–90’ recuperación Z1–Z2 o caminata larga.</li>
+        </ul>
+
+        <h3>Bloque 2 — Taper inicial (Semana del 15 al 21 de noviembre)</h3>
+        <ul class="guide-list">
+          <li>Reduce volumen 20–30 % vs bloque anterior; conserva 1–2 toques de intensidad.</li>
+          <li>Lunes: movilidad/descanso.</li>
+          <li>Martes: 60–75’ Z2 con 3×5’ Z3.</li>
+          <li>Miércoles: 60–70’ técnica + 4×1’ Z4.</li>
+          <li>Jueves: 60–75’ Z2 ondulado practicando nutrición.</li>
+          <li>Viernes: 30–45’ muy suave.</li>
+          <li>Tirada larga (última): 3–4 h entre el 18–19 de noviembre; simula equipo y alimentación completa.</li>
+          <li>Domingo: 60–75’ Z1–Z2 recuperación.</li>
+        </ul>
+
+        <h3>Bloque 3 — Taper final (Semana del 22 al 28 de noviembre)</h3>
+        <ul class="guide-list">
+          <li>Reduce volumen 40–60 %; mantén calidad breve sin acumular fatiga.</li>
+          <li>22: 60–75’ Z2 con 3×3’ Z4 (rec 3’) en subida.</li>
+          <li>23–24: 45–60’ Z2 suaves.</li>
+          <li>25: 45–60’ Z2 con 4×1’ Z4.</li>
+          <li>26–27: 45–75’ muy suave + carga de carbohidratos (8–10+ g/kg/día); ajusta sodio y líquidos.</li>
+          <li>28: 30–45’ paseo con 2–3 aceleraciones; revisar equipo, top tube tape y logística.</li>
+          <li>29 (carrera): calentamiento breve 10–15’ si te ayuda.</li>
+        </ul>
+        <p class="muted">Notas: si vienes con buena base, evita “hero rides” y prioriza frescura. Si vienes justo, descansa más; no hagas más de una tirada larga; fuerza fuera de la bici muy ligera o eliminar si te fatiga.</p>
+      </div>
+
+      <div class="guide-section guide-card">
+        <h2 id="nutricion-practica">3) Nutrición práctica (21 días)</h2>
+        <h3>Ensayos y ajustes</h3>
+        <ul class="guide-list">
+          <li>Haz 1–2 ensayos completos de alimentación/hidratación en las tiradas largas (idealmente 18–19 de noviembre).</li>
+          <li>Define y prueba cafeína: 2–4(–6) mg/kg si la toleras; evita novedades el día de la carrera.</li>
+          <li>26–27 de noviembre: baja fibra si eres sensible; cuida sodio y líquidos.</li>
+        </ul>
+        <h3>Antes</h3>
+        <ul class="guide-list">
+          <li>36–48 h previas: porciones generosas de arroz, pasta, papa/camote, pan, tortillas, avena, frutas deshidratadas; leguminosas en porciones moderadas si te caen bien. Líquidos con sodio ligero.</li>
+          <li>Desayuno (2–3 h antes): avena con plátano y crema de cacahuate; pan con mermelada; arroz con fruta; bebida fortificada de soya/avena/almendra.</li>
+          <li>30–15’ antes: dátiles o gominolas simples si los toleras.</li>
+        </ul>
+        <h3>Durante (objetivo por hora)</h3>
+        <ul class="guide-list">
+          <li>Carbohidratos: 60–90 g/h. Mezcla fuentes: tortillas con crema de cacahuate o hummus, sándwich sencillo, papas cocidas saladas, barras, dátiles/plátanos, geles si te funcionan.</li>
+          <li>Sodio: 300–600 mg/h; en calor alto podrías requerir más. Opciones: bebida con sales, caps de electrolitos, snacks salados.</li>
+          <li>Líquidos: 500–750 ml/h según clima y sudoración. En frío puede bastar 250–500 ml/h.</li>
+        </ul>
+        <h3>Sugerencias por segmento</h3>
+        <ul class="guide-list">
+          <li>Zócalo → La Loma (km 0–50): arranca conservador. 1–2 bidones, 60–75 g/h; snack salado antes del bosque.</li>
+          <li>Cañón de Lobos (≈km 110): tramo con calor potencial; eleva líquidos y sodio; revisa reservas para el puerto siguiente.</li>
+          <li>Tres Marías (≈km 145): puerto largo; si te sienta bien, toma un gel/carb rápido 5–10’ antes del inicio y mantén 70–90 g/h.</li>
+        </ul>
+        <h3>Después</h3>
+        <p>En la meta: agua con sales, fruta, cereal/arroz/pasta con leguminosas o tofu/tempeh, y algo salado. Prioriza 1–1.2 g/kg de carbohidrato en 3–4 h post, repartido en varias tomas.</p>
+      </div>
+
+      <div class="guide-section guide-card">
+        <h2 id="hidratacion-calor">4) Estrategia de hidratación en clima caluroso (opcional)</h2>
+        <p>Si esperas calor, prioriza 10–12 días con 3–4 sesiones de exposición controlada tipo “hot finish” (últimos 30–45’ con menos ventilación o capas), cuidando líquidos y sales.</p>
+      </div>
+
+      <div class="guide-section guide-card">
+        <h2 id="checklist">5) Checklists autosuficientes</h2>
+        <h3>Alimentación y líquidos</h3>
+        <ul class="guide-list">
+          <li>Bidones numerados (ej. 2×750 ml) + sobres de sales/electrolitos + reservas para recarga en comercios.</li>
+          <li>Porciones listas/etiquetadas (≈25–30 g CHO por pieza) en bolsas reutilizables.</li>
+          <li>Plan escrito por hora + recordatorios en bici (marcadores en top tube).</li>
+        </ul>
+        <h3>Equipo y seguridad</h3>
+        <ul class="guide-list">
+          <li>Casco, luces del./tras. con ≥8 h de autonomía, reflectantes; capa térmica; kit de parches/multiherramienta; power bank. (Obligatorio y recomendado por el evento).</li>
+        </ul>
+        <h3>Logística</h3>
+        <ul class="guide-list">
+          <li>Track GPX cargado, respaldo offline y en el móvil; efectivo/tarjeta; identificación; contacto de emergencia.</li>
+        </ul>
+      </div>
+
+      <div class="guide-section guide-card">
+        <h2 id="pacing">6) Ritmo por sensaciones (RPE) + potencia opcional</h2>
+        <ul class="guide-list">
+          <li>Llanos iniciales: RPE 3–4 / Z2; 60–70% FTP si usas potenciómetro.</li>
+          <li>Puertos (La Loma y Tres Marías): RPE 5–6 sostenido; evita picos que te dejen sin hidratos.</li>
+          <li>Últimos 30 km: si comes/bebes bien, podrás cerrar a RPE 5–7 sin Crisis.</li>
+        </ul>
+      </div>
+
+      <div class="guide-section guide-card">
+        <h2 id="faq">7) Preguntas frecuentes</h2>
+        <p><strong>¿Se permite apoyo externo?</strong> No; compras solo en comercios abiertos al público y apoyo entre participantes sin vehículos motorizados.</p>
+        <p><strong>¿Cuánto debo llevar por hora?</strong> Como base: 60–90 g de carbohidratos, 300–600 mg de sodio y 500–750 ml de líquido/h; entrena tu estrategia con antelación.</p>
+        <p><strong>¿Sirve la cafeína?</strong> Puede ayudar a 2–4(–6) mg/kg, si la toleras. Prueba en entrenamientos.</p>
+      </div>
+
+      <div class="guide-section guide-card">
+        <h2 id="descargables">8) Descargables</h2>
+        <ul class="guide-list">
+          <li><a href="/VAC_Checklist_Autosuficiente.pdf" download>Checklist autosuficiente (PDF)</a></li>
+          <li><a href="/VAC_Plantilla_Top_Tube.png" download>Plantilla de tape en cuadro superior (PNG)</a></li>
+        </ul>
+        <p class="muted">Aviso: Ajusta estas recomendaciones a tu contexto de salud. Si tienes condiciones médicas, consulta con profesionales.</p>
+      </div>
+      </div> <!-- /.guide-content -->
+      </div> <!-- /.guide-layout -->
+    </section>
+
+    <div class="guide-quickbar" role="navigation" aria-label="Accesos rápidos">
+      <a class="button secondary" href="#herramienta">Ir a herramienta</a>
+      <a class="button" href="#guia">Ver índice</a>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div>
+      <p>© 2025 Vuelta al Cóndor · El Rey de la Montaña. Comunidad ciclista abierta, diversa y segura.</p>
+    </div>
+    <small class="signature">Landing construida por <a href="https://izignamx.com" target="_blank"><strong>IzignaMx</strong></a></small>
+  </footer>
+
+  <script>
+    // Menú móvil accesible
+    const navToggle = document.querySelector('.hamburger');
+    const perfToggle = document.querySelector('.perf-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    const focusSelectors = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    let focusTrap = null;
+    function openNav(){ if(!navToggle||!mobileNav) return; navToggle.setAttribute('aria-expanded','true'); mobileNav.hidden=false; mobileNav.classList.add('open'); const f=mobileNav.querySelectorAll(focusSelectors); if(f.length>0){ focusTrap={ first:f[0], last:f[f.length-1] }; focusTrap.first.focus(); } document.body.style.overflow='hidden'; }
+    function closeNav(){ if(!navToggle||!mobileNav) return; navToggle.setAttribute('aria-expanded','false'); mobileNav.classList.remove('open'); mobileNav.hidden=true; focusTrap=null; document.body.style.overflow=''; navToggle.focus(); }
+    if(navToggle&&mobileNav){
+      navToggle.addEventListener('click', ()=>{ const expanded = navToggle.getAttribute('aria-expanded')==='true'; expanded?closeNav():openNav(); });
+      mobileNav.addEventListener('click', e=>{ if(e.target instanceof HTMLAnchorElement){ closeNav(); } });
+      document.addEventListener('keydown', e=>{ if(e.key==='Escape' && mobileNav.classList.contains('open')){ closeNav(); return; } if(e.key==='Tab' && mobileNav.classList.contains('open') && focusTrap){ const {first,last}=focusTrap; if(!first||!last) return; if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); } else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); } } });
+    }
+
+    // Modo rendimiento (reduce animaciones GPU y desactiva fuegos artificiales)
+    const fireworksCanvas = document.getElementById('fireworks-canvas');
+    let perfMode = false;
+    function applyPerfMode(on){
+      perfMode = !!on;
+      try{ localStorage.setItem('vac_perf_mode', perfMode?'on':'off'); }catch(_){}
+      if(perfToggle) perfToggle.setAttribute('aria-pressed', String(perfMode));
+      if(perfToggle){ const onTitle='Modo rendimiento activado: reducir animaciones y uso de GPU'; const offTitle='Modo rendimiento desactivado: apariencia completa'; perfToggle.title = perfMode?onTitle:offTitle; perfToggle.setAttribute('aria-label', perfMode?onTitle:offTitle); }
+      if(window.FluidBG && typeof window.FluidBG.setQualityPreset==='function'){
+        const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const preset = perfMode ? 'minimal' : (reduced ? 'minimal' : 'high');
+        window.FluidBG.setQualityPreset(preset);
+      }
+      if(perfMode) stopFireworks(); else startFireworks();
+    }
+    try{ const saved = localStorage.getItem('vac_perf_mode'); if(saved==='on') applyPerfMode(true); }catch(_){}
+    if(perfToggle){ perfToggle.addEventListener('click', ()=> applyPerfMode(!perfMode)); }
+
+    // Fuegos artificiales simples
+    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let fwCtx=null, fwParticles=[], fwRunning=false, fwAnimId=0, fwLastSpawn=0;
+    function fwResize(){ if(!fireworksCanvas) return; const dprCap = prefersReducedMotion?1.2:2; const dpr = Math.min(window.devicePixelRatio||1, dprCap); fireworksCanvas.width=Math.floor(window.innerWidth*dpr); fireworksCanvas.height=Math.floor(window.innerHeight*dpr); fireworksCanvas.style.width=window.innerWidth+'px'; fireworksCanvas.style.height=window.innerHeight+'px'; if(fwCtx) fwCtx.setTransform(dpr,0,0,dpr,0,0); }
+    function spawnFirework(){ if(!fwCtx) return; const W=window.innerWidth, H=window.innerHeight; const cx=Math.random()*W; const cy=(0.2+Math.random()*0.6)*H; const hue=Math.floor(Math.random()*360); const count=90+Math.floor(Math.random()*60); for(let i=0;i<count;i++){ const angle=(i/count)*Math.PI*2; const speed=1+Math.random()*2; const vx=Math.cos(angle)*speed; const vy=Math.sin(angle)*speed; fwParticles.push({ x:cx, y:cy, vx, vy, life: 60+Math.random()*40, hue }); } }
+    function fwStep(ts){ if(!fwCtx) return; if(!fwLastSpawn) fwLastSpawn = ts; const dt = ts - fwLastSpawn; if(dt>900){ spawnFirework(); fwLastSpawn = ts; } fwCtx.clearRect(0,0,fireworksCanvas.width, fireworksCanvas.height); fwParticles.forEach(p=>{ p.x+=p.vx; p.y+=p.vy; p.vy+=0.02; p.life-=1; fwCtx.fillStyle = 'hsla('+p.hue+', 80%, 60%, '+(p.life/100)+')'; fwCtx.fillRect(p.x, p.y, 2, 2); }); fwParticles = fwParticles.filter(p=> p.life>0 && p.y < window.innerHeight+50 ); fwAnimId = requestAnimationFrame(fwStep); }
+    function startFireworks(){ if(prefersReducedMotion || perfMode) return; if(!fireworksCanvas) return; fwCtx = fireworksCanvas.getContext('2d'); fwResize(); if(!fwRunning){ fwRunning=true; fwAnimId=requestAnimationFrame(fwStep); } }
+    function stopFireworks(){ if(!fwRunning) return; fwRunning=false; cancelAnimationFrame(fwAnimId); fwAnimId=0; fwParticles=[]; if(fireworksCanvas) fireworksCanvas.getContext('2d').clearRect(0,0,fireworksCanvas.width,fireworksCanvas.height); }
+    window.addEventListener('resize', fwResize);
+    startFireworks();
+
+    // Scripts de la herramienta (adaptados del archivo aislado)
+    (function(){
+      const distTotalKm = 187;
+      const segmentos = [
+        { nombre: "Zócalo → La Loma",   kmIni: 0,   kmFin: 50 },
+        { nombre: "La Loma → Cañón de Lobos", kmIni: 50,  kmFin: 110 },
+        { nombre: "Cañón de Lobos → Tres Marías", kmIni: 110, kmFin: 145 },
+        { nombre: "Tres Marías → Meta (C.U.)", kmIni: 145, kmFin: 187 }
+      ];
+      // Métricas de segmento desde GPX (distancias según hitos y ganancia positiva aproximada)
+      const gpxSegMetrics = [
+        { nombre: "Zócalo → La Loma", kmIni: 0, kmFin: 50, gain: 733 },
+        { nombre: "La Loma → Cañón de Lobos", kmIni: 50, kmFin: 110, gain: 304 },
+        { nombre: "Cañón de Lobos → Tres Marías", kmIni: 110, kmFin: 145, gain: 1479 },
+        { nombre: "Tres Marías → Meta (C.U.)", kmIni: 145, kmFin: 187, gain: 357 }
+      ];
+      const slopeMax = (function(){
+        let max = 0;
+        gpxSegMetrics.forEach(m=>{ const km = (m.kmFin - m.kmIni); if(km>0){ const s = m.gain / km; if(s>max) max=s; } });
+        return max>0 ? max : 1;
+      })();
+      const ALPHA_SEG_SLOPE = 2.0; // Intensifica el peso por pendiente relativa (0–2 recomendado)
+      // Coeficientes de ajuste metabólico por segmento (físico/aerodinámico)
+      const BETA_SLOPE_CHO = 0.12, BETA_SLOPE_HYD = 0.08, BETA_SLOPE_NA = 0.08;
+      const BETA_MASS_CHO = 0.01,  BETA_MASS_HYD = 0.005, BETA_MASS_NA = 0.004;
+      const BETA_DRAG_CHO = 0.02,  BETA_DRAG_HYD = 0.01,  BETA_DRAG_NA = 0.01;
+      function bikeDragIndex({tipoBici=null, rodada=null, anchoLlanta=null}){
+        const fType = { ruta:0.00, gravel:0.03, mtb:0.06, fixie:0.02 }; // aprox. mayor resistencia aerodinámica/rodadura
+        const t = tipoBici || 'ruta';
+        let idx = fType[t] || 0.00;
+        if (rodada === '29' || rodada === '650b') idx += 0.008;
+        else if (rodada === '27.5') idx += 0.004;
+        else if (rodada === '26') idx += 0.010;
+        if (typeof anchoLlanta === 'number' && !isNaN(anchoLlanta)){
+          if (anchoLlanta >= 45) idx += 0.030;
+          else if (anchoLlanta >= 35) idx += 0.015;
+          else if (anchoLlanta >= 28) idx += 0.008;
+        }
+        return clamp(idx, 0.00, 0.12);
+      }
+      function bikeMassIndex({tipoBici=null, pesoBici=null}){
+        const baseWeight = { ruta:8.5, gravel:9.5, mtb:12, fixie:9 };
+        const t = tipoBici || 'ruta'; const bw = baseWeight[t] || 9.5;
+        const wDelta = (typeof pesoBici === 'number' && !isNaN(pesoBici)) ? (pesoBici - bw) : 0;
+        return clamp(wDelta, -4, 10);
+      }
+      function segmentMetabolicFactors(seg, {tipoBici, pesoBici, rodada, anchoLlanta}){
+        const kmSeg = seg.kmFin - seg.kmIni;
+        const m = gpxSegMetrics.find(x => x.kmIni === seg.kmIni && x.kmFin === seg.kmFin);
+        const gain = m ? m.gain : 0;
+        const slope = kmSeg>0 ? (gain / kmSeg) : 0; // m/km
+        const slopeNorm = slopeMax>0 ? (slope / slopeMax) : 0;
+        const dIdx = bikeDragIndex({tipoBici, rodada, anchoLlanta});
+        const mIdx = bikeMassIndex({tipoBici, pesoBici});
+        const fCHO = clamp(1 + BETA_SLOPE_CHO*slopeNorm + BETA_DRAG_CHO*dIdx + BETA_MASS_CHO*mIdx, 0.95, 1.30);
+        const fHYD = clamp(1 + BETA_SLOPE_HYD*slopeNorm + BETA_DRAG_HYD*dIdx + BETA_MASS_HYD*mIdx, 0.92, 1.25);
+        const fNA  = clamp(1 + BETA_SLOPE_NA*slopeNorm + BETA_DRAG_NA*dIdx + BETA_MASS_NA*mIdx, 0.92, 1.25);
+        return { fCHO, fHYD, fNA, slopeNorm, dIdx, mIdx };
+      }
+      const eq = [
+        { item:"1 gel", g:25 },
+        { item:"1 plátano mediano", g:25 },
+        { item:"8 dátiles (~50 g)", g:28 },
+        { item:"1 barra típica", g:25 },
+        { item:"sándwich sencillo", g:45 },
+        { item:"tortilla + crema de cacahuate", g:30 },
+        { item:"papas cocidas saladas (1 taza)", g:30 },
+        { item:"gominolas porción", g:30 }
+      ];
+      function parseTiempoHHMM(t){
+        if(!t) return null;
+        t = String(t).trim().replace(',', '.');
+        // Formato hh:mm
+        let m = t.match(/^(\d{1,2}):(\d{1,2})$/);
+        if (m) {
+          let h = parseInt(m[1],10), min = parseInt(m[2],10);
+          if (isNaN(h) || isNaN(min)) return null;
+          if (min >= 60) { h += Math.floor(min/60); min = min % 60; }
+          return h + (min/60);
+        }
+        // Horas decimales: "10" o "10.5"
+        m = t.match(/^(\d{1,2})(?:\.(\d{1,2}))?$/);
+        if (m) {
+          let h = parseInt(m[1],10);
+          let frac = m[2] ? parseInt(m[2],10) : 0;
+          let base = m[2] ? Math.pow(10, m[2].length) : 1;
+          let min = Math.round((frac / base) * 60);
+          if (min >= 60) { h += 1; min = 0; }
+          return h + (min/60);
+        }
+        return null;
+      }
+      function formatearTiempoObjetivoInput(inputEl){
+        if(!inputEl || !inputEl.value) return;
+        const horas = parseTiempoHHMM(inputEl.value);
+        if (horas === null) return;
+        let h = Math.floor(horas);
+        let min = Math.round((horas - h) * 60);
+        if (min >= 60) { h += 1; min = 0; }
+        inputEl.value = String(h).padStart(2,'0') + ':' + String(min).padStart(2,'0');
+      }
+      function clamp(v,min,max){ return Math.max(min, Math.min(max,v)); }
+      // Factores auxiliares por entrenamiento, edad y superficie corporal
+      function trainingFactors(hrs){
+        const h = Number(hrs)||0;
+        const fCHO = clamp(1 + (h - 6) * 0.02, 0.90, 1.12);      // mayor entrenamiento → mejor tolerancia CHO
+        const fHyd = clamp(1 + (h - 6) * 0.01, 0.94, 1.08);       // mejor manejo de hidratación
+        const fSpeed = clamp(1 + (h - 6) * 0.015, 0.92, 1.10);    // condición física → más velocidad
+        return { fCHO, fHyd, fSpeed };
+      }
+      function ageFactors(age){
+        const a = Number(age)||0;
+        const fHydAge = clamp(1 + (35 - a) * 0.001, 0.97, 1.03);  // jóvenes sudan un poco más; mayores un poco menos
+        const fSpeedAge = clamp(1 - (a - 35) * 0.0015, 0.90, 1.06); // edad avanzada reduce ligeramente velocidad; jóvenes aumentan
+        return { fHydAge, fSpeedAge };
+      }
+      function bsaMosteller(heightCm, weightKg){ // área superficial corporal (m^2)
+        const h = Number(heightCm)||0, w = Number(weightKg)||0;
+        if(!h||!w) return 1.9; // referencia media
+        return Math.sqrt((h * w) / 3600);
+      }
+      // Factor de velocidad ajustado por tipo de bicicleta, peso, rodada y ancho
+      function speedFactorPorBici({tipoBici=null, pesoBici=null, rodada=null, anchoLlanta=null}){
+        const baseWeight = { ruta:8.5, gravel:9.5, mtb:12, fixie:9 };
+        const fType = { ruta:1.00, gravel:0.97, mtb:0.93, fixie:0.98 };
+        const t = tipoBici || 'ruta';
+        let f = fType[t] || 1.00;
+        const bw = baseWeight[t] || 9.5;
+        const wDelta = (typeof pesoBici === 'number' && !isNaN(pesoBici)) ? (pesoBici - bw) : 0;
+        const fWeight = clamp(1 - wDelta * 0.004, 0.94, 1.06); // ~0.4% por kg respecto al peso base
+        f *= fWeight;
+        if (rodada === '29') f *= 0.992;
+        else if (rodada === '650b') f *= 0.990;
+        else if (rodada === '27.5') f *= 0.995;
+        else if (rodada === '26') f *= 0.988;
+        else if (rodada === '700c') f *= 1.000;
+        if (typeof anchoLlanta === 'number' && !isNaN(anchoLlanta)){
+          if (anchoLlanta >= 45) f *= 0.98;
+          else if (anchoLlanta >= 35) f *= 0.99;
+          else if (anchoLlanta >= 28) f *= 0.995;
+        }
+        return clamp(f, 0.88, 1.08);
+      }
+      function calcObjetivos({peso,nivel,tolerancia,clima,sudor, tiempoObjetivo=null, tipoBici=null, pesoBici=null, rodada=null, anchoLlanta=null, edad=null, est=null, horasSem=null}){
+        let baseCHO=60; if(tolerancia==="alta") baseCHO=80; if(tolerancia==="baja") baseCHO=50;
+        const choPorKg = clamp(0.8 + (tolerancia==="alta"?0.2:(tolerancia==="baja"?-0.1:0)), 0.6, 1.2);
+        let gHora = Math.round(clamp(choPorKg * peso, 45, 90));
+        if(nivel==="avanzado") gHora = Math.max(gHora, baseCHO+5);
+        if(nivel==="nuevo") gHora = Math.min(gHora, baseCHO);
+        let mlHora = 600; if(clima==="frio") mlHora=400; if(clima==="calor") mlHora=850; if(sudor==="alta") mlHora+=100; if(sudor==="salada") mlHora+=150; mlHora = clamp(mlHora, 300, 1100);
+        let naHora = 450; if(clima==="calor") naHora=700; if(sudor==="alta") naHora+=150; if(sudor==="salada") naHora+=250; naHora = clamp(naHora, 300, 1200);
+
+        // Ajustes por entrenamiento, edad y superficie corporal
+        const { fCHO, fHyd, fSpeed } = trainingFactors(horasSem);
+        const { fHydAge } = ageFactors(edad);
+        const bsa = bsaMosteller(est, peso);
+        const fBSAHyd = clamp(1 + (bsa - 1.9) * 0.05, 0.95, 1.05);
+        gHora = Math.round(clamp(gHora * fCHO, 45, 100));
+        const mlPrev = mlHora; mlHora = Math.round(clamp(mlHora * fHyd * fHydAge * fBSAHyd, 300, 1100));
+        const relHyd = clamp(mlHora / mlPrev, 0.90, 1.12);
+        naHora = Math.round(clamp(naHora * (1 + (relHyd - 1) * 0.9), 300, 1200));
+
+        // Ajustes suaves por tiempo objetivo (si el usuario definió uno)
+        if (tiempoObjetivo && tiempoObjetivo > 0) {
+          const delta = 10.5 - tiempoObjetivo; // <0: más lento, >0: más rápido
+          const amp = (clima === "calor") ? 0.04 : 0.03; // mayor sensibilidad en calor
+          const maxUp = (clima === "calor") ? 1.15 : 1.10;
+          const factorHidratacion = clamp(1.0 + delta * amp, 0.90, maxUp);
+          mlHora = Math.round(clamp(mlHora * factorHidratacion, 300, 1100));
+          // Sodio ajusta en proporción ligeramente menor que el líquido
+          const factorSodio = clamp(1.0 + delta * (amp * 0.85), 0.90, (clima === "calor" ? 1.14 : 1.09));
+          naHora = Math.round(clamp(naHora * factorSodio, 300, 1200));
+
+          // Ajuste leve de carbohidratos por hora según ritmo (±7% máx.)
+          const factorCHO = clamp(1.0 + delta * 0.02, 0.93, 1.07);
+          gHora = Math.round(clamp(gHora * factorCHO, 45, 100));
+
+          // Microajuste adicional para extremos (>12 h o <9 h)
+          if (tiempoObjetivo >= 12) {
+            mlHora = Math.round(clamp(mlHora * 1.02, 300, 1100));
+            naHora = Math.round(clamp(naHora * 1.02, 300, 1200));
+          } else if (tiempoObjetivo <= 9) {
+            mlHora = Math.round(clamp(mlHora * 0.98, 300, 1100));
+            naHora = Math.round(clamp(naHora * 0.98, 300, 1200));
+          }
+        }
+
+        // Ajustes opcionales según bicicleta (si se proporcionaron)
+        if (tipoBici || pesoBici || rodada || anchoLlanta) {
+          const baseWeight = { ruta:8.5, gravel:9.5, mtb:12, fixie:9 };
+          const facChoByType = { ruta:1.00, gravel:1.03, mtb:1.05, fixie:1.02 };
+          const facHydByType = { ruta:1.00, gravel:1.02, mtb:1.04, fixie:1.02 };
+          const t = (tipoBici||'ruta');
+          const bw = baseWeight[t] || 9.5;
+          let wDelta = 0; if (typeof pesoBici === 'number' && !isNaN(pesoBici)) { wDelta = pesoBici - bw; }
+          const facWeightCHO = clamp(1 + wDelta * 0.015, 0.95, 1.12);
+          const facWeightHyd = clamp(1 + wDelta * 0.008, 0.96, 1.08);
+          let facWheelCHO = 1.00; let facWheelHyd = 1.00;
+          if (rodada === '29' || rodada === '650b') { facWheelCHO *= 1.01; facWheelHyd *= 1.01; }
+          else if (rodada === '27.5') { facWheelCHO *= 1.005; facWheelHyd *= 1.005; }
+          else if (rodada === '26') { facWheelCHO *= 0.995; facWheelHyd *= 0.995; }
+          let facWidthCHO = 1.00; let facWidthHyd = 1.00;
+          if (typeof anchoLlanta === 'number' && !isNaN(anchoLlanta)) {
+            if (anchoLlanta >= 45) { facWidthCHO *= 1.03; facWidthHyd *= 1.02; }
+            else if (anchoLlanta >= 35) { facWidthCHO *= 1.02; facWidthHyd *= 1.01; }
+            else if (anchoLlanta >= 28) { facWidthCHO *= 1.01; }
+          }
+          const facCHO = clamp((facChoByType[t]||1.00) * facWeightCHO * facWheelCHO * facWidthCHO, 0.93, 1.15);
+          const facHyd = clamp((facHydByType[t]||1.00) * facWeightHyd * facWheelHyd * facWidthHyd, 0.92, 1.14);
+          gHora = Math.round(clamp(gHora * facCHO, 45, 100));
+          const prevMl = mlHora; mlHora = Math.round(clamp(mlHora * facHyd, 300, 1100));
+          const hydRel = clamp(mlHora / prevMl, 0.90, 1.12);
+          const facNa = clamp(1 + (hydRel - 1) * 0.9, 0.90, 1.12);
+          naHora = Math.round(clamp(naHora * facNa, 300, 1200));
+        }
+
+        return { gHora, mlHora, naHora, _interno:{ fCHO, fHyd, fSpeed, bsa } };
+      }
+            function tiempoSegmentoHoras(seg, horasTotales){
+                const kmSeg = seg.kmFin - seg.kmIni;
+                // Ponderación por pendiente relativa usando métricas del GPX
+                const m = gpxSegMetrics.find(x => x.kmIni === seg.kmIni && x.kmFin === seg.kmFin);
+                const gain = m ? m.gain : 0;
+                const slope = kmSeg>0 ? (gain / kmSeg) : 0; // m por km
+                const slopeNorm = slopeMax>0 ? (slope / slopeMax) : 0;
+                const weightSeg = kmSeg * (1 + ALPHA_SEG_SLOPE * slopeNorm);
+                const sumWeights = gpxSegMetrics.reduce((acc, x)=>{
+                  const k = x.kmFin - x.kmIni; if(k<=0) return acc;
+                  const s = x.gain / k; const sn = slopeMax>0 ? (s / slopeMax) : 0;
+                  return acc + k * (1 + ALPHA_SEG_SLOPE * sn);
+                }, 0);
+                const propor = sumWeights>0 ? (weightSeg / sumWeights) : (kmSeg / distTotalKm);
+                return propor * horasTotales;
+            }
+      function redondear(n,dec=0){ const f=Math.pow(10,dec); return Math.round(n*f)/f; }
+      function construirTexto(txt){ return new Blob([txt],{type:"text/plain"}); }
+      const $ = (sel)=>document.querySelector(sel);
+      const perfil = { edad:$("#edad"), est:$("#estatura"), peso:$("#peso"), nivel:$("#nivel"), horas:$("#horas"), objetivo:$("#objetivo"), clima:$("#clima"), sudor:$("#sudor"), tol:$("#tolerancia"), bidon:$("#bidon"), cafe:$("#cafe"), mgkg:$("#mgkg"), tipoBici:$("#tipoBici"), pesoBici:$("#pesoBici"), rodada:$("#rodada"), anchoLlanta:$("#anchoLlanta") };
+      if (perfil.objetivo) { perfil.objetivo.addEventListener('blur', function(){ formatearTiempoObjetivoInput(perfil.objetivo); }); }
+      const btnGenerar=$("#generar"), btnLimpiar=$("#limpiar"), contSalida=$("#salida"), kpi=$("#kpi"), objetivosUl=$("#objetivos"), segDiv=$("#segmentos"), racionesUl=$("#raciones"), btnDesc=$("#descargar"), avisoCafe=$("#avisoCafe");
+      btnLimpiar.addEventListener("click", ()=>{ document.getElementById("perfil").reset(); contSalida.style.display="none"; kpi.innerHTML = objetivosUl.innerHTML = segDiv.innerHTML = racionesUl.innerHTML = ""; if(avisoCafe){ avisoCafe.style.display="none"; avisoCafe.innerHTML=""; } });
+      btnGenerar.addEventListener("click", (e)=>{
+        e.preventDefault();
+        const edad=Number(perfil.edad.value||0), est=Number(perfil.est.value||0), peso=Number(perfil.peso.value||0), nivel=perfil.nivel.value, horasSem=Number(perfil.horas.value||0), clima=perfil.clima.value, sudor=perfil.sudor.value, tol=perfil.tol.value, bidonRaw=Number(perfil.bidon.value), usaCafe=perfil.cafe.value==="si", mgkg=clamp(Number(perfil.mgkg.value||0), 0, 6);
+        const bidon = clamp(bidonRaw||600, 200, 1200);
+        const tipoBici = (perfil.tipoBici && perfil.tipoBici.value) ? perfil.tipoBici.value : null;
+        const pesoBici = (perfil.pesoBici && perfil.pesoBici.value) ? clamp(Number(perfil.pesoBici.value), 5, 25) : null;
+        const rodada = (perfil.rodada && perfil.rodada.value) ? perfil.rodada.value : null;
+        const anchoLlanta = (perfil.anchoLlanta && perfil.anchoLlanta.value) ? clamp(Number(perfil.anchoLlanta.value), 18, 65) : null;
+        if(!edad||!est||!peso||!horasSem){ alert("Completa edad, estatura, peso y horas de entrenamiento/semana."); return; }
+        formatearTiempoObjetivoInput(perfil.objetivo);
+        let tObjetivo = parseTiempoHHMM(perfil.objetivo.value||"");
+        let usarTiempoObjetivo = (tObjetivo !== null);
+        const tBase = (nivel==="avanzado")?9.5:(nivel==="intermedio"?10.5:11.5);
+        // Factores para transparencia en KPI
+        let fVelBiciLocal = 1.00, fSpeedLocal = 1.00, fSpeedAgeLocal = 1.00, fVelTotalLocal = 1.00;
+        if (!usarTiempoObjetivo) {
+          fVelBiciLocal = speedFactorPorBici({ tipoBici, pesoBici, rodada, anchoLlanta });
+          const tf = trainingFactors(horasSem); fSpeedLocal = tf.fSpeed;
+          const af = ageFactors(edad); fSpeedAgeLocal = af.fSpeedAge;
+          fVelTotalLocal = clamp(fVelBiciLocal * fSpeedLocal * fSpeedAgeLocal, 0.86, 1.12);
+          tObjetivo = redondear(tBase / fVelTotalLocal, 2);
+        }
+        const { gHora, mlHora, naHora } = calcObjetivos({ 
+          peso, 
+          nivel, 
+          tolerancia:tol, 
+          clima, 
+          sudor,
+          tiempoObjetivo: usarTiempoObjetivo ? tObjetivo : null,
+          tipoBici, pesoBici, rodada, anchoLlanta,
+          edad, est, horasSem
+        });
+        const velocidadPromedio = distTotalKm / tObjetivo;
+        const modoCalculoTexto = usarTiempoObjetivo ? 'Tiempo específico' : 'Estimación automática';
+        const imc = peso / Math.pow(est/100, 2);
+        const ajusteKPI = usarTiempoObjetivo ? "" : `
+          <div><div class=\"muted\">Ajuste bici/entreno/edad</div><div class=\"mono\">×${redondear(fVelTotalLocal,2)} (bici ${redondear(fVelBiciLocal,2)} · entreno ${redondear(fSpeedLocal,2)} · edad ${redondear(fSpeedAgeLocal,2)})</div></div>`;
+        kpi.innerHTML = `
+          <div><div class="muted">Tiempo objetivo</div><div class="mono">${redondear(tObjetivo,2)} h</div></div>
+          <div><div class="muted">Velocidad promedio</div><div class="mono">${redondear(velocidadPromedio,1)} km/h</div></div>
+          <div><div class="muted">IMC (ref.)</div><div class="mono">${redondear(imc,1)}</div></div>
+          <div><div class="muted">Entreno/sem</div><div class="mono">${horasSem} h</div></div>
+          <div><div class="muted">Clima</div><div class="mono">${clima}</div></div>
+          <div><div class="muted">Modo cálculo</div><div class="mono">${modoCalculoTexto}</div></div>
+          ${ajusteKPI}`;
+        const CAFFEINE_MAX_TOTAL = 400; const CAFFEINE_MAX_DOSE = 200;
+        const mgDeseado = Math.round(mgkg * peso);
+        const mgPlan = Math.min(mgDeseado, CAFFEINE_MAX_TOTAL);
+        const advCafe = usaCafe && mgDeseado > CAFFEINE_MAX_TOTAL;
+        objetivosUl.innerHTML = `
+          <li>Hidratos: <strong>${gHora} g/h</strong></li>
+          <li>Sodio: <strong>${naHora} mg/h</strong></li>
+          <li>Líquidos: <strong>${mlHora} ml/h</strong> &nbsp; (bidón ${bidon} ml → ~${redondear(mlHora/bidon,2)} bidones/h)</li>
+          ${usaCafe ? `<li>Cafeína total orientativa: <strong>${mgPlan}</strong> mg (máx. salud ${CAFFEINE_MAX_TOTAL} mg; sugerencia ≤${CAFFEINE_MAX_DOSE} mg por toma)</li>` : ``}
+          ${advCafe ? `<li class="muted">Advertencia: ingresaste ${mgDeseado} mg; se limita a ${CAFFEINE_MAX_TOTAL} mg por seguridad.</li>` : ``}`;
+        if (bidonRaw && bidonRaw !== bidon){
+          objetivosUl.innerHTML += `<li class="muted">Nota: bidón ajustado a ${bidon} ml para cálculos (entrada: ${bidonRaw} ml).</li>`;
+        } else if (!bidonRaw){
+          objetivosUl.innerHTML += `<li class="muted">Nota: sin valor de bidón; se usa ${bidon} ml por defecto.</li>`;
+        }
+        if (avisoCafe) {
+          if (usaCafe) {
+            const textoBase = `
+              <strong>Advertencia de cafeína:</strong> máximo ${CAFFEINE_MAX_TOTAL} mg totales en el día y ≤${CAFFEINE_MAX_DOSE} mg por toma.
+            `;
+            const textoExtra = advCafe ? ` Ingresaste ${mgDeseado} mg; se limitará a ${CAFFEINE_MAX_TOTAL} mg por seguridad.` : '';
+            avisoCafe.innerHTML = textoBase + textoExtra;
+            avisoCafe.style.display = 'block';
+          } else {
+            avisoCafe.innerHTML = '';
+            avisoCafe.style.display = 'none';
+          }
+        }
+        let textoExport = []; segDiv.innerHTML = ""; let totalG=0,totalNa=0,totalMl=0,totalBid=0;
+        segmentos.forEach(seg=>{
+          const horasSeg = tiempoSegmentoHoras(seg, tObjetivo);
+          const { fCHO: fSegCHO, fHYD: fSegHYD, fNA: fSegNA } = segmentMetabolicFactors(seg, { tipoBici, pesoBici, rodada, anchoLlanta });
+          const gSeg = Math.round(clamp(gHora * fSegCHO, 45, 120) * horasSeg);
+          const mlSeg = Math.round(clamp(mlHora * fSegHYD, 300, 1400) * horasSeg);
+          const naSeg0 = Math.round(clamp(naHora * fSegNA, 300, 1400) * horasSeg);
+          const bidSeg = Math.ceil(mlSeg / bidon);
+          totalG+=gSeg; totalNa+=naSeg0; totalMl+=mlSeg; totalBid+=bidSeg;
+          const mInfo = gpxSegMetrics.find(x => x.kmIni === seg.kmIni && x.kmFin === seg.kmFin);
+          const gainInfo = mInfo ? mInfo.gain : 0;
+          const linea = `<div class=\"card\"><strong>${seg.nombre}</strong> — ${redondear(horasSeg,2)} h<div>Hidratos: <strong>${gSeg} g</strong> | Sodio: <strong>${naSeg0} mg</strong> | Líquidos: <strong>${mlSeg} ml</strong> (~${bidSeg} bidones)</div><div class=\"muted\">GPX: +${gainInfo} m · variación por pendiente/bici aplicada</div></div>`;
+          segDiv.insertAdjacentHTML("beforeend", linea);
+          textoExport.push(`${seg.nombre} (${redondear(horasSeg,2)} h): ${gSeg} g CHO | ${naSeg0} mg Na | ${mlSeg} ml (~${bidSeg} bidones) | GPX +${gainInfo} m`);
+        });
+        const raciones = ["1 gel: ~25 g","1 plátano mediano: ~25 g","8 dátiles (~50 g): ~28 g","1 barra típica: ~25 g","sándwich sencillo: ~45 g","tortilla + crema de cacahuate: ~30 g","papas cocidas saladas (1 taza): ~30 g","gominolas porción: ~30 g"]; racionesUl.innerHTML = raciones.map(r=>`<li>${r}</li>`).join("");
+        const totalesHTML = `<div class=\"card\"><strong>Totales estimados para ${redondear(tObjetivo,2)} h</strong><div>Hidratos: <strong>${totalG} g</strong> | Sodio: <strong>${totalNa} mg</strong> | Líquidos: <strong>${totalMl} ml</strong> (~${totalBid} bidones)</div></div>`; segDiv.insertAdjacentHTML("beforeend", totalesHTML);
+        const biciLinea = `Bicicleta: ${tipoBici||'—'} | Peso: ${pesoBici!=null?pesoBici+' kg':'—'} | Rodada: ${rodada||'—'} | Ancho: ${anchoLlanta!=null?anchoLlanta+' mm':'—'}`;
+        const cafeLinea = usaCafe ? `Cafeína: ${mgkg} mg/kg → ${mgPlan} mg total${advCafe?" (limitado a 400 mg por salud)":""}` : `Cafeína: no`;
+        const ajusteLinea = usarTiempoObjetivo ? '' : `Ajuste bici/entreno/edad: ×${redondear(fVelTotalLocal,2)} (bici ${redondear(fVelBiciLocal,2)} · entreno ${redondear(fSpeedLocal,2)} · edad ${redondear(fSpeedAgeLocal,2)})\n`;
+        const bidonNota = (bidonRaw && bidonRaw !== bidon) ? `\nNota: bidón ajustado a ${bidon} ml para cálculos (entrada: ${bidonRaw} ml).` : (!bidonRaw ? `\nNota: sin valor de bidón; se usa ${bidon} ml por defecto.` : '');
+        const exportTxt = `Vuelta al Cóndor — Plan personal\nTiempo objetivo: ${redondear(tObjetivo,2)} h\nVelocidad promedio: ${redondear(velocidadPromedio,1)} km/h\nModo de cálculo: ${modoCalculoTexto}\n${ajusteLinea}Entreno/sem: ${horasSem} h\nIMC (ref.): ${redondear(imc,1)}\nEdad: ${edad}, Estatura: ${est} cm, Peso: ${peso} kg, Nivel: ${nivel}\n${biciLinea}\nClima: ${clima}, Sudoración: ${sudor}, Tolerancia: ${tol}\n${cafeLinea}\nObjetivos/h: ${gHora} g CHO | ${naHora} mg Na | ${mlHora} ml (bidón ${bidon} ml)${bidonNota}\n\nPor segmento:\n${textoExport.map(l=>" - "+l).join("\n")}\n\nTotales: ${totalG} g CHO | ${totalNa} mg Na | ${totalMl} ml (~${totalBid} bidones)\nNotas:\n- Ajusta por sensaciones; ensaya tu estrategia en tiradas largas.\n- Advertencia cafeína: máx. ${CAFFEINE_MAX_TOTAL} mg totales en el día y ≤${CAFFEINE_MAX_DOSE} mg por toma; evita si tienes hipertensión, arritmias o sensibilidad.\n- Nada se almacena. Este archivo es solo para ti.\n`;
+        btnDesc.onclick = ()=>{ const blob = construirTexto(exportTxt); const url = URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='plan_personal_condor.txt'; document.body.appendChild(a); a.click(); URL.revokeObjectURL(url); a.remove(); };
+        contSalida.style.display = "block"; window.scrollTo({ top: contSalida.offsetTop - 20, behavior: "smooth" });
+      });
+    })();
+
+    // Restaurar consola tras carga
+    window.addEventListener('load', function(){
+      if(window.__consoleOriginal){ var c=window.console||{}; Object.assign(c, window.__consoleOriginal); }
+      // Google Analytics diferido con respeto a Do Not Track
+      function vacDNTEnabled(){
+        try {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack || '').toString().toLowerCase();
+          return dnt === '1' || dnt === 'yes' || dnt === 'true';
+        } catch(_) { return false; }
+      }
+      if (!vacDNTEnabled()) {
+        window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-132SN84E79');
+        const script = document.createElement('script'); script.src='https://www.googletagmanager.com/gtag/js?id=G-132SN84E79'; script.async=true; document.head.appendChild(script);
+      }
+    });
+
+    // Service Worker: recarga controlada cuando hay versión nueva
+    if ('serviceWorker' in navigator) {
+      const RELOAD_KEY = '__vac_reloaded_' + (window.location.pathname || '/');
+      const alreadyReloaded = sessionStorage.getItem(RELOAD_KEY) === '1';
+
+      function handleSwMessage(event) {
+        const data = event.data || {};
+        if (data.type !== 'vac-update' || !data.version) return;
+        const currentVersion = localStorage.getItem('vac_version');
+        if (currentVersion === String(data.version)) return;
+        localStorage.setItem('vac_version', String(data.version));
+        // En esta página no mostramos banner; recarga breve y controlada
+        if (!alreadyReloaded) {
+          sessionStorage.setItem(RELOAD_KEY, '1');
+          setTimeout(() => { window.location.reload(); }, 600);
+        }
+      }
+
+      navigator.serviceWorker.addEventListener('message', handleSwMessage);
+
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(() => {
+            if (navigator.serviceWorker.controller) {
+              navigator.serviceWorker.controller.postMessage({ type: 'VAC_CHECK_VERSION' });
+            }
+          })
+          .catch(() => {});
+      });
+    }
+  </script>
+  <script>
+    // Estado del índice colapsable según viewport + botón flotante
+    document.addEventListener('DOMContentLoaded', function(){
+      var details = document.getElementById('toc');
+      if (details) {
+        var mq = window.matchMedia('(max-width: 1024px)');
+        var apply = function(){ details.open = !mq.matches; };
+        apply();
+        mq.addEventListener('change', apply);
+      }
+      var back = document.getElementById('back-to-index');
+      if (back) {
+        var showAt = 600;
+        function onScroll(){ back.style.display = (window.scrollY > showAt) ? 'inline-flex' : 'none'; }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+        back.addEventListener('click', function(){
+          try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(_) { window.scrollTo(0, 0); }
+        });
+      }
+
+      // Enlaces inline “Volver al índice” en secciones largas
+      try {
+        var sections = Array.from(document.querySelectorAll('.guide-section.guide-card'));
+        var tocLink = '#toc';
+        sections.forEach(function(sec){
+          // Evitar añadir en el bloque del índice en sí
+          if (sec.classList.contains('guide-toc')) return;
+          var minHeight = 700; // umbral de “sección larga” para mostrar el enlace
+          var h = sec.offsetHeight;
+          if (h >= minHeight) {
+            var footer = document.createElement('div');
+            footer.className = 'section-footer';
+            var a = document.createElement('a');
+            a.className = 'button secondary back-inline';
+            a.href = tocLink;
+            a.textContent = '↑ Volver al índice';
+            a.addEventListener('click', function(ev){
+              try { ev.preventDefault(); } catch(_){ }
+              var d = document.getElementById('toc');
+              if (d) { d.open = true; }
+              var el = document.querySelector('nav[aria-label="Índice de contenidos"]');
+              if (el) {
+                try { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                catch(_) { el.scrollIntoView(true); }
+              } else {
+                try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(_) { window.scrollTo(0, 0); }
+              }
+            });
+            footer.appendChild(a);
+            sec.appendChild(footer);
+          }
+        });
+      } catch(_){ }
+    });
+  </script>
+  <script>
+    // Navegación activa por pathname y visibilidad del botón de Feedback
+    document.addEventListener('DOMContentLoaded', function(){
+      // Resaltar enlace activo en nav (rutas absolutas)
+      var links = Array.from(document.querySelectorAll('.nav-links a'));
+      var current = location.pathname;
+      links.forEach(function(a){
+        try {
+          var u = new URL(a.getAttribute('href'), location.origin);
+          var same = u.pathname === current;
+          a.setAttribute('aria-current', same ? 'page' : null);
+        } catch(_){}
+      });
+      // Feedback flotante
+      var fb = document.getElementById('feedback-floating');
+      if (fb) {
+        var showAt = 500;
+        function onScroll(){ fb.style.display = (window.scrollY > showAt) ? 'inline-flex' : 'none'; }
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      }
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var toc = document.querySelector('nav[aria-label="Índice de contenidos"]');
+      if (!toc) return;
+      var links = Array.from(toc.querySelectorAll('a'));
+      var ids = links.map(function(a){ return a.getAttribute('href'); }).filter(function(h){ return h && h.indexOf('#')===0; }).map(function(h){ return h.slice(1); });
+      var targets = ids.map(function(id){ return document.getElementById(id); }).filter(function(el){ return !!el; });
+      function setActive(id){
+        links.forEach(function(a){
+          var match = a.getAttribute('href') === ('#'+id);
+          a.classList.toggle('active', match);
+          if (match) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current');
+        });
+      }
+      var obs = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0.01 });
+      targets.forEach(function(el){ obs.observe(el); });
+    });
+  </script>
+  <script defer src="./gpu-io.min.js"></script>
+  <script defer src="./fluid-background.js"></script>
+</body>
+</html>
