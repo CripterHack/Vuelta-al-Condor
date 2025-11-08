@@ -34,7 +34,5 @@ build/
 error_log
 logs/
 
-# ignore sponsor images
-sponsors/*
 # ignore lighthouse results
 .lighthouseci/*
