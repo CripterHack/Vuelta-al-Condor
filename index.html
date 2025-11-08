@@ -15,7 +15,7 @@
   <meta name="color-scheme" content="dark">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob: https://www.google-analytics.com; style-src-elem 'self' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;">
   <link rel="canonical" href="https://condor.izignamx.com/">
-  <link rel="manifest" href="https://condor.izignamx.com/site.webmanifest">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="https://condor.izignamx.com/favicon.svg">
   <link rel="icon" type="image/png" sizes="96x96" href="https://condor.izignamx.com/favicon-96x96.png">
   <link rel="apple-touch-icon" href="https://condor.izignamx.com/apple-touch-icon.png">
@@ -23,14 +23,64 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
   <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
+  <link rel="preconnect" href="https://condor.izignamx.com" crossorigin>
+  <link rel="dns-prefetch" href="https://condor.izignamx.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
-  <link rel="preload" as="image" href="https://condor.izignamx.com/images/VAC.png">
-  <link rel="preload" as="image" href="https://condor.izignamx.com/images/valley.jpg">
-  <link rel="preload" as="image" href="https://condor.izignamx.com/images/promo.jpg">
+  <link rel="preload" as="style" href="styles.min.css?v=202511080230" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.min.css?v=202511080230"></noscript>
+  <link rel="preload" as="image" href="images/valley-2400.avif" type="image/avif" fetchpriority="high">
+  <link rel="preload" as="image" href="images/VAC-red-320.avif" imagesrcset="images/VAC-red-320.avif 320w, images/VAC-red-480.avif 480w, images/VAC-red-640.avif 640w, images/VAC-red-960.avif 960w" imagesizes="(max-width: 1024px) 260px, 320px" fetchpriority="high">
+  <link rel="preload" as="image" href="images/promo-1200.avif" type="image/avif" imagesrcset="images/promo-800.avif 800w, images/promo-1200.avif 1200w" imagesizes="(max-width: 900px) 800px, 1200px" fetchpriority="low">
   <!--link rel="prefetch" href="https://condor.izignamx.com/corredores.html"-->
-  <link rel="stylesheet" href="https://condor.izignamx.com/styles.min.css?v=202511071103">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- CSS crítico inlined: header y hero para mejorar LCP -->
+  <style id="vac-critical">
+    :root{
+      color-scheme: dark;
+      --vac-bg:#0E1F15;--vac-elev:#13271B;--vac-text:#E7EFE9;--vac-muted:#B9C9C1;--vac-gold:#D8A321;--vac-red:#FF3A2E;--vac-green:#0F4D3A;--vac-link:#79B86A;--vac-outline:#FFF;
+      --vac-grad-hero: radial-gradient(ellipse at 5% -50%, rgba(216,163,33,0.21) 0%, transparent 60%), linear-gradient(180deg, rgba(14,31,21,0.69) 0%, rgba(14,31,21,0.12) 60%, rgba(14,31,21,0.44) 100%);
+      --vac-radius:18px;--vac-border:1px solid rgba(233,255,244,0.08);--vac-shadow-soft:0 14px 32px rgba(14,31,21,0.32)
+    }
+    body{background: radial-gradient(circle at top, rgba(216,163,33,0.08), transparent 55%), var(--vac-bg); color: var(--vac-text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif; margin:0}
+    /* Header fijo minimal */
+    .site-header{backdrop-filter: blur(18px); background: rgba(14,31,21,0.92); border-bottom: 1px solid rgba(233,255,244,0.08); position: fixed; top:0; width:100%; z-index:900}
+    .site-nav{display:flex; align-items:center; justify-content:space-between; gap:1.5rem; max-width:1200px; margin:0 auto; padding:.85rem 1.5rem}
+    .brand{display:flex; align-items:center; gap:.75rem; color: var(--vac-text); font-weight:700; letter-spacing:.04em; text-decoration:none}
+    .brand img{width:44px; height:44px; border-radius:12px}
+    .nav-links{display:flex; align-items:center; gap:1.25rem; list-style:none; margin:0; padding:0}
+    .nav-links a{color: var(--vac-muted); font-weight:500; text-decoration:none}
+    .nav-links a:hover,.nav-links a:focus-visible{color: var(--vac-gold)}
+    .hamburger{display:none}
+    @media (max-width: 900px){ .nav-links{display:none} .hamburger{display:flex} }
+    /* Hero above-the-fold */
+    main{background: var(--vac-bg)}
+    #contenido-principal{background-attachment: fixed; background-position: 50%; background-size: cover; padding-top:81px;
+      background-image: var(--vac-grad-hero), -webkit-image-set(
+        url("images/valley-2400.avif") type("image/avif") 1x,
+        url("images/valley-3200.avif") type("image/avif") 2x,
+        url("images/valley-2400.webp") type("image/webp") 1x,
+        url("images/valley-3200.webp") type("image/webp") 2x,
+        url("images/valley.jpg") type("image/jpeg") 1x
+      );
+      background-image: var(--vac-grad-hero), image-set(
+        url("images/valley-2400.avif") type("image/avif") 1x,
+        url("images/valley-3200.avif") type("image/avif") 2x,
+        url("images/valley-2400.webp") type("image/webp") 1x,
+        url("images/valley-3200.webp") type("image/webp") 2x,
+        url("images/valley.jpg") type("image/jpeg") 1x
+      );
+    }
+    .hero{border-bottom:1px solid rgba(233,255,244,0.06); padding-top:6rem}
+    .hero-inner{display:grid; align-items:flex-start; gap:3rem; grid-template-columns: minmax(0,.42fr) minmax(0,.9fr); max-width:1200px; margin:0 auto; padding:0 1.5rem 2.5rem}
+    .hero-media{text-align:center}
+    .hero-media img{width:min(320px,80%); height:auto}
+    .hero-content{display:grid; gap:1.5rem}
+    .hero-content h1{font-size: clamp(3rem, 5vw, 4.2rem); letter-spacing: -.04em; line-height: 1.05; margin:0}
+    .hero-subtitle{color: var(--vac-muted); font-size: 1.07rem; margin:0}
+    @media (max-width:1024px){ .hero-inner{grid-template-columns:1fr; text-align:center} .hero-content{align-items:center} }
+  </style>
   <style>
     /* Botón flotante de Feedback: discreto, accesible y no invasivo */
     #feedback-floating {
@@ -200,7 +250,7 @@
     ]
   }
   </script>
-  <script defer src="./three.min.js"></script>
+  
   <!-- Transient console silencer to suppress third‑party verbose logs during initial load. -->
   <script>
     (function() {
@@ -313,30 +363,31 @@
     .promo-card ul { margin: 0; padding-left: 1rem; color: var(--vac-text); }
     @media (max-width: 900px){ .promo-grid { grid-template-columns: 1fr; } }
   </style>
-  <!-- Google tag (gtag.js) - Deferred for performance -->
+  <!-- Google Analytics: carga en idle, respetando DNT y Save-Data -->
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
-    // Respetar Do Not Track: si está activo, no cargar GA
+    function gtag(){ dataLayer.push(arguments); }
     function vacDNTEnabled(){
       try {
         var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack || '').toString().toLowerCase();
         return dnt === '1' || dnt === 'yes' || dnt === 'true';
       } catch(_) { return false; }
     }
-    if (!vacDNTEnabled()) {
-      gtag('js', new Date());
-      gtag('config', 'G-132SN84E79');
+    function vacSaveData(){
+      try { return !!(navigator.connection && navigator.connection.saveData); } catch(_) { return false; }
     }
-    
-    // Load Google Analytics after page load
-    window.addEventListener('load', function() {
-      if (!vacDNTEnabled()) {
-        const script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-132SN84E79';
-        script.async = true;
-        document.head.appendChild(script);
-      }
+    function vacLoadGA(){
+      var script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-132SN84E79';
+      script.async = true;
+      document.head.appendChild(script);
+      gtag('js', new Date());
+      gtag('config', 'G-132SN84E79', { anonymize_ip: true, transport_type: 'beacon' });
+    }
+    window.addEventListener('load', function(){
+      if (vacDNTEnabled() || vacSaveData()) return;
+      var ric = window.requestIdleCallback || function(fn){ setTimeout(fn, 2500); };
+      ric(vacLoadGA);
     });
   </script>
 </head>
@@ -345,7 +396,11 @@
   <header class="site-header">
     <nav class="site-nav" aria-label="Navegación principal">
       <a class="brand" href="#inicio">
-        <img src="images/VAC.png" alt="Logotipo de la Vuelta al Cóndor" decoding="async" fetchpriority="high">
+        <picture>
+          <source type="image/avif" srcset="images/VAC-44.avif 44w, images/VAC-88.avif 88w, images/VAC-132.avif 132w" sizes="44px">
+          <source type="image/webp" srcset="images/VAC-44.webp 44w, images/VAC-88.webp 88w, images/VAC-132.webp 132w" sizes="44px">
+          <img src="images/VAC.png" alt="Logotipo de la Vuelta al Cóndor" decoding="async" fetchpriority="high" width="1263" height="1264">
+        </picture>
         <span>Vuelta al Cóndor</span>
       </a>
       <button class="hamburger" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Abrir menú de navegación">
@@ -357,7 +412,7 @@
         <li><a href="#detalles">Detalles</a></li>
         <li><a href="#ruta">Ruta</a></li>
         <li><a href="#altimetria">Altimetría</a></li>
-        <li><a href="/#guia-promo">Guía</a></li>
+        <li><a href="#guia-promo">Guía</a></li>
         <li><a href="#patrocinadores">Patrocinadores</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#reglamento">Reglamento</a></li>
@@ -381,7 +436,7 @@
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#reglamento">Reglamento</a></li>
         <li><a href="#contacto">Contacto</a></li>
-        <li><a href="/guia.html">Guía</a></li>
+        <li><a href="guia.html">Guía</a></li>
         <!--li><a href="/corredores.html">Corredores</a></li-->
       </ul>
     </div>
@@ -393,7 +448,11 @@
     <section class="hero" id="hero" aria-labelledby="hero-title">
       <div class="hero-inner">
         <div class="hero-media">
-          <img src="images/VAC-red.png" alt="Emblema de la Vuelta al Cóndor 2025">
+          <picture>
+            <source type="image/avif" srcset="images/VAC-red-320.avif 320w, images/VAC-red-480.avif 480w, images/VAC-red-640.avif 640w, images/VAC-red-960.avif 960w" sizes="(max-width: 1024px) 260px, 320px">
+            <source type="image/webp" srcset="images/VAC-red-320.webp 320w, images/VAC-red-480.webp 480w, images/VAC-red-640.webp 640w, images/VAC-red-960.webp 960w" sizes="(max-width: 1024px) 260px, 320px">
+            <img src="images/VAC-red.png" alt="Emblema de la Vuelta al Cóndor 2025" loading="eager" fetchpriority="high" decoding="async" width="1263" height="1264">
+          </picture>
         </div>
         <div class="hero-content">
           <p class="inclusive-badge">
@@ -428,7 +487,7 @@
           <div class="hero-cta">
             <a class="button primary" href="route/vac.gpx" download>📍 Descargar GPX</a>
             <a class="button secondary" href="#reglamento">Ver reglamento</a>
-            <a class="button secondary" href="/guia.html">Ver guía</a>
+            <a class="button secondary" href="guia.html">Ver guía</a>
           </div>
           <div id="countdown" class="countdown" aria-live="polite">
             <div class="countdown-item">
@@ -600,8 +659,8 @@
         </article>
       </div>
       <div class="hero-cta" style="margin-top: 0.75rem">
-        <a class="button primary" href="/guia.html">Ir a la Guía</a>
-        <a class="button secondary" href="/guia.html#herramienta">Calcular estrategia personal</a>
+        <a class="button primary" href="guia.html">Ir a la Guía</a>
+        <a class="button secondary" href="guia.html#herramienta">Calcular estrategia personal</a>
       </div>
     </section>
 
@@ -1058,7 +1117,7 @@
       navigator.serviceWorker.addEventListener('message', handleSwMessage);
 
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('sw.js')
           .then(reg => {
             // Solicitar verificación de versión explícita al tomar control
             if (navigator.serviceWorker.controller) {
