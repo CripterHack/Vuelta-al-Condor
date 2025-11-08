@@ -20,14 +20,14 @@
         Header set Expires "0"
     </FilesMatch>
     
-    # Cache corto para CSS y JS con versioning
+    # Cache más largo para estáticos con versioning en nombre/consulta
     <FilesMatch "\.(css|js)$">
-        Header set Cache-Control "public, max-age=3600"
+        Header set Cache-Control "public, max-age=604800, immutable"
     </FilesMatch>
     
     # Cache largo para imágenes (no cambian frecuentemente)
     <FilesMatch "\.(jpg|jpeg|png|gif|ico|svg)$">
-        Header set Cache-Control "public, max-age=86400"
+        Header set Cache-Control "public, max-age=2592000, immutable"
     </FilesMatch>
     
     # Cabeceras de seguridad (no bloquean recursos actuales)
@@ -35,6 +35,7 @@
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set Permissions-Policy "interest-cohort=(), geolocation=(), microphone=(), camera=()"
+    Header always set Cross-Origin-Opener-Policy "same-origin"
     # HSTS solo sobre HTTPS
     Header always set Strict-Transport-Security "max-age=31536000" env=HTTPS
 </IfModule>
@@ -48,16 +49,16 @@
     ExpiresByType text/plain "access plus 0 seconds"
     ExpiresByType application/json "access plus 0 seconds"
     
-    # CSS y JS con cache corto
-    ExpiresByType text/css "access plus 1 hour"
-    ExpiresByType application/javascript "access plus 1 hour"
+    # CSS y JS con cache medio
+    ExpiresByType text/css "access plus 7 days"
+    ExpiresByType application/javascript "access plus 7 days"
     
     # Imágenes con cache más largo
-    ExpiresByType image/png "access plus 1 day"
-    ExpiresByType image/jpg "access plus 1 day"
-    ExpiresByType image/jpeg "access plus 1 day"
-    ExpiresByType image/gif "access plus 1 day"
-    ExpiresByType image/svg+xml "access plus 1 day"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/jpg "access plus 30 days"
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/gif "access plus 30 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
 ExpiresDefault "access plus 0 seconds"
 </IfModule>
 
