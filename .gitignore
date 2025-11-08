@@ -1,0 +1,38 @@
+# OS-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Editor/IDE
+.vscode/
+.idea/
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Python caches
+__pycache__/
+.pytest_cache/
+
+# Node/JS (in case tooling is added later)
+node_modules/
+dist/
+build/
+
+# Misc
+.env
+.env.local
+*.bak
+*.orig
+*.rej
+
+# cPanel/LiteSpeed common server-side logs (keep .htaccess and site files tracked)
+error_log
+logs/
+
+# ignore sponsor images
+sponsor/
