@@ -50,6 +50,12 @@ jobs:
 
   lighthouse:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: write
+    env:
+      LHCI_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -61,7 +67,7 @@ jobs:
       - name: Install deps
         run: npm install
       - name: Lighthouse CI
-        run: npx lhci autorun
+        run: npm run lhci -- --upload.target=temporary-public-storage
         continue-on-error: true
       - name: Upload LHCI artifacts
         uses: actions/upload-artifact@v4
