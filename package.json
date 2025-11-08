@@ -13,7 +13,7 @@
     "lint:html": "htmlhint \"**/*.html\" --config .htmlhintrc",
     "lint:css": "stylelint \"**/*.css\"",
     "lint:js": "eslint --ignore-pattern \"*.min.js\" --ignore-pattern \"gpu-io.min.js\" --ignore-pattern \"three.min.js\" --ignore-pattern \"sw.js\" .",
-    "check:links": "linkinator . --recurse",
+    "check:links": "linkinator . --config=linkinator.config.json",
     "lhci": "lhci autorun",
     "css:prefix": "postcss styles.css --use autoprefixer -o styles.prefixed.css",
     "css:build": "postcss styles.prefixed.css -o styles.min.css",
