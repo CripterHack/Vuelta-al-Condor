@@ -174,6 +174,13 @@ http://localhost:5174/
 - **GitHub Pages**: publica desde rama principal o carpeta `docs/` con contenido idéntico.
 - **Servidor tradicional / CDN**: copia los archivos tal cual; invalida cachés al actualizar `styles.min.css` o imágenes pesadas.
 
+### Staging (GitHub Pages)
+- URL de staging: `https://cripterhack.github.io/Vuelta-al-Condor/` (actualiza con tu usuario y nombre de repo).
+- Compatibilidad de rutas: se ajustaron todas las referencias a recursos a rutas relativas (`styles.min.css`, `images/...`, `route/vac.gpx`, `site.webmanifest`) para funcionar bajo subpath de Pages.
+- CD automático: se incluye `/.github/workflows/pages.yml` que construye estilos (autoprefix + minify), genera variantes de imagen y despliega a Pages en cada push a `main`/`master`.
+- Activación: en la configuración del repositorio (“Pages”), el workflow `Deploy to GitHub Pages` habilita el entorno `github-pages` automáticamente; no requiere secretos.
+- Fallback noscript: en `index.html` se aplica la técnica `preload as=style` con `onload` y un `<noscript>` de respaldo, combinada con CSS crítico inline para mejorar LCP.
+
 ### Nota de CSP y despliegue
 - El hosting no debe añadir cabeceras CSP que contradigan la meta CSP del HTML, salvo que quieras mover la CSP al servidor. Si lo haces, asegúrate de mantener las mismas directivas.
 
