@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://condor.izignamx.com/sitemap.xml
