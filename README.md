@@ -175,7 +175,7 @@ http://localhost:5174/
 - **Servidor tradicional / CDN**: copia los archivos tal cual; invalida cachés al actualizar `styles.min.css` o imágenes pesadas.
 
 ### Staging (GitHub Pages)
-- URL de staging: `https://cripterhack.github.io/Vuelta-al-Condor/` (actualiza con tu usuario y nombre de repo).
+- URL de staging: `https://cripterhack.github.io/vuelta-al-condor/`.
 - Compatibilidad de rutas: se ajustaron todas las referencias a recursos a rutas relativas (`styles.min.css`, `images/...`, `route/vac.gpx`, `site.webmanifest`) para funcionar bajo subpath de Pages.
 - CD automático: se incluye `/.github/workflows/pages.yml` que construye estilos (autoprefix + minify), genera variantes de imagen y despliega a Pages en cada push a `main`/`master`.
 - Activación: en la configuración del repositorio (“Pages”), el workflow `Deploy to GitHub Pages` habilita el entorno `github-pages` automáticamente; no requiere secretos.
