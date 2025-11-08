@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Simple six‑stripe LGBTQ+ pride flag.  This SVG is used on the Vuelta al Cóndor
+  landing page to indicate that the event is inclusive and welcoming to all
+  identities.  Colors are defined using standard RGB hex values.  The SVG is
+  intentionally tiny (10×6 units) and scales cleanly to any size.  No text is
+  included; use the surrounding HTML to provide descriptive alt text for
+  accessibility.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6" aria-hidden="true">
+  <!-- Red -->
+  <rect width="10" height="1" y="0" fill="#E40303" />
+  <!-- Orange -->
+  <rect width="10" height="1" y="1" fill="#FF8C00" />
+  <!-- Yellow -->
+  <rect width="10" height="1" y="2" fill="#FFED00" />
+  <!-- Green -->
+  <rect width="10" height="1" y="3" fill="#008026" />
+  <!-- Blue -->
+  <rect width="10" height="1" y="4" fill="#004DFF" />
+  <!-- Violet -->
+  <rect width="10" height="1" y="5" fill="#750787" />
+</svg>
