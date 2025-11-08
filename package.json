@@ -4,7 +4,7 @@
   "private": true,
   "description": "Servidor de desarrollo que relaja CSP y sirve el sitio sin modificar HTML/.htaccess",
   "engines": {
-    "node": ">=18"
+    "node": ">=20.19.4"
   },
   "scripts": {
     "dev": "node dev-server.js",
