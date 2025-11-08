@@ -19,17 +19,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.19.4'
-          cache: 'npm'
+          cache: 'pnpm'
+      - name: Enable corepack
+        run: corepack enable
+      - name: Setup pnpm
+        run: corepack prepare pnpm@9.12.2 --activate
       - name: Install deps
-        run: npm install
+        run: pnpm install --frozen-lockfile
       - name: Lint HTML
-        run: npx htmlhint "**/*.html" --config .htmlhintrc
+        run: pnpm exec htmlhint "**/*.html" --config .htmlhintrc
         continue-on-error: true
       - name: Lint CSS
-        run: npx stylelint "**/*.css"
+        run: pnpm exec stylelint "**/*.css"
         continue-on-error: true
       - name: Lint JS
-        run: npx eslint --ignore-pattern "*.min.js" --ignore-pattern "gpu-io.min.js" --ignore-pattern "three.min.js" --ignore-pattern "sw.js" .
+        run: pnpm exec eslint --ignore-pattern "*.min.js" --ignore-pattern "gpu-io.min.js" --ignore-pattern "three.min.js" --ignore-pattern "sw.js" .
         continue-on-error: true
 
   links:
@@ -41,11 +45,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.19.4'
-          cache: 'npm'
+          cache: 'pnpm'
+      - name: Enable corepack
+        run: corepack enable
+      - name: Setup pnpm
+        run: corepack prepare pnpm@9.12.2 --activate
       - name: Install deps
-        run: npm install
+        run: pnpm install --frozen-lockfile
       - name: Check internal links
-        run: npx linkinator --dir .
+        run: pnpm exec linkinator --dir .
         continue-on-error: true
 
   lighthouse:
@@ -63,11 +71,15 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.19.4'
-          cache: 'npm'
+          cache: 'pnpm'
+      - name: Enable corepack
+        run: corepack enable
+      - name: Setup pnpm
+        run: corepack prepare pnpm@9.12.2 --activate
       - name: Install deps
-        run: npm install
+        run: pnpm install --frozen-lockfile
       - name: Lighthouse CI
-        run: npm run lhci -- --upload.target=temporary-public-storage
+        run: pnpm exec lhci autorun --upload.target=temporary-public-storage
         continue-on-error: true
       - name: Upload LHCI artifacts
         uses: actions/upload-artifact@v4
@@ -85,13 +97,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.19.4'
-          cache: 'npm'
+          cache: 'pnpm'
+      - name: Enable corepack
+        run: corepack enable
+      - name: Setup pnpm
+        run: corepack prepare pnpm@9.12.2 --activate
       - name: Install deps
-        run: npm install
+        run: pnpm install --frozen-lockfile
       - name: CSP header sanity check
         run: node tools/ci/check_csp.js
-      - name: npm audit (high severity)
-        run: npm audit --audit-level=high || true
+      - name: Audit (high severity)
+        run: pnpm audit --audit-level=high || true
 
   dependency-review:
     if: github.event_name == 'pull_request'

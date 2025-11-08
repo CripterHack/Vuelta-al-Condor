@@ -24,15 +24,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20.19.4'
-          cache: 'npm'
+          cache: 'pnpm'
+      - name: Enable corepack
+        run: corepack enable
+      - name: Setup pnpm
+        run: corepack prepare pnpm@9.12.2 --activate
       - name: Install deps
-        run: npm install
+        run: pnpm install --frozen-lockfile
       - name: Build CSS (autoprefix + minify)
         run: |
-          npm run css:prefix
-          npm run css:build
+          pnpm run css:prefix
+          pnpm run css:build
       - name: Generate image variants (AVIF/WebP)
-        run: npm run images:gen || true
+        run: pnpm run images:gen || true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
