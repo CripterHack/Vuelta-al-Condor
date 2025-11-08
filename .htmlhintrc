@@ -1,0 +1,9 @@
+{
+  "tagname-lowercase": true,
+  "attr-lowercase": true,
+  "attr-value-double-quotes": true,
+  "doctype-first": false,
+  "img-alt-require": true,
+  "title-require": true,
+  "spec-char-escape": true
+}
