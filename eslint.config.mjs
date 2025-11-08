@@ -13,7 +13,7 @@ export default [
       "gpu-io.min.js",
       "three.min.js",
       "sw.js",
-      "eslint.config.js",
+      "eslint.config.mjs",
       "node_modules/**",
       "dist/**",
       "build/**",
