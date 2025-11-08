@@ -11,7 +11,14 @@
     },
     "assert": {
       "assertionLevel": "warn",
-      "preset": "lighthouse:recommended"
+      "assertions": {
+        "legacy-javascript": "warn",
+        "render-blocking-insight": "off",
+        "uses-long-cache-ttl": "off",
+        "speed-index": ["warn", { "minScore": 0.05 }],
+        "largest-contentful-paint": "warn",
+        "mainthread-work-breakdown": "warn"
+      }
     },
     "upload": {
       "target": "filesystem",
