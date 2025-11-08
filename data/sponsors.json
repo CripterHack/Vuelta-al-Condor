@@ -1,0 +1,38 @@
+[
+  {
+    "name": "IzignaMx",
+    "logo": "/sponsors/izignamx.png",
+    "url": "https://izignamx.com?utm_source=landing_condor_izignamx",
+    "cta": "Conocer IzignaMx"
+  },
+  {
+    "name": "Daniel Pineda Tattoo",
+    "logo": "/sponsors/tattoo.png",
+    "url": "https://www.instagram.com/nosellama.ttt?utm_source=landing_condor_izignamx",
+    "cta": "Reservar con Daniel Pineda"
+  },
+  {
+    "name": "La Hamburguesa Nómada",
+    "logo": "/sponsors/hamburguesa-nomada.png",
+    "url": "https://www.instagram.com/hamburguesanomada?utm_source=landing_condor_izignamx",
+    "cta": "La Hamburguesa Nómada - Instagram"
+  },
+  {
+    "name": "CHÁAKgear",
+    "logo": "/sponsors/chaak.png",
+    "url": "https://www.instagram.com/chaakgear?utm_source=landing_condor_izignamx",
+    "cta": "CHÁAKgear - Instagram"
+  },
+  {
+    "name": "AktiCore",
+    "logo": "/sponsors/akticore.png",
+    "url": "https://www.instagram.com/akticore_mx?utm_source=landing_condor_izignamx",
+    "cta": "Seguir a AktiCore"
+  },
+  {
+     "name": "Okupache",
+     "logo": "/sponsors/okupache-espacio-autonomo-de-trabajo-autogestivo.jpg",
+     "url": "https://www.instagram.com/okupache?utm_source=landing_condor_izignamx",
+     "cta": "Seguir a Okupache"
+  }
+]
