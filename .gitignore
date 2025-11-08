@@ -22,7 +22,6 @@ __pycache__/
 node_modules/
 dist/
 build/
-pnpm-lock.yaml
 
 # Misc
 .env
@@ -36,4 +35,6 @@ error_log
 logs/
 
 # ignore sponsor images
-sponsor/
+sponsors/*
+# ignore lighthouse results
+.lighthouseci/*
