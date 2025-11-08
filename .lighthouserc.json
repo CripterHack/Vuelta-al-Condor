@@ -1,0 +1,21 @@
+{
+  "ci": {
+    "collect": {
+      "staticDistDir": ".",
+      "url": [
+        "/index.html",
+        "/guia.html",
+        "/corredores.html"
+      ],
+      "numberOfRuns": 1
+    },
+    "assert": {
+      "assertionLevel": "warn",
+      "preset": "lighthouse:recommended"
+    },
+    "upload": {
+      "target": "filesystem",
+      "outputDir": ".lighthouseci"
+    }
+  }
+}
