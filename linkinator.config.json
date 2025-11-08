@@ -1,0 +1,13 @@
+{
+  "recurse": true,
+  "markdown": true,
+  "directoryListing": true,
+  "skip": [
+    "^https?://(www\\.)?google-analytics\\.com",
+    "^https?://(www\\.)?googletagmanager\\.com",
+    "^https?://fonts\\.googleapis\\.com",
+    "^https?://fonts\\.gstatic\\.com",
+    "^https?://condor\\.izignamx\\.com"
+  ],
+  "verbosity": "warning"
+}

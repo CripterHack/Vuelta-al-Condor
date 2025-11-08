@@ -51,7 +51,7 @@ jobs:
       - name: Install deps
         run: pnpm install --frozen-lockfile
       - name: Check internal links
-        run: pnpm exec linkinator --dir .
+        run: pnpm run check:links
         continue-on-error: true
 
   lighthouse:
@@ -76,7 +76,7 @@ jobs:
       - name: Install deps
         run: pnpm install --frozen-lockfile
       - name: Lighthouse CI
-        run: pnpm exec lhci autorun --upload.target=temporary-public-storage
+        run: pnpm exec lhci autorun
         continue-on-error: true
       - name: Upload LHCI artifacts
         uses: actions/upload-artifact@v4

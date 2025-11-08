@@ -2,7 +2,7 @@
 const fs = require('fs');
 let sharp;
 try { sharp = require('sharp'); } catch (e) {
-  console.error('Sharp is not installed. Run `pnpm add -D sharp` and retry.');
+  console.error('Sharp is not installed. Run `pnpm add -D sharp` and retry.', e?.message || e);
   process.exit(1);
 }
 
