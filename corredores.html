@@ -13,7 +13,7 @@
   <meta name="color-scheme" content="dark">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob: https://www.google-analytics.com; style-src-elem 'self' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;">
   <link rel="canonical" href="https://condor.izignamx.com/corredores.html">
-  <link rel="manifest" href="https://condor.izignamx.com/site.webmanifest">
+  <link rel="manifest" href="site.webmanifest">
   <link rel="icon" type="image/svg+xml" href="https://condor.izignamx.com/favicon.svg">
   <link rel="icon" type="image/png" sizes="96x96" href="https://condor.izignamx.com/favicon-96x96.png">
   <link rel="apple-touch-icon" href="https://condor.izignamx.com/apple-touch-icon.png">
@@ -23,9 +23,8 @@
   <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
-  <link rel="preload" as="image" href="https://condor.izignamx.com/images/VAC.png">
-  <link rel="stylesheet" href="https://condor.izignamx.com/styles.min.css?v=202511071103">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="styles.min.css?v=202511080230">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">  
   <meta property="og:title" content="Corredores · Vuelta al Cóndor">
   <meta property="og:description" content="Listado de corredores de la Vuelta al Cóndor 2025. Próximamente publicaremos la parrilla completa con categorías, dorsales y tiempos.">
   <meta property="og:type" content="article">
@@ -54,8 +53,12 @@
   <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
   <header class="site-header">
     <nav class="site-nav" aria-label="Navegación principal">
-      <a class="brand" href="https://condor.izignamx.com/">
-        <img src="https://condor.izignamx.com/images/VAC.png" alt="Logotipo de la Vuelta al Cóndor" decoding="async" fetchpriority="high">
+      <a class="brand" href="index.html#inicio">
+        <picture>
+          <source type="image/avif" srcset="images/VAC-44.avif 44w, images/VAC-88.avif 88w, images/VAC-132.avif 132w" sizes="44px">
+          <source type="image/webp" srcset="images/VAC-44.webp 44w, images/VAC-88.webp 88w, images/VAC-132.webp 132w" sizes="44px">
+          <img src="images/VAC.png" alt="Logotipo de la Vuelta al Cóndor" decoding="async" fetchpriority="high" width="1263" height="1264">
+        </picture>
         <span>Vuelta al Cóndor</span>
       </a>
       <button class="hamburger" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Abrir menú de navegación">
@@ -64,26 +67,26 @@
         <span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="/index.html#detalles">Detalles</a></li>
-        <li><a href="/index.html#ruta">Ruta</a></li>
-        <li><a href="/index.html#altimetria">Altimetría</a></li>
-        <li><a href="/index.html#patrocinadores">Patrocinadores</a></li>
-        <li><a href="/index.html#faq">FAQ</a></li>
-        <li><a href="/index.html#reglamento">Reglamento</a></li>
-        <li><a href="/index.html#contacto">Contacto</a></li>
-        <li><a href="/corredores.html" aria-current="page">Corredores</a></li>
+        <li><a href="index.html#detalles">Detalles</a></li>
+        <li><a href="index.html#ruta">Ruta</a></li>
+        <li><a href="index.html#altimetria">Altimetría</a></li>
+        <li><a href="index.html#patrocinadores">Patrocinadores</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#reglamento">Reglamento</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a href="corredores.html" aria-current="page">Corredores</a></li>
       </ul>
     </nav>
     <div class="mobile-nav" id="mobile-nav" hidden>
       <ul>
-        <li><a href="/index.html#detalles">Detalles</a></li>
-        <li><a href="/index.html#ruta">Ruta</a></li>
-        <li><a href="/index.html#altimetria">Altimetría</a></li>
-        <li><a href="/index.html#patrocinadores">Patrocinadores</a></li>
-        <li><a href="/index.html#faq">FAQ</a></li>
-        <li><a href="/index.html#reglamento">Reglamento</a></li>
-        <li><a href="/index.html#contacto">Contacto</a></li>
-        <li><a href="/corredores.html" aria-current="page">Corredores</a></li>
+        <li><a href="index.html#detalles">Detalles</a></li>
+        <li><a href="index.html#ruta">Ruta</a></li>
+        <li><a href="index.html#altimetria">Altimetría</a></li>
+        <li><a href="index.html#patrocinadores">Patrocinadores</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="index.html#reglamento">Reglamento</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a href="corredores.html" aria-current="page">Corredores</a></li>
       </ul>
     </div>
   </header>
@@ -217,7 +220,7 @@
       navigator.serviceWorker.addEventListener('message', handleSwMessage);
 
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
+        navigator.serviceWorker.register('sw.js')
           .then(() => {
             if (navigator.serviceWorker.controller) {
               navigator.serviceWorker.controller.postMessage({ type: 'VAC_CHECK_VERSION' });
