@@ -79,8 +79,8 @@ jobs:
         run: pnpm exec lhci autorun
         continue-on-error: true
       - name: Upload LHCI artifacts
+        if: ${{ hashFiles('.lighthouseci/**') != '' }}
         uses: actions/upload-artifact@v4
-        if: always()
         with:
           name: lhci-report
           path: .lighthouseci
@@ -106,7 +106,6 @@ jobs:
         run: pnpm audit --audit-level=high || true
 
   dependency-review:
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -114,5 +113,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Dependency Review
+      - name: Dependency Review (PR)
+        if: github.event_name == 'pull_request'
         uses: actions/dependency-review-action@v4
+      - name: Dependency Review (push)
+        if: github.event_name == 'push'
+        uses: actions/dependency-review-action@v4
+        with:
+          base-ref: ${{ github.event.before }}
+          head-ref: ${{ github.sha }}
