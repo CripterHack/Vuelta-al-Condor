@@ -4,6 +4,7 @@
   if (!canvas) return;
 
   const reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent || '');
 
   // Ensure GPU-IO is available
   if (!window.GPUIO) {
@@ -20,11 +21,11 @@
     minimal: { scale: 0.45, advectSteps: 1, decay: 0.980, forceBase: 0.030, radiusPx: 110 },
   };
 
-  let currentPreset = reducedMotion ? 'minimal' : 'high';
+  let currentPreset = reducedMotion ? 'minimal' : (isMobile ? 'medium' : 'high');
   let composer;
   let velocity;
   let ink;
-  let advectProgram, injectProgram, decayProgram, renderProgram, ampProgram, debugProgram;
+  let advectProgram, injectProgram, decayProgram;
   let advectInkProgram, injectInkProgram, decayInkProgram, renderInkProgram;
   let running = false;
 
@@ -49,22 +50,9 @@
     canvas.style.height = (h / dpr) + 'px';
   }
 
-  function hsv2rgb(h, s, v) {
-    const i = Math.floor(h * 6);
-    const f = h * 6 - i;
-    const p = v * (1 - s);
-    const q = v * (1 - f * s);
-    const t = v * (1 - (1 - f) * s);
-    switch (i % 6) {
-      case 0: return [v, t, p];
-      case 1: return [q, v, p];
-      case 2: return [p, v, t];
-      case 3: return [p, q, v];
-      case 4: return [t, p, v];
-      case 5: return [v, p, q];
-      default: return [v, t, p];
-    }
-  }
+  //
+  // Nota: funciones auxiliares no utilizadas han sido removidas para reducir warnings ESLint.
+  //
 
   function buildPrograms() {
     const w = velocity.width;
@@ -145,70 +133,7 @@
       ],
     });
 
-    // Render velocity as a dashed vector field across a coarse grid
-    renderProgram = new GPUProgram(composer, {
-      name: 'renderVelocityVectors',
-      fragmentShader: `
-        in vec2 v_uv;
-        uniform sampler2D u_vel;
-        uniform vec2 u_grid;     // grid cells in x,y (float)
-        uniform float u_len;     // half-length of dash in cell units
-        uniform float u_thick;   // half-thickness in cell units
-        uniform float u_gain;    // brightness gain by speed
-        uniform float u_alpha;   // global alpha cap
-        out vec4 out_color;
-        void main(){
-          vec2 cellSize = 1.0 / u_grid;
-          vec2 cellCenter = (floor(v_uv * u_grid) + 0.5) / u_grid;
-          vec2 v = texture(u_vel, cellCenter).xy;
-          float speed = length(v);
-          vec2 dir = speed > 1e-5 ? normalize(v) : vec2(1.0, 0.0);
-          vec2 rel = v_uv - cellCenter;
-          float along = abs(dot(rel, dir));
-          float perp  = abs(dot(rel, vec2(-dir.y, dir.x)));
-          float base = max(cellSize.x, cellSize.y);
-          float halfLen = u_len * base;
-          float halfThk = u_thick * base;
-          // Proper masks: 1 inside the dash extent, 0 outside
-          float maskAlong = 1.0 - smoothstep(0.0, halfLen, along);
-          float maskPerp  = 1.0 - smoothstep(0.0, halfThk, perp);
-          float mask = maskAlong * maskPerp;
-          float a = clamp(u_alpha * mask * (speed * u_gain), 0.0, 1.0);
-          out_color = vec4(1.0, 1.0, 1.0, a);
-        }
-      `,
-      uniforms: [
-        { name: 'u_vel', value: 0, type: INT },
-        { name: 'u_grid', value: [Math.max(8, Math.floor(w / 30)), Math.max(6, Math.floor(h / 30))], type: FLOAT },
-        { name: 'u_len', value: 0.6, type: FLOAT },
-        { name: 'u_thick', value: 0.25, type: FLOAT },
-        { name: 'u_gain', value: 120.0, type: FLOAT },
-        { name: 'u_alpha', value: 1.0, type: FLOAT },
-      ],
-    });
-
-    // Fallback amplitude renderer to guarantee visibility (subtle)
-    ampProgram = new GPUProgram(composer, {
-      name: 'renderVelocityAmplitudeFallback',
-      fragmentShader: `
-        in vec2 v_uv;
-        uniform sampler2D u_vel;
-        uniform float u_gain;
-        uniform float u_alpha;
-        out vec4 out_color;
-        void main(){
-          vec2 v = texture(u_vel, v_uv).xy;
-          float amp = clamp(length(v) * u_gain, 0.0, 1.0);
-          float a = clamp(u_alpha * amp, 0.0, 0.35);
-          out_color = vec4(1.0, 1.0, 1.0, a);
-        }
-      `,
-      uniforms: [
-        { name: 'u_vel', value: 0, type: INT },
-        { name: 'u_gain', value: 20.0, type: FLOAT },
-        { name: 'u_alpha', value: 0.25, type: FLOAT },
-      ],
-    });
+    // Renderizadores de velocidad no usados han sido eliminados para evitar sobrecarga.
 
     // ---- Ink trail programs (scalar field advected by velocity) ----
     advectInkProgram = new GPUProgram(composer, {
@@ -320,7 +245,7 @@
         composer.gl.clearColor(0, 0, 0, 0);
         composer.gl.clear(composer.gl.COLOR_BUFFER_BIT);
       }
-    } catch (_) {}
+    } catch {}
     // Ensure composer matches canvas size
     composer.resize([canvas.width, canvas.height]);
   }
@@ -417,7 +342,6 @@
     // Inject mouse force if active
     if (pointer.down || (Math.abs(pointer.dx) + Math.abs(pointer.dy)) > 0.15) {
       const rect = canvas.getBoundingClientRect();
-      const inBounds = pointer.x >= rect.left && pointer.x <= rect.right && pointer.y >= rect.top && pointer.y <= rect.bottom;
       const mouseUV = [
         Math.min(1, Math.max(0, (pointer.x - rect.left) / rect.width)),
         Math.min(1, Math.max(0, 1 - (pointer.y - rect.top) / rect.height)),
@@ -446,7 +370,7 @@
         composer.gl.clearColor(0, 0, 0, 0);
         composer.gl.clear(composer.gl.COLOR_BUFFER_BIT);
       }
-    } catch (_) {}
+    } catch {}
 
     // ---- Ink pipeline ----
     // Advect ink using latest velocity field
@@ -484,7 +408,12 @@
   }
 
   function start() {
-    // Always animate; if reducedMotion is enabled, we already selected a minimal preset
+    // Si el usuario prefiere menos movimiento, no iniciar la animación
+    if (reducedMotion) {
+      try { canvas.style.display = 'none'; } catch {}
+      return;
+    }
+    // Animación normal
     setCanvasSize();
     initComposer();
     initLayers();
@@ -508,12 +437,32 @@
     }
   });
 
-  // Start after DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', start, { once: true });
-  } else {
-    start();
+  // Start deferred on mobile (first interaction or idle), immediate on desktop
+  function scheduleStart(){
+    if (reducedMotion) {
+      try { canvas.style.display = 'none'; } catch {}
+      return;
+    }
+    if (isMobile) {
+      const starter = function(){
+        window.removeEventListener('pointerdown', starter);
+        if (!running) start();
+      };
+      window.addEventListener('pointerdown', starter, { once: true, passive: true });
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(function(){ if (!running) start(); }, { timeout: 2500 });
+      } else {
+        setTimeout(function(){ if (!running) start(); }, 2000);
+      }
+    } else {
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', start, { once: true });
+      } else {
+        start();
+      }
+    }
   }
+  scheduleStart();
 
   // Expose minimal API for performance mode control
   try {
@@ -523,5 +472,5 @@
       resume: function(){ if (!running) { running = true; requestAnimationFrame(stepSimulation); } },
       isRunning: function(){ return !!running; }
     };
-  } catch (_) {}
+  } catch {}
 })();
