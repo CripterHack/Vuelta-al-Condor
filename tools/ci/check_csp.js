@@ -29,12 +29,15 @@ if (!cspLine) {
     fail('No CSP found: .htaccess header missing and index.html not present');
   }
   const html = fs.readFileSync(indexPath, 'utf8');
-  const metaMatch = html.match(/<meta[^>]*http-equiv=["']Content-Security-Policy["'][^>]*content=["']([^"']+)["'][^>]*>/i);
-  if (!metaMatch) {
+  // Capture content attribute correctly depending on outer quote type
+  const metaDouble = html.match(/<meta[^>]*http-equiv=["']Content-Security-Policy["'][^>]*content="([^"]+)"[^>]*>/i);
+  const metaSingle = html.match(/<meta[^>]*http-equiv=["']Content-Security-Policy["'][^>]*content='([^']+)'[^>]*>/i);
+  const metaContent = (metaDouble && metaDouble[1]) || (metaSingle && metaSingle[1]);
+  if (!metaContent) {
     fail('No CSP found: .htaccess header missing and meta CSP not present in index.html');
   }
   policySource = 'meta';
-  cspLine = `Content-Security-Policy "${metaMatch[1]}"`;
+  cspLine = `Content-Security-Policy "${metaContent}"`;
   warn('Using meta CSP as fallback (no server header found).');
 }
 
