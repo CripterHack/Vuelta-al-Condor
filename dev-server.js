@@ -26,15 +26,19 @@ const DEV_CSP = [
   "frame-ancestors 'self'"
 ].join('; ');
 
-// CSP estricta de producción (refleja la meta CSP en HTML)
+// CSP estricta de producción (paridad con meta CSP en HTML, sin 'unsafe-inline' ni 'unsafe-eval')
 const PROD_CSP = [
   "default-src 'self'",
   "img-src 'self' data: blob: https://www.google-analytics.com",
   "style-src-elem 'self' https://fonts.googleapis.com",
-  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-  "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com",
+  "style-src 'self' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com",
-  "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com"
+  "script-src 'self' https://www.googletagmanager.com",
+  "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com",
+  "object-src 'none'",
+  "base-uri 'none'",
+  "frame-ancestors 'self'",
+  "upgrade-insecure-requests"
 ].join('; ');
 
 
