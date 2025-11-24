@@ -34,6 +34,10 @@ jobs:
         run: |
           pnpm run css:prefix
           pnpm run css:build
+      - name: Minify JS (exclude feedback.js)
+        run: pnpm run js:minify
+      - name: Use .min.js in HTML
+        run: pnpm run html:use-min
       - name: Generate image variants (AVIF/WebP)
         run: pnpm run images:gen || true
       - name: Upload artifact
