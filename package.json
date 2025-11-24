@@ -15,9 +15,12 @@
     "lint:js": "eslint --ignore-pattern \"*.min.js\" --ignore-pattern \"gpu-io.min.js\" --ignore-pattern \"three.min.js\" --ignore-pattern \"sw.js\" .",
     "check:links": "linkinator . --config=linkinator.config.json",
     "lhci": "lhci autorun",
+    "check:csp": "node tools/ci/check_csp.js",
     "css:prefix": "postcss styles.css --use autoprefixer -o styles.prefixed.css",
     "css:build": "postcss styles.prefixed.css -o styles.min.css",
-    "images:gen": "node tools/image-gen.js"
+    "images:gen": "node tools/image-gen.js",
+    "js:minify": "node tools/js-minify.js",
+    "html:use-min": "node tools/html-use-min.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
@@ -34,6 +37,7 @@
     "postcss-cli": "^11.0.1",
     "sharp": "^0.33.5",
     "stylelint": "^16.10.0",
-    "stylelint-config-standard": "^36.0.1"
+    "stylelint-config-standard": "^36.0.1",
+    "terser": "^5.36.0"
   }
 }
