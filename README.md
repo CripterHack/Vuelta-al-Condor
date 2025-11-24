@@ -59,6 +59,27 @@ http://localhost:5174/
   - Elimina la meta CSP de las respuestas HTML para evitar combinación de políticas.
 - Producción: usa la **CSP estricta definida en HTML**, con orígenes limitados (Google Fonts/GA) y `'self'`.
 
+### Modo estricto local (simular producción)
+- Para validar con la misma CSP estricta que en producción, arranca el servidor con `STRICT=1`:
+  - PowerShell: `$env:STRICT = 1; pnpm run dev`
+  - CMD (Windows): `cmd /c "set STRICT=1 && pnpm run dev"`
+- En este modo, el servidor devuelve por cabecera la política estricta (sin `'unsafe-inline'` ni `'unsafe-eval'`) y sigue eliminando la meta CSP del HTML para evitar conflictos.
+
+### Requisitos de CSP por entorno
+- Desarrollo (relajado): permite `'unsafe-inline'` y `'unsafe-eval'` para evitar falsos positivos causados por extensiones locales y tooling. La meta CSP se elimina al vuelo.
+- Staging (GitHub Pages): no hay cabecera CSP del servidor. La política se define por **meta CSP** dentro de `index.html`, `guia.html` y `corredores.html`.
+- Producción: política **estricta** en HTML (meta CSP) o por cabecera del servidor si decides moverla a `.htaccess`. Asegura paridad con las directivas del HTML.
+
+### Confirmación: no se requiere `unsafe-eval`
+- Se auditó el código del sitio (scripts y bibliotecas incluidas) y **no usa** `eval`, `new Function` ni `setTimeout/Interval` con cadenas.
+- Bibliotecas WebGL (`gpu-io.min.js`) generan y compilan shaders, pero **no** evalúan código JavaScript dinámico.
+- Por lo tanto, `'unsafe-eval'` permanece excluido en todos los entornos. Si una biblioteca futura lo exigiera, debe reemplazarse o refactorizarse.
+
+### Notas de validación
+- GA4 (gtag.js) puede registrar `net::ERR_ABORTED` en desarrollo/strict por privacidad/red; estos errores no afectan la funcionalidad.
+- Ejecuta `pnpm run lhci` para confirmar SEO/Best Practices una vez aplicada la CSP estricta.
+- Para comprobar la política rápidamente: `pnpm run check:csp` (usa `tools/ci/check_csp.js`; preferirá cabecera en `.htaccess` y, si no existe, verificará la meta CSP de `index.html`).
+
 ### Recomendaciones
 - No desplegar el server de desarrollo; es solo para localhost.
 - Validar en producción sin extensiones que reescriban recursos.
@@ -88,7 +109,6 @@ http://localhost:5174/
 - Analítica: GA4 cargado de forma diferida y condicionado por DNT.
 - Animaciones: botón de “modo rendimiento” que reduce animaciones GPU y oculta fireworks.
 - Navegación: índice de guía sticky y colapsable en móvil con scroll‑spy; barra de accesos rápidos y botón “↑ Índice”.
-- Feedback: botón flotante “Feedback” que abre la sección `#contacto` en la landing.
 
 ## Diseño responsive
 
@@ -106,12 +126,6 @@ http://localhost:5174/
 
 - Acceso directo a guía desde home (CTA y promo) y dentro de guía (índice + quickbar).
 - Flujo de herramienta: inputs claros, validación mínima y exportación a `.txt` e impresión.
-- Botón “Feedback” visible tras scroll, sin interferir con contenido ni controles primarios.
-
-## Mecanismos de retroalimentación
-
-- Botón flotante “Feedback” enlaza a `/#contacto` para mensaje directo.
-- Alternativas: reemplazar por `mailto:` en producción o integrar formulario con backend; ajusta el `href` en `index.html`/`guia.html`.
 
 ## Rendimiento
 
