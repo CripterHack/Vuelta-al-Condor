@@ -35,9 +35,30 @@ jobs:
           pnpm run css:prefix
           pnpm run css:build
       - name: Minify JS (exclude feedback.js)
-        run: pnpm run js:minify
+        run: |
+          # Minificar todos los scripts menos *.min.js y feedback.js usando Terser CLI
+          for f in scripts/*.js; do
+            base="$(basename "$f")"
+            if [[ "$base" == *.min.js ]] || [[ "$base" == "feedback.js" ]]; then
+              echo "Skip $base"; continue;
+            fi
+            out="scripts/${base%.js}.min.js"
+            echo "Minify $f → $out"
+            pnpm exec terser "$f" \
+              -o "$out" \
+              -c passes=2,hoist_funs=true,drop_debugger=true \
+              -m
+          done
       - name: Use .min.js in HTML
-        run: pnpm run html:use-min
+        run: |
+          # Reemplazar referencias a scripts no minificados por sus versiones .min.js si existen
+          for html in *.html; do
+            echo "Procesando $html"
+            for min in scripts/*.min.js; do
+              base="$(basename "$min" .min.js)"
+              sed -i "s#src=\"scripts/$base.js\"#src=\"scripts/$base.min.js\"#g" "$html"
+            done
+          done
       - name: Generate image variants (AVIF/WebP)
         run: pnpm run images:gen || true
       - name: Upload artifact
