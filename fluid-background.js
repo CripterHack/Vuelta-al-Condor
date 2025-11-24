@@ -46,8 +46,6 @@
     const h = Math.max(1, Math.floor((window.innerHeight || document.documentElement.clientHeight) * dpr));
     canvas.width = w;
     canvas.height = h;
-    canvas.style.width = (w / dpr) + 'px';
-    canvas.style.height = (h / dpr) + 'px';
   }
 
   //
@@ -238,8 +236,7 @@
       clearValue: [0, 0, 0, 0],
       verboseLogging: false,
     });
-    // Keep canvas transparent so strokes composite over the hero background
-    canvas.style.background = 'transparent';
+    // Canvas transparente gestionado por CSS (.fluid-canvas)
     try {
       if (composer.gl && typeof composer.gl.clearColor === 'function') {
         composer.gl.clearColor(0, 0, 0, 0);
@@ -410,7 +407,6 @@
   function start() {
     // Si el usuario prefiere menos movimiento, no iniciar la animación
     if (reducedMotion) {
-      try { canvas.style.display = 'none'; } catch {}
       return;
     }
     // Animación normal
@@ -440,7 +436,6 @@
   // Start deferred on mobile (first interaction or idle), immediate on desktop
   function scheduleStart(){
     if (reducedMotion) {
-      try { canvas.style.display = 'none'; } catch {}
       return;
     }
     if (isMobile) {
