@@ -11,10 +11,9 @@
   <meta name="robots" content="noindex,follow">
   <meta name="theme-color" content="#0E1F15">
   <meta name="color-scheme" content="dark">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob: https://www.google-analytics.com; style-src-elem 'self' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;">
-  <link rel="canonical" href="/corredores.html">
+  <link rel="canonical" href="https://condor.izignamx.com/corredores.html">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +22,7 @@
   <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
-  <link rel="stylesheet" href="styles.min.css?v=202511080230">
+  <link rel="stylesheet" href="styles.min.css?v=202511080450">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">  
   <meta property="og:title" content="Corredores · Vuelta al Cóndor">
   <meta property="og:description" content="Listado de corredores de la Vuelta al Cóndor 2025. Próximamente publicaremos la parrilla completa con categorías, dorsales y tiempos.">
@@ -37,14 +36,30 @@
   <meta name="twitter:title" content="Corredores · Vuelta al Cóndor">
   <meta name="twitter:description" content="Listado de corredores de la Vuelta al Cóndor 2025. Próximamente publicaremos la parrilla completa con categorías, dorsales y tiempos.">
   <meta name="twitter:image" content="/images/promo.jpg">
+  <script defer src="scripts/console-silencer.min.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "/"},
-      {"@type": "ListItem", "position": 2, "name": "Guía", "item": "/guia.html"},
-      {"@type": "ListItem", "position": 3, "name": "Corredores", "item": "/corredores.html"}
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": "/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Guía",
+        "item": "/guia.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Corredores",
+        "item": "/corredores.html"
+      }
     ]
   }
   </script>
@@ -97,15 +112,15 @@
         <h1 id="corredores-title">Corredores · Próximamente</h1>
         <p>Estamos validando las fichas de inscripción y los criterios de participación. Publicaremos la lista completa con categorías, dorsales y tiempos oficiales muy pronto.</p>
       </div>
-      <div class="gpx-card" style="background: rgba(19, 39, 27, 0.6);">
+      <div class="gpx-card dark">
         <p>Para respetar la privacidad de las personas participantes y garantizar datos exactos, seguimos estos pasos antes de publicar:</p>
         <ul>
           <li>Verificar documentación y consentimientos de difusión.</li>
           <li>Clasificar por categoría (femenil, varonil) y dorsal asignado.</li>
-          <li>Sincronizar tiempos oficiales con cronometraje y checkpoints.</li>
+          <li>Sincronizar tiempos oficiales con cronometraje y puntos de referencia (sin checkpoints).</li>
         </ul>
-        <p style="margin-top: 1.5rem; color: var(--vac-text);">Mientras tanto, si necesitas confirmar una inscripción o actualizar datos, escríbenos por WhatsApp:</p>
-        <div class="contact-options" style="margin-top: 0;">
+        <p class="u-mt-1_5rem">Mientras tanto, si necesitas confirmar una inscripción o actualizar datos, escríbenos por WhatsApp:</p>
+        <div class="contact-options u-mt-0">
           <a class="button primary" href="https://wa.me/529429003932" target="_blank" rel="noopener">💬 WhatsApp Organización</a>
         </div>
       </div>
@@ -119,116 +134,12 @@
     <small class="signature">Landing construida por <a href="https://izignamx.com" target="_blank"><strong>IzignaMx</strong></a></small>
   </footer>
 
-  <script>
-    // Google Analytics: respeta Do Not Track y carga diferido
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    function vacDNTEnabled(){
-      try {
-        var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack || '').toString().toLowerCase();
-        return dnt === '1' || dnt === 'yes' || dnt === 'true';
-      } catch(_) { return false; }
-    }
-    if (!vacDNTEnabled()) {
-      gtag('js', new Date());
-      gtag('config', 'G-132SN84E79');
-    }
-    window.addEventListener('load', function(){
-      if (!vacDNTEnabled()) {
-        var script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-132SN84E79';
-        script.async = true;
-        document.head.appendChild(script);
-      }
-    });
-    const navToggle = document.querySelector('.hamburger');
-    const mobileNav = document.getElementById('mobile-nav');
-    const focusSelectors = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
-    let focusTrap = null;
-
-    function openNav() {
-      if (!navToggle || !mobileNav) return;
-      navToggle.setAttribute('aria-expanded', 'true');
-      mobileNav.hidden = false;
-      mobileNav.classList.add('open');
-      const focusables = mobileNav.querySelectorAll(focusSelectors);
-      if (focusables.length > 0) {
-        focusTrap = { first: focusables[0], last: focusables[focusables.length - 1] };
-        focusTrap.first.focus();
-      }
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeNav() {
-      if (!navToggle || !mobileNav) return;
-      navToggle.setAttribute('aria-expanded', 'false');
-      mobileNav.classList.remove('open');
-      mobileNav.hidden = true;
-      focusTrap = null;
-      document.body.style.overflow = '';
-      navToggle.focus();
-    }
-
-    if (navToggle && mobileNav) {
-      navToggle.addEventListener('click', () => {
-        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-        expanded ? closeNav() : openNav();
-      });
-
-      mobileNav.addEventListener('click', event => {
-        if (event.target instanceof HTMLAnchorElement) {
-          closeNav();
-        }
-      });
-
-      document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
-          closeNav();
-          return;
-        }
-        if (event.key === 'Tab' && mobileNav.classList.contains('open') && focusTrap) {
-          const { first, last } = focusTrap;
-          if (!first || !last) return;
-          if (event.shiftKey && document.activeElement === first) {
-            event.preventDefault();
-            last.focus();
-          } else if (!event.shiftKey && document.activeElement === last) {
-            event.preventDefault();
-            first.focus();
-          }
-        }
-      });
-    }
-
-    // Service Worker: recarga controlada cuando hay versión nueva
-    if ('serviceWorker' in navigator) {
-      const RELOAD_KEY = '__vac_reloaded_' + (window.location.pathname || '/');
-      const alreadyReloaded = sessionStorage.getItem(RELOAD_KEY) === '1';
-
-      function handleSwMessage(event) {
-        const data = event.data || {};
-        if (data.type !== 'vac-update' || !data.version) return;
-        const currentVersion = localStorage.getItem('vac_version');
-        if (currentVersion === String(data.version)) return;
-        localStorage.setItem('vac_version', String(data.version));
-        if (!alreadyReloaded) {
-          sessionStorage.setItem(RELOAD_KEY, '1');
-          setTimeout(() => { window.location.reload(); }, 600);
-        }
-      }
-
-      navigator.serviceWorker.addEventListener('message', handleSwMessage);
-
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
-          .then(() => {
-            if (navigator.serviceWorker.controller) {
-              navigator.serviceWorker.controller.postMessage({ type: 'VAC_CHECK_VERSION' });
-            }
-          })
-          .catch(() => {});
-      });
-    }
-  </script>
+  <script defer src="scripts/nav.min.js"></script>
+  <script defer src="scripts/aria.min.js"></script>
+  <script defer src="scripts/performance.min.js"></script>
+  <script defer src="scripts/event.min.js"></script>
+  <script defer src="scripts/sw-register.min.js"></script>
+  <script defer src="scripts/analytics.min.js"></script>
+  <script defer src="scripts/console-restore.min.js"></script>
 </body>
 </html>

@@ -13,10 +13,9 @@
   <meta name="robots" content="index,follow">
   <meta name="theme-color" content="#0E1F15">
   <meta name="color-scheme" content="dark">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob: https://www.google-analytics.com; style-src-elem 'self' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com;">
-  <link rel="canonical" href="/">
+  <link rel="canonical" href="https://condor.izignamx.com/">
   <link rel="manifest" href="site.webmanifest">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,84 +26,14 @@
   <link rel="dns-prefetch" href="https://condor.izignamx.com">
   <link rel="dns-prefetch" href="https://www.googletagmanager.com">
   <link rel="dns-prefetch" href="https://www.google-analytics.com">
-  <link rel="preload" as="style" href="styles.min.css?v=202511080230" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="styles.min.css?v=202511080230"></noscript>
+  <link rel="stylesheet" href="styles.min.css?v=202511080450" fetchpriority="high">
   <link rel="preload" as="image" href="images/valley-2400.avif" type="image/avif" fetchpriority="high">
   <link rel="preload" as="image" href="images/VAC-red-320.avif" imagesrcset="images/VAC-red-320.avif 320w, images/VAC-red-480.avif 480w, images/VAC-red-640.avif 640w, images/VAC-red-960.avif 960w" imagesizes="(max-width: 1024px) 260px, 320px" fetchpriority="high">
   <link rel="preload" as="image" href="images/promo-1200.avif" type="image/avif" imagesrcset="images/promo-800.avif 800w, images/promo-1200.avif 1200w" imagesizes="(max-width: 900px) 800px, 1200px" fetchpriority="low">
   <!--link rel="prefetch" href="/corredores.html"-->
-  
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- CSS crítico inlined: header y hero para mejorar LCP -->
-  <style id="vac-critical">
-    :root{
-      color-scheme: dark;
-      --vac-bg:#0E1F15;--vac-elev:#13271B;--vac-text:#E7EFE9;--vac-muted:#B9C9C1;--vac-gold:#D8A321;--vac-red:#FF3A2E;--vac-green:#0F4D3A;--vac-link:#79B86A;--vac-outline:#FFF;
-      --vac-grad-hero: radial-gradient(ellipse at 5% -50%, rgba(216,163,33,0.21) 0%, transparent 60%), linear-gradient(180deg, rgba(14,31,21,0.69) 0%, rgba(14,31,21,0.12) 60%, rgba(14,31,21,0.44) 100%);
-      --vac-radius:18px;--vac-border:1px solid rgba(233,255,244,0.08);--vac-shadow-soft:0 14px 32px rgba(14,31,21,0.32)
-    }
-    body{background: radial-gradient(circle at top, rgba(216,163,33,0.08), transparent 55%), var(--vac-bg); color: var(--vac-text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif; margin:0}
-    /* Header fijo minimal */
-    .site-header{backdrop-filter: blur(18px); background: rgba(14,31,21,0.92); border-bottom: 1px solid rgba(233,255,244,0.08); position: fixed; top:0; width:100%; z-index:900}
-    .site-nav{display:flex; align-items:center; justify-content:space-between; gap:1.5rem; max-width:1200px; margin:0 auto; padding:.85rem 1.5rem}
-    .brand{display:flex; align-items:center; gap:.75rem; color: var(--vac-text); font-weight:700; letter-spacing:.04em; text-decoration:none}
-    .brand img{width:44px; height:44px; border-radius:12px}
-    .nav-links{display:flex; align-items:center; gap:1.25rem; list-style:none; margin:0; padding:0}
-    .nav-links a{color: var(--vac-muted); font-weight:500; text-decoration:none}
-    .nav-links a:hover,.nav-links a:focus-visible{color: var(--vac-gold)}
-    .hamburger{display:none}
-    @media (max-width: 900px){ .nav-links{display:none} .hamburger{display:flex} }
-    /* Hero above-the-fold */
-    main{background: var(--vac-bg)}
-    #contenido-principal{background-attachment: fixed; background-position: 50%; background-size: cover; padding-top:81px;
-      background-image: var(--vac-grad-hero), -webkit-image-set(
-        url("images/valley-2400.avif") type("image/avif") 1x,
-        url("images/valley-3200.avif") type("image/avif") 2x,
-        url("images/valley-2400.webp") type("image/webp") 1x,
-        url("images/valley-3200.webp") type("image/webp") 2x,
-        url("images/valley.jpg") type("image/jpeg") 1x
-      );
-      background-image: var(--vac-grad-hero), image-set(
-        url("images/valley-2400.avif") type("image/avif") 1x,
-        url("images/valley-3200.avif") type("image/avif") 2x,
-        url("images/valley-2400.webp") type("image/webp") 1x,
-        url("images/valley-3200.webp") type("image/webp") 2x,
-        url("images/valley.jpg") type("image/jpeg") 1x
-      );
-    }
-    .hero{border-bottom:1px solid rgba(233,255,244,0.06); padding-top:6rem}
-    .hero-inner{display:grid; align-items:flex-start; gap:3rem; grid-template-columns: minmax(0,.42fr) minmax(0,.9fr); max-width:1200px; margin:0 auto; padding:0 1.5rem 2.5rem}
-    .hero-media{text-align:center}
-    .hero-media img{width:min(320px,80%); height:auto}
-    .hero-content{display:grid; gap:1.5rem}
-    .hero-content h1{font-size: clamp(3rem, 5vw, 4.2rem); letter-spacing: -.04em; line-height: 1.05; margin:0}
-    .hero-subtitle{color: var(--vac-muted); font-size: 1.07rem; margin:0}
-    @media (max-width:1024px){ .hero-inner{grid-template-columns:1fr; text-align:center} .hero-content{align-items:center} }
-  </style>
-  <style>
-    /* Botón flotante de Feedback: discreto, accesible y no invasivo */
-    #feedback-floating {
-      position: fixed;
-      left: 16px;
-      bottom: 16px;
-      z-index: 20;
-      display: none;
-      padding: 10px 12px;
-      border-radius: 24px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-    }
-    @media (max-width: 900px){
-      #feedback-floating { left: 12px; bottom: 12px; }
-    }
-  </style>
-  <!-- Estado activo para enlaces internos: resalta cuando la sección está visible -->
-  <style>
-    .nav-links a[aria-current="location"] { color: var(--vac-gold); position: relative; }
-    .nav-links a[aria-current="location"]::after {
-      content: ''; position: absolute; left: 0; bottom: -.5rem; width: 100%; height: 2px;
-      background: var(--vac-gold); border-radius: 999px;
-    }
-  </style>
+  <!-- CSS crítico removido: ya está en styles.css/styles.min.css para cumplir CSP -->
+  <!-- Estado activo para enlaces internos: estilos movidos a stylesheet -->
   <meta property="og:title" content="Vuelta al Cóndor 2025 · 187 km autosuficientes">
   <meta property="og:description" content="Sube 3000 m+ desde el Zócalo hasta Okupache C.U. con un evento inclusivo y seguro.">
   <meta property="og:type" content="website">
@@ -125,7 +54,7 @@
     "name": "Vuelta al Cóndor 2025",
     "description": "Carrera de ciclismo de ruta autosuficiente de 187 km y 3000 m de desnivel acumulado. Evento inclusivo y seguro para todas las personas.",
     "startDate": "2025-11-29T06:00:00-06:00",
-    "endDate": "2025-11-29T20:00:00-06:00",
+    "endDate": "2025-11-29T22:00:00-06:00",
     "eventStatus": "https://schema.org/EventScheduled",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "inLanguage": "es-MX",
@@ -251,145 +180,11 @@
   }
   </script>
   
-  <!-- Transient console silencer to suppress third‑party verbose logs during initial load. -->
-  <script>
-    (function() {
-      var c = window.console || {};
-      // Save originals and mute non-error channels (keep warn/error intact)
-      var original = {
-        log: c.log,
-        info: c.info,
-        debug: c.debug,
-        trace: c.trace,
-        group: c.group,
-        groupCollapsed: c.groupCollapsed,
-        groupEnd: c.groupEnd
-      };
-      var noop = function(){};
-      c.log = c.info = c.debug = c.trace = noop;
-      c.group = c.groupCollapsed = c.groupEnd = noop;
-      // Expose for later restoration after load
-      window.__consoleOriginal = original;
-    })();
-  </script>
-  <!-- Estilos para el banner del evento, overlay de fuegos artificiales y botón de rendimiento -->
-  <style>
-    .fireworks-canvas {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 50;
-      display: none;
-    }
-    .event-banner {
-      display: none;
-      margin: 0.75rem 0 1rem 0;
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--vac-accent, #51e9f0);
-      border-radius: 8px;
-      background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35));
-      color: var(--vac-text, #ffffff);
-      font-weight: 600;
-      letter-spacing: 0.2px;
-    }
-    .event-banner.motivation { border-color: var(--vac-accent, #51e9f0); }
-    .event-banner.thanks { border-color: #9ef59f; }
-
-    /* Botón de rendimiento como toggle deslizante con emoji ⚡ */
-    .perf-toggle.button.secondary {
-      position: relative;
-      width: 64px;
-      height: 32px;
-      min-width: 64px;
-      padding: 0;
-      border-radius: 999px;
-      display: inline-block;
-      border: 1px solid rgba(81, 233, 240, 0.65);
-      background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.12));
-      overflow: hidden;
-      transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
-    }
-    .perf-toggle .toggle-track {
-      position: absolute; inset: 0; border-radius: inherit;
-      background: radial-gradient(120% 120% at 0% 50%, rgba(81,233,240,0.12), rgba(0,0,0,0));
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 8px; font-size: 10px; font-weight: 600; letter-spacing: 0.5px;
-      color: rgba(207,239,241,0.45);
-      transition: background .25s ease, color .25s ease;
-    }
-    .perf-toggle .toggle-text { opacity: 0.55; transition: opacity .2s ease, color .2s ease; }
-    .perf-toggle:not([aria-pressed="true"]) .toggle-text.off { opacity: 0.95; color: #cfeff1; }
-    .perf-toggle:not([aria-pressed="true"]) .toggle-text.on { opacity: 0.25; color: rgba(207,239,241,0.35); }
-    .perf-toggle .toggle-knob {
-      position: absolute; top: 2px; left: 2px;
-      width: 28px; height: 28px; border-radius: 50%;
-      display: grid; place-items: center;
-      background: rgba(14, 31, 21, 0.75);
-      color: #cfeff1; font-size: 18px; line-height: 1;
-      box-shadow: 0 0 0 0 rgba(81,233,240,0.0);
-      transform: translateX(0);
-      transition: transform .18s ease, background .18s ease, color .18s ease, box-shadow .18s ease;
-    }
-    .perf-toggle:focus-visible { outline: none; box-shadow: 0 0 0 2px rgba(81,233,240,0.6); }
-    .perf-toggle[aria-pressed="true"] { border-color: #35d399; }
-    .perf-toggle[aria-pressed="true"] .toggle-track {
-      background: radial-gradient(120% 120% at 100% 50%, rgba(53,211,153,0.20), rgba(0,0,0,0));
-    }
-    .perf-toggle[aria-pressed="true"] .toggle-text.on { opacity: 0.95; color: #9ef59f; }
-    .perf-toggle[aria-pressed="true"] .toggle-text.off { opacity: 0.25; color: rgba(207,239,241,0.35); }
-    .perf-toggle[aria-pressed="true"] .toggle-knob {
-      transform: translateX(32px);
-      background: rgba(53, 211, 153, 0.25);
-      color: #9ef59f;
-      box-shadow: 0 0 8px 2px rgba(53,211,153,0.25);
-    }
-    /* Sección promocional de la Guía en el home */
-    .guide-promo {
-      margin: 1.25rem auto 1.5rem;
-    }
-    .promo-grid {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .promo-card {
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      padding: 16px;
-      background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35));
-    }
-    .promo-card h3 { margin: 0 0 .5rem 0; color: var(--vac-text); }
-    .promo-card p { margin: 0 0 .5rem 0; color: var(--vac-muted); }
-    .promo-card ul { margin: 0; padding-left: 1rem; color: var(--vac-text); }
-    @media (max-width: 900px){ .promo-grid { grid-template-columns: 1fr; } }
-  </style>
-  <!-- Google Analytics: carga en idle, respetando DNT y Save-Data -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    function vacDNTEnabled(){
-      try {
-        var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack || '').toString().toLowerCase();
-        return dnt === '1' || dnt === 'yes' || dnt === 'true';
-      } catch(_) { return false; }
-    }
-    function vacSaveData(){
-      try { return !!(navigator.connection && navigator.connection.saveData); } catch(_) { return false; }
-    }
-    function vacLoadGA(){
-      var script = document.createElement('script');
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-132SN84E79';
-      script.async = true;
-      document.head.appendChild(script);
-      gtag('js', new Date());
-      gtag('config', 'G-132SN84E79', { anonymize_ip: true, transport_type: 'beacon' });
-    }
-    window.addEventListener('load', function(){
-      if (vacDNTEnabled() || vacSaveData()) return;
-      var ric = window.requestIdleCallback || function(fn){ setTimeout(fn, 2500); };
-      ric(vacLoadGA);
-    });
-  </script>
+  <!-- Silenciador de consola movido a módulo externo -->
+  <script src="scripts/console-silencer.min.js"></script>
+  <!-- Estilos movidos a styles.min.css/styles.css -->
+  <!-- Google Analytics movido a módulo externo -->
+  <script defer src="scripts/analytics.min.js"></script>
 </head>
 <body id="inicio">
   <a class="skip-link" href="#contenido-principal">Saltar al contenido principal</a>
@@ -516,6 +311,23 @@
           </div>
         </div>
       </div>
+  </section>
+
+    <section class="section" id="que-es" aria-labelledby="que-es-title">
+      <div class="section-header">
+        <h2 id="que-es-title">¿QUÉ ES LA VUELTA AL CÓNDOR?</h2>
+        <p>Hola a todxs, somos Dinno y Bane, organizadores de Vuelta a los Durmientes y parte de “El Rey de la Montaña”. <br/>Mucho gusto y gracias por estar presentes en este nuevo reto.</p>
+      </div>
+      <div class="gpx-card">
+        <p>La Vuelta al Cóndor es una <strong>ruta convertida en carrera</strong> por su trayecto espectacular: trazar la silueta de la Ciudad de México saliendo desde su corazón, la Plaza de la Constitución (Zócalo).</p>
+        <ul>
+          <li>187 kilómetros y 3000 m+ acumulados.</li>
+          <li>Tiempo máximo de 16 horas: la meta se cierra a las 22:00 del sábado 29 de noviembre.</li>
+          <li>La validación se realiza con tu <strong>track y altimetría</strong> en una plataforma que registre la ruta.</li>
+          <li><a href="route/vac.gpx" download>Descarga/Solicita el <strong>archivo .gpx oficial</strong></a> para evitar confusiones.</li>
+          <li>Formato <strong>autosuficiente</strong>: administra tu energía, tiempo, alimentación y mente.</li>
+        </ul>
+      </div>
     </section>
 
     <section class="section" id="detalles" aria-labelledby="detalles-title">
@@ -528,11 +340,25 @@
           <h3>Salida</h3>
           <span>29 de noviembre 2025 · 06:00</span>
           <p>Zócalo de la Ciudad de México. Check-in nocturno con control de luces y equipamiento obligatorio.</p>
+          <p><strong>Entrega de kits</strong> el día del evento: 4:30–5:45 am en el Zócalo.</p>
+        </article>
+        <article class="detail-card">
+          <h3>Entrega de kits</h3>
+          <ul>
+            <li>Jueves 27 · 4:00–8:00 pm · Basica estudio (colonia Doctores)</li>
+            <li>Viernes 28 · 4:00–8:00 pm · Basica estudio (colonia Doctores)</li>
+            <li>Sábado 29 · 4:30–5:45 am · Zócalo de la Ciudad de México</li>
+          </ul>
         </article>
         <article class="detail-card">
           <h3>Meta</h3>
           <span>Okupache C.U. · Km 187</span>
           <p>Llegada celebratoria en Ciudad Universitaria con hidratación, zona de recuperación y señalización táctica.</p>
+        </article>
+        <article class="detail-card">
+          <h3>Tiempo a vencer</h3>
+          <span>Diego López · 6H 5</span>
+          <p>Récord de referencia para personas élite.</p>
         </article>
         <article class="detail-card">
           <h3>Formato autosuficiente</h3>
@@ -573,7 +399,7 @@
         </article>
         <article class="route-item">
           <h3>Okupache C.U. · Meta</h3>
-          <span>Km 187 · 06:00-20:00</span>
+          <span>Km 187 · 06:00-22:00</span>
           <p>Recepción con comunidad ciclista, actividades culturales y evento de clausura libre de discriminación.</p>
         </article>
       </div>
@@ -581,6 +407,24 @@
         <img src="images/VAC-ruta-labeled.png" alt="Mapa ilustrado de la Vuelta al Cóndor 2025 con los puertos La Loma, Cañón de Lobos, Tres Marías y la meta en Okupache C.U." loading="lazy" decoding="async" width="1200" height="720">
         <figcaption>La ruta recorre carreteras federales y caminos locales señalizados. Respeta cruces urbanos y mantente visible en todo momento.</figcaption>
       </figure>
+    </section>
+
+    <section class="section" id="referencias" aria-labelledby="referencias-title">
+      <div class="section-header">
+        <h2 id="referencias-title">Puntos de referencia (NO checkpoints)</h2>
+        <p>Estos puntos ayudan a ubicar la progresión en la ruta. No es necesario detenerse ni tomar fotos o video; la validación se hará por tu track y ubicación en tiempo real.</p>
+      </div>
+      <div class="gpx-card">
+        <ul>
+          <li>Mirador “La Loma”</li>
+          <li>Oaxtepec “Centro”</li>
+          <li>Cañón de Lobos</li>
+          <li>Cuernavaca “Centro”</li>
+          <li>Tres Marías</li>
+          <li>Meta “Ciudad Universitaria Okupache” (Auditorio)</li>
+        </ul>
+        <p class="muted">Recuerda: no son puntos de control. Sigue tu ritmo y comparte ubicación en tiempo real según el reglamento.</p>
+      </div>
     </section>
 
     <section class="section" id="altimetria" aria-labelledby="altimetria-title">
@@ -602,7 +446,7 @@
         <p>Descarga el track certificado. No se permiten atajos ni rodadas fuera de ruta.</p>
       </div>
       <div class="gpx-card">
-        <p>El archivo <strong>vac.gpx</strong> fue validado en Strava y Garmin Connect. Incluye puntos de control, zonas de abastecimiento sugeridas y alertas de seguridad.</p>
+        <p>El archivo <strong>vac.gpx</strong> fue validado en Strava y Garmin Connect. Incluye <strong></strong>puntos de referencia</strong> (NO son checkpoints), zonas de abastecimiento sugeridas y alertas de seguridad.</p>
         <ul>
           <li>No salirse de la ruta marcada. Cualquier recorte implica descalificación.</li>
           <li>Sincroniza el track con tu dispositivo al menos 24 horas antes para evitar problemas de carga.</li>
@@ -631,6 +475,20 @@
           <p>Configura número de emergencia, comparte tu ubicación con contactos de confianza y guarda nuestra línea directa en WhatsApp.</p>
         </article>
       </div>
+      <div class="gpx-card u-mt-1_5rem">
+        <h3>¿Qué se recomienda llevar?</h3>
+        <ul>
+          <li>Casco certificado y guantes.</li>
+          <li>Luces delantera y trasera (autonomía ≥8 h) y reflectantes visibles.</li>
+          <li>Ropa térmica por capas: cortavientos, impermeable si clima, buff.</li>
+          <li>Kit de reparación: cámara/insert, bomba o CO₂, multiherramienta.</li>
+          <li>Dispositivo GPS con el <strong>GPX oficial</strong> y copia offline en celular.</li>
+          <li>Batería externa para el celular y/o GPS.</li>
+          <li>Hidratación y sales suficientes; geles/carbohidratos para 16 h.</li>
+          <li>Dinero en efectivo y credencial de identificación.</li>
+          <li>Botiquín básico y contactos de emergencia.</li>
+        </ul>
+      </div>
     </section>
 
     <section class="section guide-promo" id="guia-promo" aria-labelledby="guia-promo-title">
@@ -658,7 +516,7 @@
           </ul>
         </article>
       </div>
-      <div class="hero-cta" style="margin-top: 0.75rem">
+      <div class="hero-cta u-mt-12">
         <a class="button primary" href="guia.html">Ir a la Guía</a>
         <a class="button secondary" href="guia.html#herramienta">Calcular estrategia personal</a>
       </div>
@@ -669,10 +527,10 @@
         <h2 id="patrocinadores-title">Patrocinadores y aliados</h2>
         <p>Gracias a las marcas y proyectos que sostienen la logística, la seguridad y los espacios comunitarios de este desafío.</p>
       </div>
-      <div class="sponsor-grid" data-sponsors-grid aria-live="polite">
+      <div id="sponsor-grid" class="sponsor-grid" data-sponsors-grid aria-live="polite">
         <p class="visually-hidden">Los logotipos se cargarán automáticamente cuando esta sección sea visible.</p>
       </div>
-      <p style="margin-top: 1.5rem; color: var(--vac-muted);">¿Quieres sumar tu marca? Escríbenos para integrar iniciativas responsables y libres de discriminación.</p>
+      <p class="u-mt-1_5rem muted">¿Quieres sumar tu marca? Escríbenos para integrar iniciativas responsables y libres de discriminación.</p>
     </section>
 
     <section class="section" id="faq" aria-labelledby="faq-title">
@@ -684,7 +542,7 @@
         <details class="faq-item">
           <summary>¿Qué incluye la inscripción?</summary>
           <div>
-            <p>Número oficial, buff del evento, comida, rastreo de progreso, acceso a puntos de control con primeros auxilios, cobertura fotográfica y acompañamiento. El kit se entrega el 29 de noviembre a partir de las 05:00.</p>
+            <p>Número oficial, buff del evento, comida, rastreo de progreso, acompañamiento comunitario y cobertura fotográfica. Entrega de kits: jueves 27 y viernes 28 de 4:00 a 8:00 pm en Basica estudio (colonia Doctores); sábado 29 de 4:30 a 5:45 am en el Zócalo de la Ciudad de México.</p>
           </div>
         </details>
         <details class="faq-item">
@@ -714,14 +572,14 @@
         <p>Estas reglas garantizan un evento seguro, justo e inclusivo. Debes aceptarlas al concluir tu registro.</p>
       </div>
       <ul class="reglamento-list">
-        <li>Respetar la ruta oficial sin recortes ni traslados motorizados.</li>
+        <li>Seguir la <strong>ruta oficial</strong> con el GPX publicado: sin recortes ni traslados motorizados.</li>
+        <li>Formato <strong>autosuficiente</strong>: sin caravanas motorizadas ni apoyo externo. Compras en comercios abiertos son válidas; asistencia entre participantes sin vehículos motorizados.</li>
+        <li><strong>No hay checkpoints</strong>: la validación se realiza con tu track y <em>puntos de referencia</em>. Comparte ubicación en tiempo real según las instrucciones.</li>
         <li>Portar casco, luces activas, reflectantes y equipo obligatorio durante todo el evento.</li>
-        <li>No tirar basura. Lleva bolsa personal y utiliza los puntos de acopio comunitario.</li>
-        <li>Registrar cada paso de control en los checkpoints designados.</li>
-        <li>Reportar cualquier incidente de movilidad o salud al staff inmediatamente.</li>
-        <li>Evitar actitudes discriminatorias. Cero tolerancia a violencia verbal, física o simbólica.</li>
-        <li>Dar prioridad a peatones y tráfico local. Respeta reglamentos viales y señalizaciones.</li>
-        <li>Aceptar ajustes climáticos o de ruta comunicados por la organización.</li>
+        <li>No tirar basura: usa bolsa personal y puntos de acopio comunitarios.</li>
+        <li>Respeta reglamentos viales, peatones y tráfico local; prioriza la seguridad en cruces.</li>
+        <li>Cero tolerancia a discriminación, violencia o acoso. Reporta cualquier incidente al staff inmediatamente.</li>
+        <li>Acepta ajustes por clima o seguridad comunicados por la organización. El incumplimiento puede implicar descalificación.</li>
       </ul>
     </section>
 
@@ -738,7 +596,7 @@
         <div class="social-links">
           <a class="button secondary" href="https://www.instagram.com/el.rey.de.la.montana" target="_blank" rel="noopener">📸 Instagram @el.rey.de.la.montana</a>
         </div>
-        <p style="font-size:1rem;margin: 0; color: var(--vac-muted);">Si necesitas adaptaciones adicionales (lengua de señas, apoyo psicológico, accesibilidad motriz) escríbenos y coordinamos contigo.</p>
+        <p class="u-m-0 muted">Si necesitas adaptaciones adicionales (lengua de señas, apoyo psicológico, accesibilidad motriz) escríbenos y coordinamos contigo.</p>
       </div>
       <img src="/rey-de-la-montana.svg" alt="Logotipo de El Rey de la Montaña" width="150" height="48" loading="lazy" decoding="async" class="rey">
     </section>
@@ -751,463 +609,17 @@
     <small class="signature">Landing construida por <a href="https://izignamx.com" target="_blank"><strong>IzignaMx</strong></a></small>
   </footer>
 
-  <script>
-    const navToggle = document.querySelector('.hamburger');
-    const perfToggle = document.querySelector('.perf-toggle');
-    const mobileNav = document.getElementById('mobile-nav');
-    const focusSelectors = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
-    let focusTrap = null;
-
-    function openNav() {
-      if (!navToggle || !mobileNav) return;
-      navToggle.setAttribute('aria-expanded', 'true');
-      mobileNav.hidden = false;
-      mobileNav.classList.add('open');
-      const focusables = mobileNav.querySelectorAll(focusSelectors);
-      if (focusables.length > 0) {
-        focusTrap = { first: focusables[0], last: focusables[focusables.length - 1] };
-        focusTrap.first.focus();
-      }
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeNav() {
-      if (!navToggle || !mobileNav) return;
-      navToggle.setAttribute('aria-expanded', 'false');
-      mobileNav.classList.remove('open');
-      mobileNav.hidden = true;
-      focusTrap = null;
-      document.body.style.overflow = '';
-      navToggle.focus();
-    }
-
-    if (navToggle && mobileNav) {
-      navToggle.addEventListener('click', () => {
-        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-        expanded ? closeNav() : openNav();
-      });
-
-      mobileNav.addEventListener('click', event => {
-        if (event.target instanceof HTMLAnchorElement) {
-          closeNav();
-        }
-      });
-
-      document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
-          closeNav();
-          return;
-        }
-        if (event.key === 'Tab' && mobileNav.classList.contains('open') && focusTrap) {
-          const { first, last } = focusTrap;
-          if (!first || !last) return;
-          if (event.shiftKey && document.activeElement === first) {
-            event.preventDefault();
-            last.focus();
-          } else if (!event.shiftKey && document.activeElement === last) {
-            event.preventDefault();
-            first.focus();
-          }
-        }
-      });
-    }
-
-    const countdownTarget = new Date('2025-11-29T06:00:00-06:00').getTime();
-    // Ventanas de estado del evento
-    const eventStartMs = countdownTarget; // cuando termina el contador
-    const eventEndMs = new Date('2025-11-29T20:00:00-06:00').getTime(); // fin del día de competencia
-    const thanksSwitchMs = eventStartMs + (20 * 60 * 60 * 1000); // 20h después del fin del contador
-
-    // Elementos UI
-    const fireworksCanvas = document.getElementById('fireworks-canvas');
-    const eventBanner = document.getElementById('event-banner');
-    let perfMode = false;
-
-    function applyPerfMode(on) {
-      perfMode = !!on;
-      try {
-        localStorage.setItem('vac_perf_mode', perfMode ? 'on' : 'off');
-      } catch(_) {}
-      if (perfToggle) perfToggle.setAttribute('aria-pressed', String(perfMode));
-      if (perfToggle) {
-        const onTitle = 'Modo rendimiento activado: reducir animaciones y uso de GPU';
-        const offTitle = 'Modo rendimiento desactivado: apariencia completa';
-        perfToggle.title = perfMode ? onTitle : offTitle;
-        perfToggle.setAttribute('aria-label', perfMode ? onTitle : offTitle);
-      }
-      // Fluid background: bajar calidad o reanudar calidad normal
-      if (window.FluidBG && typeof window.FluidBG.setQualityPreset === 'function') {
-        const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const preset = perfMode ? 'minimal' : (reduced ? 'minimal' : 'high');
-        window.FluidBG.setQualityPreset(preset);
-        if (perfMode && window.FluidBG.isRunning && window.FluidBG.isRunning()) {
-          // Mantener animación pero en calidad mínima; no pausamos para conservar estética
-        }
-      }
-      // Fuegos artificiales: desactivar en modo rendimiento
-      if (perfMode) stopFireworks();
-      evaluateEventState(Date.now());
-    }
-
-    // Estado inicial desde almacenamiento
-    try {
-      const saved = localStorage.getItem('vac_perf_mode');
-      if (saved === 'on') applyPerfMode(true);
-    } catch(_) {}
-
-    if (perfToggle) {
-      perfToggle.addEventListener('click', () => {
-        applyPerfMode(!perfMode);
-      });
-    }
-
-    // Motor simple de fuegos artificiales
-    const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let fwCtx = null, fwParticles = [], fwRunning = false, fwAnimId = 0, fwLastSpawn = 0;
-    function fwResize() {
-      if (!fireworksCanvas) return;
-      const dprCap = prefersReducedMotion ? 1.2 : 2;
-      const dpr = Math.min(window.devicePixelRatio || 1, dprCap);
-      fireworksCanvas.width = Math.floor(window.innerWidth * dpr);
-      fireworksCanvas.height = Math.floor(window.innerHeight * dpr);
-      fireworksCanvas.style.width = window.innerWidth + 'px';
-      fireworksCanvas.style.height = window.innerHeight + 'px';
-      if (fwCtx) fwCtx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-    function spawnFirework() {
-      if (!fwCtx) return;
-      const W = window.innerWidth, H = window.innerHeight;
-      const cx = Math.random() * W;
-      const cy = (0.2 + Math.random() * 0.6) * H;
-      const hue = Math.floor(Math.random() * 360);
-      const count = 90 + Math.floor(Math.random() * 60);
-      for (let i = 0; i < count; i++) {
-        const angle = (i / count) * Math.PI * 2;
-        const speed = 2 + Math.random() * 3.5;
-        fwParticles.push({
-          x: cx, y: cy,
-          vx: Math.cos(angle) * speed,
-          vy: Math.sin(angle) * speed,
-          alpha: 1,
-          decay: 0.012 + Math.random() * 0.025,
-          color: `hsl(${hue}, 100%, ${55 + Math.random()*20}%)`
-        });
-      }
-    }
-    function fwStep(ts) {
-      if (!fwCtx) return;
-      if (!fwRunning) return;
-      const now = ts || performance.now();
-      if (now - fwLastSpawn > 550) { // nueva explosión cada ~0.55s
-        spawnFirework();
-        fwLastSpawn = now;
-      }
-      fwCtx.clearRect(0, 0, fireworksCanvas.width, fireworksCanvas.height);
-      fwCtx.globalCompositeOperation = 'lighter';
-      for (let i = fwParticles.length - 1; i >= 0; i--) {
-        const p = fwParticles[i];
-        p.x += p.vx;
-        p.y += p.vy;
-        p.vx *= 0.985; // ligera fricción
-        p.vy *= 0.985; // ligera fricción
-        p.vy += 0.02;  // gravedad
-        p.alpha -= p.decay;
-        if (p.alpha <= 0 || p.y > window.innerHeight + 40) {
-          fwParticles.splice(i, 1);
-          continue;
-        }
-        fwCtx.globalAlpha = Math.max(p.alpha, 0);
-        fwCtx.fillStyle = p.color;
-        fwCtx.beginPath();
-        fwCtx.arc(p.x, p.y, 2.2, 0, Math.PI * 2);
-        fwCtx.fill();
-      }
-      fwAnimId = requestAnimationFrame(fwStep);
-    }
-    function startFireworks() {
-      if (fwRunning || !fireworksCanvas || perfMode) return;
-      if (prefersReducedMotion || document.visibilityState !== 'visible') return;
-      fireworksCanvas.style.display = 'block';
-      fwCtx = fireworksCanvas.getContext('2d');
-      fwParticles = [];
-      fwRunning = true;
-      fwLastSpawn = performance.now();
-      fwResize();
-      fwAnimId = requestAnimationFrame(fwStep);
-    }
-    function stopFireworks() {
-      if (!fwRunning) return;
-      fwRunning = false;
-      fwParticles = [];
-      try { cancelAnimationFrame(fwAnimId); } catch(e) {}
-      fwAnimId = 0;
-      if (fireworksCanvas) fireworksCanvas.style.display = 'none';
-    }
-    window.addEventListener('resize', fwResize, { passive: true });
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'hidden') {
-        stopFireworks();
-      } else {
-        // Re-evaluar estado al volver a ser visible
-        evaluateEventState(Date.now());
-      }
-    });
-
-    // Banner del evento
-    function showBanner(text, type) {
-      if (!eventBanner) return;
-      eventBanner.textContent = text;
-      eventBanner.classList.remove('motivation', 'thanks');
-      if (type) eventBanner.classList.add(type);
-      eventBanner.hidden = false;
-      eventBanner.style.display = 'block';
-    }
-    function hideBanner() {
-      if (!eventBanner) return;
-      eventBanner.hidden = true;
-      eventBanner.style.display = 'none';
-    }
-
-    function evaluateEventState(nowTs) {
-      const now = nowTs || Date.now();
-      if (now < eventStartMs) {
-        hideBanner();
-        stopFireworks();
-        return;
-      }
-      // Durante el día de competencia: mostrar mensaje motivacional y fuegos
-      if (now >= eventStartMs && now < eventEndMs) {
-        showBanner('¡Arrancamos! Hoy rodamos fuerte y con respeto. ¡Ánimo ciclistas y afición!', 'motivation');
-        if (!fwRunning) startFireworks();
-        return;
-      }
-      // Tras 20h del fin del contador: mensaje de agradecimiento y sin fuegos
-      if (now >= thanksSwitchMs) {
-        showBanner('¡Gracias por ser parte de la Vuelta al Cóndor! Comunidad, respeto y diversidad.', 'thanks');
-        stopFireworks();
-        return;
-      }
-      // Entre fin del día y antes del cambio a agradecimiento: mantener motivación sin fuegos
-      showBanner('Gran día de competencia. ¡Recupérate y comparte tu experiencia!', 'motivation');
-      stopFireworks();
-    }
-    const countdownValues = {
-      days: document.getElementById('countdown-days'),
-      hours: document.getElementById('countdown-hours'),
-      minutes: document.getElementById('countdown-minutes'),
-      seconds: document.getElementById('countdown-seconds')
-    };
-
-    function pad(value) {
-      return String(value).padStart(2, '0');
-    }
-
-    function updateCountdown() {
-      const now = Date.now();
-      const distance = countdownTarget - now;
-      if (distance <= 0) {
-        Object.values(countdownValues).forEach(node => {
-          if (node) node.textContent = '00';
-        });
-        // Activar estado del evento al terminar el contador
-        evaluateEventState(now);
-        return;
-      }
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((distance / (1000 * 60)) % 60);
-      const seconds = Math.floor((distance / 1000) % 60);
-      if (countdownValues.days) countdownValues.days.textContent = pad(days);
-      if (countdownValues.hours) countdownValues.hours.textContent = pad(hours);
-      if (countdownValues.minutes) countdownValues.minutes.textContent = pad(minutes);
-      if (countdownValues.seconds) countdownValues.seconds.textContent = pad(seconds);
-      // Mientras corre el contador, ocultar elementos del evento
-      evaluateEventState(now);
-    }
-
-    updateCountdown();
-    window.setInterval(updateCountdown, 1000);
-    // Reevaluar estado cada 30 segundos para cambios de día/umbral
-    window.setInterval(() => evaluateEventState(Date.now()), 30000);
-
-    const sponsorGrid = document.querySelector('[data-sponsors-grid]');
-    const sponsorSection = document.querySelector('[data-sponsors]');
-
-    async function loadSponsors() {
-      if (!sponsorGrid) return;
-      try {
-        const response = await fetch('data/sponsors.json', { cache: 'no-store' });
-        if (!response.ok) throw new Error('No se pudo cargar el listado');
-        const sponsors = await response.json();
-        if (!Array.isArray(sponsors) || sponsors.length === 0) {
-          sponsorGrid.innerHTML = `<p style="color: var(--vac-muted); text-align:center;">Pronto anunciaremos a los patrocinadores confirmados.</p>`;
-          return;
-        }
-        sponsorGrid.innerHTML = '';
-        sponsors.forEach(sponsor => {
-          const card = document.createElement('article');
-          card.className = 'sponsor-card';
-
-          const link = document.createElement('a');
-          link.href = sponsor.url || '#';
-          link.target = '_blank';
-          link.rel = 'noopener';
-          link.setAttribute('aria-label', sponsor.cta || sponsor.name);
-
-          const logo = document.createElement('img');
-          logo.src = sponsor.logo;
-          logo.alt = sponsor.name;
-          logo.loading = 'lazy';
-          logo.decoding = 'async';
-
-          link.appendChild(logo);
-          card.appendChild(link);
-
-          const label = document.createElement('span');
-          label.textContent = sponsor.name;
-          card.appendChild(label);
-
-          sponsorGrid.appendChild(card);
-        });
-      } catch (error) {
-        sponsorGrid.innerHTML = `<p style='color: var(--vac-muted); text-align:center;'>No fue posible cargar los patrocinadores en este momento.</p>`;
-      }
-    }
-
-    if ('IntersectionObserver' in window && sponsorSection) {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            loadSponsors();
-            observer.disconnect();
-          }
-        });
-      }, { rootMargin: '0px 0px -120px 0px' });
-      observer.observe(sponsorSection);
-    } else {
-      loadSponsors();
-    }
-
-    // Service Worker: recarga controlada cuando hay versión nueva
-    if ('serviceWorker' in navigator) {
-      // Manejo de mensaje de actualización desde el SW
-      const RELOAD_KEY = '__vac_reloaded_' + (window.location.pathname || '/');
-      const alreadyReloaded = sessionStorage.getItem(RELOAD_KEY) === '1';
-
-      function handleSwMessage(event) {
-        const data = event.data || {};
-        if (data.type !== 'vac-update' || !data.version) return;
-        const currentVersion = localStorage.getItem('vac_version');
-        if (currentVersion === String(data.version)) return;
-        // Persistir nueva versión y avisar visualmente
-        localStorage.setItem('vac_version', String(data.version));
-        const banner = document.getElementById('event-banner');
-        if (banner) {
-          banner.textContent = 'Actualización disponible. Recargando para aplicar cambios…';
-          banner.classList.add('motivation');
-          banner.hidden = false;
-        }
-        // Recargar una sola vez por página para evitar bucles
-        if (!alreadyReloaded) {
-          sessionStorage.setItem(RELOAD_KEY, '1');
-          setTimeout(() => { window.location.reload(); }, 600);
-        }
-      }
-
-      navigator.serviceWorker.addEventListener('message', handleSwMessage);
-
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js')
-          .then(reg => {
-            // Solicitar verificación de versión explícita al tomar control
-            if (navigator.serviceWorker.controller) {
-              navigator.serviceWorker.controller.postMessage({ type: 'VAC_CHECK_VERSION' });
-            }
-          })
-          .catch(() => {});
-      });
-    }
-  </script>
+  
   <script defer src="./gpu-io.min.js"></script>
-  <!-- Restore console methods once everything has loaded -->
-  <script>
-    // Estado activo accesible en navegación:
-    // - Enlaces a otras páginas: aria-current="page" cuando path coincide.
-    // - Enlaces a secciones internas: NO page; usar aria-current="location" sólo si su sección está en viewport.
-    document.addEventListener('DOMContentLoaded', function(){
-      var links = Array.from(document.querySelectorAll('.nav-links a'));
-      function normalizePath(p){ return (p === '/' || p === '') ? '/' : p.replace(/index\.html$/, '/'); }
-      var current = normalizePath(location.pathname);
-      var sectionLinks = [];
-      links.forEach(function(a){
-        var href = a.getAttribute('href');
-        try {
-          var u = new URL(href, location.origin);
-          var pathSame = normalizePath(u.pathname) === current;
-          var hasHash = !!u.hash || (href && href.charAt(0) === '#');
-          if (pathSame && hasHash) {
-            // Link interno a sección: gestionar por visibilidad de la sección
-            a.removeAttribute('aria-current');
-            var id = (u.hash || '').slice(1) || (href && href.charAt(0)==='#' ? href.slice(1) : '');
-            if (id) { a.dataset.observeTarget = id; sectionLinks.push(a); }
-          } else {
-            // Link a otra página
-            a.setAttribute('aria-current', pathSame && !hasHash ? 'page' : null);
-          }
-        } catch(_){ /* noop */ }
-      });
-
-      // Observer para resaltar sección visible
-      if (sectionLinks.length && 'IntersectionObserver' in window) {
-        var targets = sectionLinks
-          .map(function(a){ return document.getElementById(a.dataset.observeTarget); })
-          .filter(function(el){ return !!el; });
-        try {
-          var obs = new IntersectionObserver(function(entries){
-            entries.forEach(function(entry){
-              var id = entry.target.id;
-              var inView = entry.isIntersecting;
-              sectionLinks.forEach(function(a){
-                if (a.dataset.observeTarget === id) {
-                  if (inView) a.setAttribute('aria-current','location');
-                  else if (a.getAttribute('aria-current') === 'location') a.removeAttribute('aria-current');
-                }
-              });
-            });
-          }, { rootMargin: '-45% 0px -45% 0px', threshold: 0.15 });
-          targets.forEach(function(el){ obs.observe(el); });
-        } catch(_){ /* silently ignore */ }
-      }
-    });
-
-    // Mostrar/ocultar botón de Feedback según scroll
-    document.addEventListener('DOMContentLoaded', function(){
-      var fb = document.getElementById('feedback-floating');
-      if (!fb) return;
-      var showAt = 500;
-      function onScroll(){ fb.style.display = (window.scrollY > showAt) ? 'inline-flex' : 'none'; }
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-    });
-    window.addEventListener('load', function() {
-      try {
-        var c = window.console || {};
-        var o = window.__consoleOriginal;
-        if (o) {
-          c.log = o.log;
-          c.info = o.info;
-          c.debug = o.debug;
-          c.trace = o.trace;
-          c.group = o.group;
-          c.groupCollapsed = o.groupCollapsed;
-          c.groupEnd = o.groupEnd;
-        }
-        window.__consoleOriginal = null;
-      } catch (e) {
-        // intentionally silent
-      }
-    }, { once: true });
-  </script>
+  <!-- Módulos externos -->
+  <script defer src="scripts/event.min.js"></script>
+  <script defer src="scripts/performance.min.js"></script>
+  <script defer src="scripts/countdown.min.js"></script>
+  <script defer src="scripts/sponsors.min.js"></script>
+  <script defer src="scripts/sw-register.min.js"></script>
+  <script defer src="scripts/nav.min.js"></script>
+  <script defer src="scripts/aria.min.js"></script>
+  <script defer src="scripts/console-restore.min.js"></script>
   <script defer src="./fluid-background.js"></script>
 </body>
 </html>
