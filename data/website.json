@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Vuelta al Condor",
+  "url": "https://condor.izignamx.com/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://condor.izignamx.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}

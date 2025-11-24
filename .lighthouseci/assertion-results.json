@@ -10,9 +10,24 @@
     "passed": false,
     "auditId": "legacy-javascript",
     "level": "warn",
-    "url": "http://localhost:63140/index.html",
+    "url": "http://localhost:54776/index.html",
     "auditTitle": "Avoid serving legacy JavaScript to modern browsers",
     "auditDocumentationLink": "https://web.dev/baseline"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.05,
+    "actual": 0.04,
+    "values": [
+      0.04
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "speed-index",
+    "level": "warn",
+    "url": "http://localhost:54776/index.html",
+    "auditTitle": "Speed Index",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/speed-index/"
   },
   {
     "name": "minScore",
@@ -25,22 +40,22 @@
     "passed": false,
     "auditId": "largest-contentful-paint",
     "level": "warn",
-    "url": "http://localhost:63140/index.html",
+    "url": "http://localhost:54776/index.html",
     "auditTitle": "Largest Contentful Paint",
     "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
   },
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.5,
+    "actual": 0,
     "values": [
-      0.5
+      0
     ],
     "operator": ">=",
     "passed": false,
     "auditId": "mainthread-work-breakdown",
     "level": "warn",
-    "url": "http://localhost:63140/index.html",
+    "url": "http://localhost:54776/index.html",
     "auditTitle": "Minimize main-thread work",
     "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/"
   },
@@ -55,9 +70,24 @@
     "passed": false,
     "auditId": "legacy-javascript",
     "level": "warn",
-    "url": "http://localhost:63140/guia.html",
+    "url": "http://localhost:54776/guia.html",
     "auditTitle": "Avoid serving legacy JavaScript to modern browsers",
     "auditDocumentationLink": "https://web.dev/baseline"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.05,
+    "actual": 0.03,
+    "values": [
+      0.03
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "speed-index",
+    "level": "warn",
+    "url": "http://localhost:54776/guia.html",
+    "auditTitle": "Speed Index",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/speed-index/"
   },
   {
     "name": "minScore",
@@ -70,22 +100,22 @@
     "passed": false,
     "auditId": "largest-contentful-paint",
     "level": "warn",
-    "url": "http://localhost:63140/guia.html",
+    "url": "http://localhost:54776/guia.html",
     "auditTitle": "Largest Contentful Paint",
     "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
   },
   {
     "name": "minScore",
     "expected": 0.9,
-    "actual": 0.5,
+    "actual": 0,
     "values": [
-      0.5
+      0
     ],
     "operator": ">=",
     "passed": false,
     "auditId": "mainthread-work-breakdown",
     "level": "warn",
-    "url": "http://localhost:63140/guia.html",
+    "url": "http://localhost:54776/guia.html",
     "auditTitle": "Minimize main-thread work",
     "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/"
   },
@@ -100,9 +130,24 @@
     "passed": false,
     "auditId": "legacy-javascript",
     "level": "warn",
-    "url": "http://localhost:63140/corredores.html",
+    "url": "http://localhost:54776/corredores.html",
     "auditTitle": "Avoid serving legacy JavaScript to modern browsers",
     "auditDocumentationLink": "https://web.dev/baseline"
+  },
+  {
+    "name": "minScore",
+    "expected": 0.05,
+    "actual": 0.04,
+    "values": [
+      0.04
+    ],
+    "operator": ">=",
+    "passed": false,
+    "auditId": "speed-index",
+    "level": "warn",
+    "url": "http://localhost:54776/corredores.html",
+    "auditTitle": "Speed Index",
+    "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/speed-index/"
   },
   {
     "name": "minScore",
@@ -115,7 +160,7 @@
     "passed": false,
     "auditId": "largest-contentful-paint",
     "level": "warn",
-    "url": "http://localhost:63140/corredores.html",
+    "url": "http://localhost:54776/corredores.html",
     "auditTitle": "Largest Contentful Paint",
     "auditDocumentationLink": "https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/"
   }

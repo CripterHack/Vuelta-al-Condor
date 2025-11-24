@@ -1,0 +1,24 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guía",
+      "item": "/guia.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Corredores",
+      "item": "/corredores.html"
+    }
+  ]
+}

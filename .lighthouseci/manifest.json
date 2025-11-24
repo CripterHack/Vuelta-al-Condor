@@ -1,38 +1,38 @@
 [
   {
-    "url": "http://localhost:63140/index.html",
+    "url": "http://localhost:54776/index.html",
     "isRepresentativeRun": true,
-    "htmlPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-index_html-2025_11_08_08_18_24.report.html",
-    "jsonPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-index_html-2025_11_08_08_18_24.report.json",
+    "htmlPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-index_html-2025_11_08_11_48_55.report.html",
+    "jsonPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-index_html-2025_11_08_11_48_55.report.json",
     "summary": {
-      "performance": 0.56,
+      "performance": 0.34,
       "accessibility": 1,
-      "best-practices": 0.75,
-      "seo": 1
+      "best-practices": 0.93,
+      "seo": 0.92
     }
   },
   {
-    "url": "http://localhost:63140/guia.html",
+    "url": "http://localhost:54776/guia.html",
     "isRepresentativeRun": true,
-    "htmlPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-guia_html-2025_11_08_08_18_40.report.html",
-    "jsonPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-guia_html-2025_11_08_08_18_40.report.json",
+    "htmlPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-guia_html-2025_11_08_11_49_12.report.html",
+    "jsonPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-guia_html-2025_11_08_11_49_12.report.json",
     "summary": {
-      "performance": 0.56,
+      "performance": 0.51,
       "accessibility": 1,
-      "best-practices": 0.75,
-      "seo": 1
+      "best-practices": 0.93,
+      "seo": 0.92
     }
   },
   {
-    "url": "http://localhost:63140/corredores.html",
+    "url": "http://localhost:54776/corredores.html",
     "isRepresentativeRun": true,
-    "htmlPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-corredores_html-2025_11_08_08_18_56.report.html",
-    "jsonPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-corredores_html-2025_11_08_08_18_56.report.json",
+    "htmlPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-corredores_html-2025_11_08_11_49_27.report.html",
+    "jsonPath": "D:\\MEGA\\condor\\vac_site\\.lighthouseci\\localhost-corredores_html-2025_11_08_11_49_27.report.json",
     "summary": {
-      "performance": 0.56,
+      "performance": 0.55,
       "accessibility": 1,
-      "best-practices": 0.75,
-      "seo": 0.69
+      "best-practices": 0.93,
+      "seo": 0.61
     }
   }
 ]

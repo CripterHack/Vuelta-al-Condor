@@ -1,0 +1,21 @@
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Vuelta al Cóndor",
+  "url": "/",
+  "inLanguage": "es-MX",
+  "description": "Sitio oficial de la Vuelta al Cóndor 2025, ultraciclismo autosuficiente e inclusivo desde el Zócalo de CDMX.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "El Rey de la Montaña",
+    "url": "https://www.instagram.com/el.rey.de.la.montana"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}

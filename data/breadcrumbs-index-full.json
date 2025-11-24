@@ -1,0 +1,11 @@
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "/"},
+    {"@type": "ListItem", "position": 2, "name": "Detalles", "item": "/#detalles"},
+    {"@type": "ListItem", "position": 3, "name": "Ruta", "item": "/#ruta"},
+    {"@type": "ListItem", "position": 4, "name": "Patrocinadores", "item": "/#patrocinadores"},
+    {"@type": "ListItem", "position": 5, "name": "Contacto", "item": "/#contacto"}
+  ]
+}

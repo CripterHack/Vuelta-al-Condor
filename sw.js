@@ -1,13 +1,13 @@
-const STATIC_CACHE = 'vac-static-v10';
-const DYNAMIC_CACHE = 'vac-dynamic-v10';
-const APP_VERSION = '2025-11-08-4';
+const STATIC_CACHE = 'vac-static-v11';
+const DYNAMIC_CACHE = 'vac-dynamic-v11';
+const APP_VERSION = '2025-11-08-5';
 
 const STATIC_ASSETS = [
   './',
   'index.html',
   'guia.html',
   'corredores.html',
-  'styles.min.css?v=202511080230',
+  'styles.min.css?v=202511080450',
   'site.webmanifest',
   'favicon.svg',
   'favicon-96x96.png',
