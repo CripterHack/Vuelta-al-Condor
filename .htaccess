@@ -38,6 +38,19 @@
     Header always set Cross-Origin-Opener-Policy "same-origin"
     # HSTS solo sobre HTTPS
     Header always set Strict-Transport-Security "max-age=31536000" env=HTTPS
+    
+    # Content Security Policy (producción)
+    # Nota: esta política coincide con la usada por el dev server en modo estricto
+    # y con las metas en HTML. No permite eval ni inline; habilita Analytics/GTM y Google Fonts.
+    Header set Content-Security-Policy "default-src 'self'; img-src 'self' data: blob: https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src-attr 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://www.googletagmanager.com; script-src-elem 'self' https://www.googletagmanager.com; script-src-attr 'none'; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; worker-src 'self'; media-src 'self'; manifest-src 'self'; frame-src 'self'; form-action 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; upgrade-insecure-requests;"
+
+    # Report-To y Report-Only para capturar violaciones sin bloquear
+    # Report-To (Reporting API) solo se envía bajo HTTPS
+    Header set Report-To '{"group":"csp","max_age":86400,"endpoints":[{"url":"https://condor.izignamx.com/reports/csp-report.php"}]}' env=HTTPS
+    # Reporting-Endpoints (sintaxis más nueva, compatible con algunos navegadores)
+    Header set Reporting-Endpoints 'csp="https://condor.izignamx.com/reports/csp-report.php"' env=HTTPS
+    # CSP Report-Only copia de la política, sin bloqueo, solo reporte
+    Header set Content-Security-Policy-Report-Only "default-src 'self'; img-src 'self' data: blob: https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src-elem 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src-attr 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; script-src 'self' https://www.googletagmanager.com; script-src-elem 'self' https://www.googletagmanager.com; script-src-attr 'none'; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com; worker-src 'self'; media-src 'self'; manifest-src 'self'; frame-src 'self'; form-action 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'; report-uri /reports/csp-report.php; report-to csp;"
 </IfModule>
 
 # Configuración adicional para Apache
