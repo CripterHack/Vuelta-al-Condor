@@ -1,6 +1,13 @@
 // Herramienta de planificación personal de la guía
 // Extraído desde guia.html para cumplir CSP estricto (sin inline scripts)
 (function(){
+  // Parseo robusto de números (soporta coma decimal en móviles/español)
+  function parseNum(val){
+    if (val === undefined || val === null) return NaN;
+    const s = String(val).trim().replace(',', '.');
+    const n = Number(s);
+    return Number.isFinite(n) ? n : NaN;
+  }
   const distTotalKm = 187;
   const segmentos = [
     { nombre: "Zócalo → La Loma",   kmIni: 0,   kmFin: 50 },
@@ -238,17 +245,33 @@
   const $ = (sel)=>document.querySelector(sel);
   const perfil = { edad:$("#edad"), est:$("#estatura"), peso:$("#peso"), nivel:$("#nivel"), horas:$("#horas"), objetivo:$("#objetivo"), clima:$("#clima"), sudor:$("#sudor"), tol:$("#tolerancia"), bidon:$("#bidon"), cafe:$("#cafe"), mgkg:$("#mgkg"), tipoBici:$("#tipoBici"), pesoBici:$("#pesoBici"), rodada:$("#rodada"), anchoLlanta:$("#anchoLlanta") };
   if (perfil.objetivo) { perfil.objetivo.addEventListener('blur', function(){ formatearTiempoObjetivoInput(perfil.objetivo); }); }
-  const btnGenerar=$("#generar"), btnLimpiar=$("#limpiar"), contSalida=$("#salida"), kpi=$("#kpi"), objetivosUl=$("#objetivos"), segDiv=$("#segmentos"), racionesUl=$("#raciones"), btnDesc=$("#descargar"), avisoCafe=$("#avisoCafe");
+  const btnGenerar=$("#generar"), btnLimpiar=$("#limpiar"), contSalida=$("#salida"), kpi=$("#kpi"), objetivosUl=$("#objetivos"), segDiv=$("#segmentos"), racionesUl=$("#raciones"), btnDesc=$("#descargar"), avisoCafe=$("#avisoCafe"), avisoError=$("#avisoError");
+  function showError(msg){
+    if (avisoError){
+      avisoError.innerHTML = msg;
+      avisoError.hidden = false;
+      try { avisoError.focus(); } catch(_){ }
+    } else {
+      // Fallback si no existe contenedor accesible
+      alert(msg);
+    }
+  }
   btnLimpiar.addEventListener("click", ()=>{ document.getElementById("perfil").reset(); contSalida.hidden = true; kpi.innerHTML = objetivosUl.innerHTML = segDiv.innerHTML = racionesUl.innerHTML = ""; if(avisoCafe){ avisoCafe.hidden = true; avisoCafe.innerHTML=""; } });
   btnGenerar.addEventListener("click", (e)=>{
     e.preventDefault();
-    const edad=Number(perfil.edad.value||0), est=Number(perfil.est.value||0), peso=Number(perfil.peso.value||0), nivel=perfil.nivel.value, horasSem=Number(perfil.horas.value||0), clima=perfil.clima.value, sudor=perfil.sudor.value, tol=perfil.tol.value, bidonRaw=Number(perfil.bidon.value), usaCafe=perfil.cafe.value==="si", mgkg=clamp(Number(perfil.mgkg.value||0), 0, 6);
-    const bidon = clamp(bidonRaw||600, 200, 1200);
+    const edad=parseNum(perfil.edad.value), est=parseNum(perfil.est.value), peso=parseNum(perfil.peso.value), nivel=perfil.nivel.value, horasSem=parseNum(perfil.horas.value), clima=perfil.clima.value, sudor=perfil.sudor.value, tol=perfil.tol.value, bidonRaw=parseNum(perfil.bidon.value), usaCafe=perfil.cafe.value==="si", mgkg=clamp(parseNum(perfil.mgkg.value), 0, 6);
+    const bidon = clamp((Number.isFinite(bidonRaw)?bidonRaw:600), 200, 1200);
     const tipoBici = (perfil.tipoBici && perfil.tipoBici.value) ? perfil.tipoBici.value : null;
-    const pesoBici = (perfil.pesoBici && perfil.pesoBici.value) ? clamp(Number(perfil.pesoBici.value), 5, 25) : null;
+    const pesoBici = (perfil.pesoBici && perfil.pesoBici.value) ? clamp(parseNum(perfil.pesoBici.value), 5, 25) : null;
     const rodada = (perfil.rodada && perfil.rodada.value) ? perfil.rodada.value : null;
-    const anchoLlanta = (perfil.anchoLlanta && perfil.anchoLlanta.value) ? clamp(Number(perfil.anchoLlanta.value), 18, 65) : null;
-    if(!edad||!est||!peso||!horasSem){ alert("Completa edad, estatura, peso y horas de entrenamiento/semana."); return; }
+    const anchoLlanta = (perfil.anchoLlanta && perfil.anchoLlanta.value) ? clamp(parseNum(perfil.anchoLlanta.value), 18, 65) : null;
+    const valid = Number.isFinite(edad) && edad>0 && Number.isFinite(est) && est>0 && Number.isFinite(peso) && peso>0 && Number.isFinite(horasSem) && horasSem>=0;
+    if(!valid){
+      showError("Completa edad, estatura y peso. Las horas pueden ser 0.");
+      contSalida.hidden = true;
+      return;
+    }
+    if (avisoError){ avisoError.hidden = true; avisoError.innerHTML = ""; }
     formatearTiempoObjetivoInput(perfil.objetivo);
     let tObjetivo = parseTiempoHHMM(perfil.objetivo.value||"");
     let usarTiempoObjetivo = (tObjetivo !== null);
