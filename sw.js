@@ -1,6 +1,6 @@
-const STATIC_CACHE = 'vac-static-v11';
-const DYNAMIC_CACHE = 'vac-dynamic-v11';
-const APP_VERSION = '2025-11-08-5';
+const STATIC_CACHE = 'vac-static-v12';
+const DYNAMIC_CACHE = 'vac-dynamic-v12';
+const APP_VERSION = '2025-11-25-1';
 
 const STATIC_ASSETS = [
   './',
