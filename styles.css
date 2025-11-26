@@ -746,6 +746,10 @@ a:focus-visible {
   border-radius: 6px;
 }
 
+@media (max-width: 1024px) {
+  .inclusive-badge {margin:0 auto}
+}
+
 .hero-stats {
   display: -ms-grid;
   display: grid;
@@ -1033,7 +1037,7 @@ ul:not(.nav-links) li:last-child {
 }
 
 .sponsor-card img {
-  max-height: 82px;
+  max-height: 100px;
   width: auto;
   -o-object-fit: contain;
      object-fit: contain;
@@ -1203,12 +1207,6 @@ ul:not(.nav-links) li:last-child {
             align-items: center;
   }
 
-  .hero-cta {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-
   .hero-media img {
     width: min(260px, 70%);
   }
@@ -1361,9 +1359,13 @@ ul:not(.nav-links) li:last-child {
 
 .sponsor-card img[src*="/sponsors/izignamx.png"] {
   background-color: transparent;
-  -webkit-transform: scale(1.5);
-      -ms-transform: scale(1.5);
-          transform: scale(1.5);
+  -webkit-transform: scale(1.15);
+      -ms-transform: scale(1.15);
+          transform: scale(1.15);
+}
+.sponsor-card img[src*="/sponsors/rodando-pulque.jpg"], .sponsor-card__alt img {
+  background-color: transparent;
+  padding: 0;
 }
 
 @media (max-width:489px) {
