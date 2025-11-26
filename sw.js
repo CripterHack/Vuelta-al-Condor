@@ -1,13 +1,13 @@
-const STATIC_CACHE = 'vac-static-v12';
-const DYNAMIC_CACHE = 'vac-dynamic-v12';
-const APP_VERSION = '2025-11-25-1';
+const STATIC_CACHE = 'vac-static-v15';
+const DYNAMIC_CACHE = 'vac-dynamic-v15';
+const APP_VERSION = '2025-11-25-4';
 
 const STATIC_ASSETS = [
   './',
   'index.html',
   'guia.html',
   'corredores.html',
-  'styles.min.css?v=202511080450',
+  'styles.min.css?v=202511252235',
   'site.webmanifest',
   'favicon.svg',
   'favicon-96x96.png',
@@ -21,15 +21,30 @@ const STATIC_ASSETS = [
   'images/valley-2400.webp',
   'images/valley-3200.webp',
   'images/VAC-red.png',
-  'images/VAC-altimetria-labeled.svg',
-  'images/VAC-ruta-labeled.svg',
+  'images/VAC-red-320.avif',
+  'images/promo-1200.avif',
+  'images/VAC-altimetria-labeled.png',
+  'images/VAC-ruta-labeled.png',
   'images/lgbtq_flag.svg',
-  'data/sponsors.json',
+  'data/sponsors.json?v=202511252220',
   'route/vac.gpx',
   'gpu-io.min.js',
   'fluid-background.js',
   'VAC_Checklist_Autosuficiente.pdf',
-  'VAC_Plantilla_Top_Tube.png'
+  'VAC_Plantilla_Top_Tube.png',
+  'scripts/analytics.min.js',
+  'scripts/aria.min.js',
+  'scripts/console-easter-egg.min.js',
+  'scripts/console-restore.min.js',
+  'scripts/console-silencer.min.js',
+  'scripts/countdown.min.js',
+  'scripts/event.min.js',
+  'scripts/guide.min.js',
+  'scripts/guide-tools.min.js?v=20251125',
+  'scripts/nav.min.js',
+  'scripts/performance.min.js',
+  'scripts/sponsors.min.js?v=202511252220',
+  'scripts/sw-register.min.js'
 ];
 
 self.addEventListener('install', event => {
