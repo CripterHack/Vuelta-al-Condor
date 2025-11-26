@@ -1,5 +1,4 @@
-// Carga de patrocinadores con IntersectionObserver y mensajes sin estilos inline
-(function(){
+ (function(){
   const sponsorGrid = document.getElementById('sponsor-grid') || document.querySelector('[data-sponsors-grid]');
   if (!sponsorGrid) return;
 
@@ -18,12 +17,22 @@
       if (!Array.isArray(list) || list.length === 0){ renderEmpty(); return; }
       const frag = document.createDocumentFragment();
       list.forEach(s => {
-        const card = document.createElement('div');
+        const hasUrl = typeof s.url === 'string' && s.url.length > 0;
+        const card = document.createElement(hasUrl ? 'a' : 'div');
         card.className = 'sponsor-card';
+        if (hasUrl){
+          card.href = s.url;
+          card.target = '_blank';
+          card.rel = 'noopener sponsored';
+          if (s.cta) card.title = s.cta;
+          const label = s.cta ? `${s.cta}` : (s.name || 'Patrocinador');
+          card.setAttribute('aria-label', label);
+        }
         const img = document.createElement('img');
         img.loading = 'lazy';
         img.decoding = 'async';
-        img.alt = s.name || 'Patrocinador';
+        img.setAttribute('fetchpriority', 'low');
+        img.alt = s.name ? `Logo ${s.name}` : 'Logo patrocinador';
         img.src = s.logo;
         card.appendChild(img);
         frag.appendChild(card);
