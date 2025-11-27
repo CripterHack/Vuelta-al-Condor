@@ -26,7 +26,7 @@ const STATIC_ASSETS = [
   'images/VAC-altimetria-labeled.png',
   'images/VAC-ruta-labeled.png',
   'images/lgbtq_flag.svg',
-  'data/sponsors.json?v=202511252220',
+  'data/sponsors.json?v=202511270420',
   'route/vac.gpx',
   'gpu-io.min.js',
   'fluid-background.js',
@@ -43,7 +43,7 @@ const STATIC_ASSETS = [
   'scripts/guide-tools.min.js?v=20251125',
   'scripts/nav.min.js',
   'scripts/performance.min.js',
-  'scripts/sponsors.min.js?v=202511252220',
+  'scripts/sponsors.min.js?v=202511270420',
   'scripts/sw-register.min.js'
 ];
 
