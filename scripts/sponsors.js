@@ -19,7 +19,7 @@
       list.forEach(s => {
         const hasUrl = typeof s.url === 'string' && s.url.length > 0;
         const card = document.createElement(hasUrl ? 'a' : 'div');
-        card.className = 'sponsor-card';
+        card.className = s.class ? `sponsor-card ${s.class}` : 'sponsor-card';
         if (hasUrl){
           card.href = s.url;
           card.target = '_blank';
