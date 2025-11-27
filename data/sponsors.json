@@ -15,7 +15,8 @@
     "name": "La Hamburguesa Nómada",
     "logo": "/sponsors/hamburguesa-nomada.png",
     "url": "https://www.instagram.com/hamburguesanomada?utm_source=landing_condor_izignamx",
-    "cta": "La Hamburguesa Nómada - Instagram"
+    "cta": "La Hamburguesa Nómada - Instagram",
+    "class": "sponsor-card__alt"
   },
   {
     "name": "CHÁAKgear",
@@ -64,5 +65,33 @@
      "logo": "/sponsors/ban-bang-fotografia.jpg",
      "url": "https://www.instagram.com/ban_bang_roo?utm_source=landing_condor_izignamx",
      "cta": "Seguir a Ban Bang®"
+  },
+  {
+     "name": "Bien Veggis",
+     "logo": "/sponsors/bien-veggis.jpg",
+     "url": "https://www.instagram.com/bienveggis?utm_source=landing_condor_izignamx",
+     "cta": "Seguir a Bien Veggis",
+     "class": "sponsor-card__alt"
+  },
+  {
+     "name": "Tirando Blum",
+     "logo": "/sponsors/tirando-blum.jpg",
+     "url": "https://www.instagram.com/tirando.blum?utm_source=landing_condor_izignamx",
+     "cta": "Seguir a Tirando Blum",
+     "class": "sponsor-card__alt"
+  },
+  {
+     "name": "Salvia café",
+     "logo": "/sponsors/salvia-cafe.png",
+     "url": "https://www.instagram.com/s4lvia.cafe?utm_source=landing_condor_izignamx",
+     "cta": "Seguir a Salvia café",
+     "class": "sponsor-card__alt"
+  },
+  {
+     "name": "!Kampai!",
+     "logo": "/sponsors/kampai.jpg",
+     "url": "https://www.instagram.com/fermentos.kampai?utm_source=landing_condor_izignamx",
+     "cta": "Seguir a !Kampai!",
+     "class": "sponsor-card__alt"
   }
 ]
