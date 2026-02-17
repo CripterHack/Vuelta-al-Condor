@@ -1350,11 +1350,18 @@ ul:not(.nav-links) li:last-child {
   border: 0;
 }
 
+.sponsor-card img:hover,
+.sponsor-card img:focus {
+    transform: scale(1.42);
+}
 .sponsor-card img[src*="/sponsors/akticore.png"] {
   background-color: transparent;
   -webkit-transform: scale(2);
       -ms-transform: scale(2);
           transform: scale(2);
+}
+.sponsor-card img:hover {
+    transform: scale(2.05);
 }
 
 .sponsor-card img[src*="/sponsors/izignamx.png"] {

@@ -1,6 +1,6 @@
-const STATIC_CACHE = 'vac-static-v15';
-const DYNAMIC_CACHE = 'vac-dynamic-v15';
-const APP_VERSION = '2025-11-25-4';
+const STATIC_CACHE = 'vac-static-v16';
+const DYNAMIC_CACHE = 'vac-dynamic-v16';
+const APP_VERSION = '2025-11-25-5';
 
 const STATIC_ASSETS = [
   './',
@@ -26,7 +26,7 @@ const STATIC_ASSETS = [
   'images/VAC-altimetria-labeled.png',
   'images/VAC-ruta-labeled.png',
   'images/lgbtq_flag.svg',
-  'data/sponsors.json?v=202511270420',
+  'data/sponsors.json?v=202511270910',
   'route/vac.gpx',
   'gpu-io.min.js',
   'fluid-background.js',
