@@ -7,7 +7,7 @@
     if (details) {
       var mq = window.matchMedia('(max-width: 1024px)');
       var apply = function(){ details.open = !mq.matches; };
-      try { apply(); mq.addEventListener('change', apply); } catch(_){ }
+      try { apply(); mq.addEventListener('change', apply); } catch{ }
     }
 
     var back = document.getElementById('back-to-index');
@@ -15,9 +15,9 @@
       var showAt = 600;
       function onScroll(){ var visible = window.scrollY > showAt; back.classList.toggle('is-visible', visible); }
       window.addEventListener('scroll', onScroll, { passive: true });
-      try { onScroll(); } catch(_){ }
+      try { onScroll(); } catch{ }
       back.addEventListener('click', function(){
-        try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(_) { window.scrollTo(0, 0); }
+        try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch { window.scrollTo(0, 0); }
       });
     }
 
@@ -37,21 +37,21 @@
           a.href = tocLink;
           a.textContent = '↑ Volver al índice';
           a.addEventListener('click', function(ev){
-            try { ev.preventDefault(); } catch(_){ }
+            try { ev.preventDefault(); } catch{ }
             var d = document.getElementById('toc'); if (d) { d.open = true; }
             var el = document.querySelector('nav[aria-label="Índice de contenidos"]');
             if (el) {
               try { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-              catch(_) { el.scrollIntoView(true); }
+              catch { el.scrollIntoView(true); }
             } else {
-              try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(_) { window.scrollTo(0, 0); }
+              try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch { window.scrollTo(0, 0); }
             }
           });
           footer.appendChild(a);
           sec.appendChild(footer);
         }
       });
-    } catch(_){ }
+    } catch{ }
 
     // Resaltado de la sección activa en el índice mediante IntersectionObserver
     var toc = document.querySelector('nav[aria-label="Índice de contenidos"]');
@@ -73,7 +73,7 @@
           entries.forEach(function(entry){ if (entry.isIntersecting) setActive(entry.target.id); });
         }, { rootMargin: '-45% 0px -45% 0px', threshold: 0.01 });
         targets.forEach(function(el){ obs.observe(el); });
-      } catch(_){ }
+      } catch{ }
     }
   });
 })();

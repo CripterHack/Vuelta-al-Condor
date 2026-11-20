@@ -73,7 +73,7 @@
     if (!fwRunning) return;
     fwRunning = false;
     fwParticles = [];
-    try { cancelAnimationFrame(fwAnimId); } catch(_){ }
+    try { cancelAnimationFrame(fwAnimId); } catch{ }
     fwAnimId = 0;
     if (fireworksCanvas) fireworksCanvas.classList.remove('is-visible');
   }

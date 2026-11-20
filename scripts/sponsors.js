@@ -39,7 +39,7 @@
       });
       sponsorGrid.innerHTML = '';
       sponsorGrid.appendChild(frag);
-    } catch (e) {
+    } catch {
       renderError('No fue posible cargar los patrocinadores en este momento.');
     }
   }

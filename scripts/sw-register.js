@@ -17,7 +17,7 @@
             }
           });
         });
-      }).catch(function(_){ /* silencioso */ });
+      }).catch(function(){ /* silencioso */ });
     }, { once: true });
   }
 })();

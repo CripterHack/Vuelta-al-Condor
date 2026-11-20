@@ -12,7 +12,7 @@
       if (window.VAC && typeof window.VAC.countdownTarget === 'number') {
         return window.VAC.countdownTarget;
       }
-    } catch(_){ }
+    } catch{ }
     const el = document.getElementById('countdown-target');
     const attr = el ? Number(el.getAttribute('data-target-ms')) : NaN;
     if (!Number.isNaN(attr)) return attr;
@@ -28,7 +28,7 @@
       if (window.VAC && typeof window.VAC.evaluateEventState === 'function') {
         window.VAC.evaluateEventState(now);
       }
-    } catch(_){ }
+    } catch{ }
   }
 
   function update(){
