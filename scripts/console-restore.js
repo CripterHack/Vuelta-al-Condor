@@ -13,7 +13,7 @@ window.addEventListener('load', function(){
       c.groupEnd = o.groupEnd;
     }
     window.__consoleOriginal = null;
-  } catch (_) {
+  } catch {
     // intencionalmente silencioso
   }
 }, { once: true });

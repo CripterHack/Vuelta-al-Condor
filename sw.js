@@ -1,13 +1,13 @@
-const STATIC_CACHE = 'vac-static-v16';
-const DYNAMIC_CACHE = 'vac-dynamic-v16';
-const APP_VERSION = '2025-11-25-5';
+const STATIC_CACHE = 'vac-static-v17';
+const DYNAMIC_CACHE = 'vac-dynamic-v17';
+const APP_VERSION = '2026-11-20-1';
 
 const STATIC_ASSETS = [
   './',
   'index.html',
   'guia.html',
   'corredores.html',
-  'styles.min.css?v=202511252235',
+  'styles.min.css?v=20261120',
   'site.webmanifest',
   'favicon.svg',
   'favicon-96x96.png',
@@ -142,7 +142,7 @@ async function networkFirst(request) {
       cache.put(request, response.clone());
     }
     return response;
-  } catch (error) {
+  } catch {
     const cached = await caches.match(request);
     return cached || new Response('Contenido no disponible offline', {
       status: 503,

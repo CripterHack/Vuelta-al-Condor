@@ -26,14 +26,16 @@ jobs:
       - name: Install deps
         run: pnpm install --frozen-lockfile
       - name: Lint HTML
-        run: pnpm exec htmlhint "**/*.html" --config .htmlhintrc
-        continue-on-error: true
+        run: pnpm run lint:html
       - name: Lint CSS
-        run: pnpm exec stylelint "**/*.css"
-        continue-on-error: true
-      - name: Lint JS
-        run: pnpm exec eslint --ignore-pattern "*.min.js" --ignore-pattern "gpu-io.min.js" --ignore-pattern "three.min.js" --ignore-pattern "sw.js" .
-        continue-on-error: true
+        run: pnpm run lint:css
+      - name: Lint authored JavaScript
+        run: pnpm run lint:js
+      - name: Check generated and vendored JavaScript syntax
+        run: |
+          for file in scripts/*.min.js gpu-io.min.js three.min.js; do
+            node --check "$file"
+          done
 
   links:
     runs-on: ubuntu-latest
@@ -52,7 +54,6 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Check internal links
         run: pnpm run check:links
-        continue-on-error: true
 
   lighthouse:
     runs-on: ubuntu-latest

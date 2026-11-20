@@ -6,10 +6,10 @@
     try {
       var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack || '').toString().toLowerCase();
       return dnt === '1' || dnt === 'yes' || dnt === 'true';
-    } catch(_) { return false; }
+    } catch { return false; }
   }
   function saveData(){
-    try { return navigator.connection && navigator.connection.saveData === true; } catch(_) { return false; }
+    try { return navigator.connection && navigator.connection.saveData === true; } catch { return false; }
   }
   function loadGA(){
     var script = document.createElement('script');

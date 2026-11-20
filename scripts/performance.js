@@ -5,12 +5,12 @@
 
   function evaluateEventState(){
     // expuesto por scripts/event.js si está presente
-    try { if (window.VAC && typeof window.VAC.evaluateEventState === 'function') window.VAC.evaluateEventState(Date.now()); } catch(_){}
+    try { if (window.VAC && typeof window.VAC.evaluateEventState === 'function') window.VAC.evaluateEventState(Date.now()); } catch{}
   }
 
   function applyPerfMode(on){
     perfMode = !!on;
-    try { localStorage.setItem('vac_perf_mode', perfMode ? 'on' : 'off'); } catch(_){}
+    try { localStorage.setItem('vac_perf_mode', perfMode ? 'on' : 'off'); } catch{}
     if (perfToggle) perfToggle.setAttribute('aria-pressed', String(perfMode));
     if (perfToggle) {
       const onTitle = 'Modo rendimiento activado: reducir animaciones y uso de GPU';
@@ -26,14 +26,14 @@
     // Notificar a controlador de fuegos
     try { if (window.VAC && window.VAC.fireworks) {
       if (perfMode && typeof window.VAC.fireworks.stop === 'function') window.VAC.fireworks.stop();
-    }} catch(_){ }
+    }} catch{ }
     evaluateEventState();
   }
 
   try {
     const saved = localStorage.getItem('vac_perf_mode');
     if (saved === 'on') applyPerfMode(true);
-  } catch(_){}
+  } catch{}
 
   if (perfToggle) {
     perfToggle.addEventListener('click', () => applyPerfMode(!perfMode));

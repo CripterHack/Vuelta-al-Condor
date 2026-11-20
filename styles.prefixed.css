@@ -239,12 +239,12 @@ a:focus-visible {
 #fireworks-canvas.fireworks-canvas { position: fixed; inset: 0; pointer-events: none; z-index: 50; display: none; width: 100vw; height: 100vh; }
 #fireworks-canvas.is-visible { display: block; }
 .event-banner {
-  margin: 0.75rem 0 1rem 0;
+  margin: 0.75rem 0 1rem;
   padding: 0.75rem 1rem;
   border: 1px solid var(--vac-accent, #51e9f0);
   border-radius: 8px;
   background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35));
-  color: var(--vac-text, #ffffff);
+  color: var(--vac-text, #fff);
   font-weight: 600;
   letter-spacing: 0.2px;
 }
@@ -297,7 +297,7 @@ a:focus-visible {
 .guide-promo { margin: 1.25rem auto 1.5rem; }
 .promo-grid { display: grid; gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .promo-card { border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; padding: 16px; background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.35)); }
-.promo-card h3 { margin: 0 0 .5rem 0; color: var(--vac-text); }
+.promo-card h3 { margin: 0 0 .5rem; color: var(--vac-text); }
 
 /* --- Guía de entrenamiento: estilos del bloque <style> movidos --- */
 .guide-section { max-width: 980px; margin: 0 auto; }
@@ -354,7 +354,7 @@ a:focus-visible {
 .section-footer { margin-top: 12px; text-align: right; }
 .section-footer .back-inline { display: inline-flex; align-items: center; gap: 6px; }
 #tool .alert { margin-top: 10px; padding: 10px; border-radius: 10px; border: 1px solid rgba(255, 120, 120, 0.35); background: rgba(255, 120, 120, 0.12); }
-#tool .alert strong { color: #ffaaaa; }
+#tool .alert strong { color: #faa; }
 
 
 .skip-link:focus {
@@ -366,9 +366,11 @@ a:focus-visible {
 .u-mt-10 { margin-top: 10px; }
 .u-mt-1rem { margin-top: 1rem; }
 .u-mt-0 { margin-top: 0; }
-.u-mt-1_5rem { margin-top: 1.5rem; }
+.u-mt-24 { margin-top: 1.5rem; }
+
 /* Nueva utilidad para 0.75rem (12px) */
 .u-mt-12 { margin-top: 12px; }
+
 /* Nueva utilidad para resetear margen completo */
 .u-m-0 { margin: 0; }
 
@@ -666,6 +668,7 @@ a:focus-visible {
   height: 20px;
   border-radius: 6px;
 }
+
 @media (max-width: 1024px) {
   .inclusive-badge {margin:0 auto}
 }
@@ -1185,16 +1188,23 @@ ul:not(.nav-links) li:last-child {
   border: 0;
 }
 
+.sponsor-card img:hover,
+.sponsor-card img:focus {
+    transform: scale(1.42);
+}
 .sponsor-card img[src*="/sponsors/akticore.png"] {
   background-color: transparent;
   transform: scale(2);
+}
+.sponsor-card img:hover {
+    transform: scale(2.05);
 }
 
 .sponsor-card img[src*="/sponsors/izignamx.png"] {
   background-color: transparent;
   transform: scale(1.15);
 }
-.sponsor-card img[src*="/sponsors/rodando-pulque.jpg"], .sponsor-card__alt img{
+.sponsor-card img[src*="/sponsors/rodando-pulque.jpg"], .sponsor-card-alt img {
   background-color: transparent;
   padding: 0;
 }
