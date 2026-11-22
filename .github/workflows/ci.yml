@@ -31,6 +31,8 @@ jobs:
         run: pnpm run lint:css
       - name: Lint authored JavaScript
         run: pnpm run lint:js
+      - name: Check service worker paths and offline assets
+        run: node --test tools/ci/check-offline-artifact.js
       - name: Check generated and vendored JavaScript syntax
         run: |
           for file in scripts/*.min.js gpu-io.min.js three.min.js; do
