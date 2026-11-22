@@ -61,10 +61,21 @@ jobs:
           done
       - name: Generate image variants (AVIF/WebP)
         run: pnpm run images:gen || true
+      - name: Stage Pages files without build dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          stage="$RUNNER_TEMP/condor-pages"
+          mkdir "$stage"
+          tar --exclude='./.git' --exclude='./.github' --exclude='./node_modules' -cf - . |
+            tar -xf - -C "$stage"
+          test ! -e "$stage/node_modules"
+          test -f "$stage/.nojekyll"
+          CONDOR_STATIC_ARTIFACT_DIR="$stage" node --test tools/ci/check-offline-artifact.js
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: ${{ runner.temp }}/condor-pages
 
   deploy:
     environment:
