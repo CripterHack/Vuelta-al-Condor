@@ -63,15 +63,7 @@ jobs:
         run: pnpm run images:gen || true
       - name: Stage Pages files without build dependencies
         shell: bash
-        run: |
-          set -euo pipefail
-          stage="$RUNNER_TEMP/condor-pages"
-          mkdir "$stage"
-          tar --exclude='./.git' --exclude='./.github' --exclude='./node_modules' -cf - . |
-            tar -xf - -C "$stage"
-          test ! -e "$stage/node_modules"
-          test -f "$stage/.nojekyll"
-          CONDOR_STATIC_ARTIFACT_DIR="$stage" node --test tools/ci/check-offline-artifact.js
+        run: bash .github/scripts/stage-pages.sh "$RUNNER_TEMP/condor-pages"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

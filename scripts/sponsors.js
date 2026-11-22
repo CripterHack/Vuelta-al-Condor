@@ -1,6 +1,7 @@
  (function(){
   const sponsorGrid = document.getElementById('sponsor-grid') || document.querySelector('[data-sponsors-grid]');
   if (!sponsorGrid) return;
+  const siteBase = new URL('../', document.currentScript.src);
 
   function renderError(msg){
     sponsorGrid.innerHTML = `<p class="muted text-center">${msg}</p>`;
@@ -11,7 +12,7 @@
 
   async function fetchSponsors(){
     try {
-      const res = await fetch('/data/sponsors.json', { cache: 'no-store' });
+      const res = await fetch(new URL('data/sponsors.json', siteBase), { cache: 'no-store' });
       if (!res.ok) throw new Error('HTTP '+res.status);
       const list = await res.json();
       if (!Array.isArray(list) || list.length === 0){ renderEmpty(); return; }
@@ -33,7 +34,7 @@
         img.decoding = 'async';
         img.setAttribute('fetchpriority', 'low');
         img.alt = s.name ? `Logo ${s.name}` : 'Logo patrocinador';
-        img.src = s.logo;
+        img.src = typeof s.logo === 'string' && s.logo.startsWith('/sponsors/') ? new URL(s.logo.slice(1), siteBase).href : s.logo;
         card.appendChild(img);
         frag.appendChild(card);
       });
