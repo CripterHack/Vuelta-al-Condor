@@ -23,13 +23,13 @@ Sitio estático oficial de la **Vuelta al Cóndor 2025**, un desafío de ciclism
 
 ## Requisitos rápidos
 
-- Node.js ≥ 20.19.4 (recomendado). El proyecto incluye `.nvmrc`; usa `nvm use` (macOS/Linux) o `nvm use 20.19.4` (Windows) para fijar versión.
+- Node.js ≥ 22.23.5 (recomendado). El proyecto incluye `.nvmrc`; usa `nvm use` (macOS/Linux) o `nvm use 22.23.5` (Windows) para fijar versión.
 - Lighthouse (CLI o Chrome DevTools) para validar CWV.
 
 ### Entorno Node
-- Versionado local: `.nvmrc` especifica `20.19.4`.
+- Versionado local: `.nvmrc` especifica `22.23.5`.
 - macOS/Linux: `nvm install` y luego `nvm use`.
-- Windows (nvm‑windows): `nvm install 20.19.4` y `nvm use 20.19.4`.
+- Windows (nvm‑windows): `nvm install 22.23.5` y `nvm use 22.23.5`.
 
 ## Desarrollo local
 
