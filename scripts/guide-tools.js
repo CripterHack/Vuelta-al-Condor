@@ -65,16 +65,6 @@
     const fNA  = clamp(1 + BETA_SLOPE_NA*slopeNorm + BETA_DRAG_NA*dIdx + BETA_MASS_NA*mIdx, 0.92, 1.25);
     return { fCHO, fHYD, fNA, slopeNorm, dIdx, mIdx };
   }
-  const eq = [
-    { item:"1 gel", g:25 },
-    { item:"1 plátano mediano", g:25 },
-    { item:"8 dátiles (~50 g)", g:28 },
-    { item:"1 barra típica", g:25 },
-    { item:"sándwich sencillo", g:45 },
-    { item:"tortilla + crema de cacahuate", g:30 },
-    { item:"papas cocidas saladas (1 taza)", g:30 },
-    { item:"gominolas porción", g:30 }
-  ];
   function parseTiempoHHMM(t){
     if(!t) return null;
     t = String(t).trim().replace(',', '.');
@@ -250,7 +240,7 @@
     if (avisoError){
       avisoError.innerHTML = msg;
       avisoError.hidden = false;
-      try { avisoError.focus(); } catch(_){ }
+      try { avisoError.focus(); } catch{ }
     } else {
       // Fallback si no existe contenedor accesible
       alert(msg);
@@ -347,12 +337,12 @@
       totalG+=gSeg; totalNa+=naSeg0; totalMl+=mlSeg; totalBid+=bidSeg;
       const mInfo = gpxSegMetrics.find(x => x.kmIni === seg.kmIni && x.kmFin === seg.kmFin);
       const gainInfo = mInfo ? mInfo.gain : 0;
-      const linea = `<div class=\"card\"><strong>${seg.nombre}</strong> — ${redondear(horasSeg,2)} h<div>Hidratos: <strong>${gSeg} g</strong> | Sodio: <strong>${naSeg0} mg</strong> | Líquidos: <strong>${mlSeg} ml</strong> (~${bidSeg} bidones)</div><div class=\"muted\">GPX: +${gainInfo} m · variación por pendiente/bici aplicada</div></div>`;
+      const linea = `<div class="card"><strong>${seg.nombre}</strong> — ${redondear(horasSeg,2)} h<div>Hidratos: <strong>${gSeg} g</strong> | Sodio: <strong>${naSeg0} mg</strong> | Líquidos: <strong>${mlSeg} ml</strong> (~${bidSeg} bidones)</div><div class="muted">GPX: +${gainInfo} m · variación por pendiente/bici aplicada</div></div>`;
       segDiv.insertAdjacentHTML("beforeend", linea);
       textoExport.push(`${seg.nombre} (${redondear(horasSeg,2)} h): ${gSeg} g CHO | ${naSeg0} mg Na | ${mlSeg} ml (~${bidSeg} bidones) | GPX +${gainInfo} m`);
     });
     const raciones = ["1 gel: ~25 g","1 plátano mediano: ~25 g","8 dátiles (~50 g): ~28 g","1 barra típica: ~25 g","sándwich sencillo: ~45 g","tortilla + crema de cacahuate: ~30 g","papas cocidas saladas (1 taza): ~30 g","gominolas porción: ~30 g"]; racionesUl.innerHTML = raciones.map(r=>`<li>${r}</li>`).join("");
-    const totalesHTML = `<div class=\"card\"><strong>Totales estimados para ${redondear(tObjetivo,2)} h</strong><div>Hidratos: <strong>${totalG} g</strong> | Sodio: <strong>${totalNa} mg</strong> | Líquidos: <strong>${totalMl} ml</strong> (~${totalBid} bidones)</div></div>`; segDiv.insertAdjacentHTML("beforeend", totalesHTML);
+    const totalesHTML = `<div class="card"><strong>Totales estimados para ${redondear(tObjetivo,2)} h</strong><div>Hidratos: <strong>${totalG} g</strong> | Sodio: <strong>${totalNa} mg</strong> | Líquidos: <strong>${totalMl} ml</strong> (~${totalBid} bidones)</div></div>`; segDiv.insertAdjacentHTML("beforeend", totalesHTML);
     const biciLinea = `Bicicleta: ${tipoBici||'—'} | Peso: ${pesoBici!=null?pesoBici+' kg':'—'} | Rodada: ${rodada||'—'} | Ancho: ${anchoLlanta!=null?anchoLlanta+' mm':'—'}`;
     const cafeLinea = usaCafe ? `Cafeína: ${mgkg} mg/kg → ${mgPlan} mg total${advCafe?" (limitado a 400 mg por salud)":""}` : `Cafeína: no`;
     const ajusteLinea = usarTiempoObjetivo ? '' : `Ajuste bici/entreno/edad: ×${redondear(fVelTotalLocal,2)} (bici ${redondear(fVelBiciLocal,2)} · entreno ${redondear(fSpeedLocal,2)} · edad ${redondear(fSpeedAgeLocal,2)})\n`;

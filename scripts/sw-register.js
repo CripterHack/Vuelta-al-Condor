@@ -1,8 +1,11 @@
 // Registro del Service Worker con manejo de actualización
 (function(){
-  if ('serviceWorker' in navigator) {
+  const script = document.currentScript;
+  if ('serviceWorker' in navigator && script?.src) {
+    // Resolve from scripts/ while currentScript is available, not from the host root.
+    const workerUrl = new URL('../sw.js', script.src).href;
     window.addEventListener('load', function(){
-      navigator.serviceWorker.register('/sw.js').then(function(reg){
+      navigator.serviceWorker.register(workerUrl).then(function(reg){
         if (!reg) return;
         if (reg.waiting) {
           reg.waiting.postMessage({ type: 'SKIP_WAITING' });
@@ -17,7 +20,7 @@
             }
           });
         });
-      }).catch(function(_){ /* silencioso */ });
+      }).catch(function(){ /* silencioso */ });
     }, { once: true });
   }
 })();

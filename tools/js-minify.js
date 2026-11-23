@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 /* Minifica/optimiza scripts en ./scripts, excluyendo feedback.js */
-const fs = require('fs');
 const fsp = require('fs/promises');
 const path = require('path');
 const terser = require('terser');

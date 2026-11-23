@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20.19.4'
+          node-version: '22.23.5'
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -61,10 +61,13 @@ jobs:
           done
       - name: Generate image variants (AVIF/WebP)
         run: pnpm run images:gen || true
+      - name: Stage Pages files without build dependencies
+        shell: bash
+        run: bash .github/scripts/stage-pages.sh "$RUNNER_TEMP/condor-pages"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: '.'
+          path: ${{ runner.temp }}/condor-pages
 
   deploy:
     environment:

@@ -41,13 +41,6 @@
     ]
   },
   "sport": "Cycling",
-  "offers": {
-    "@type": "Offer",
-    "price": "280",
-    "priceCurrency": "MXN",
-    "availability": "https://schema.org/InStock",
-    "description": "Inscripción única por persona. Categorías femenil y varonil."
-  },
   "subEvent": [
     {
       "@type": "Event",

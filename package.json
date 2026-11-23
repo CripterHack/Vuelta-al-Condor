@@ -4,7 +4,7 @@
   "private": true,
   "description": "Servidor de desarrollo que relaja CSP y sirve el sitio sin modificar HTML/.htaccess",
   "engines": {
-    "node": ">=20.19.4"
+    "node": ">=22.23.5"
   },
   "scripts": {
     "dev": "node dev-server.js",
@@ -12,19 +12,19 @@
     "start": "node dev-server.js",
     "lint:html": "htmlhint \"**/*.html\" --config .htmlhintrc",
     "lint:css": "stylelint \"**/*.css\"",
-    "lint:js": "eslint --ignore-pattern \"*.min.js\" --ignore-pattern \"gpu-io.min.js\" --ignore-pattern \"three.min.js\" --ignore-pattern \"sw.js\" .",
-    "check:links": "linkinator . --config=linkinator.config.json",
+    "lint:js": "eslint --max-warnings 0 .",
+    "check:links": "node tools/ci/check-links.js",
     "lhci": "lhci autorun",
     "check:csp": "node tools/ci/check_csp.js",
-    "css:prefix": "postcss styles.css --use autoprefixer -o styles.prefixed.css",
-    "css:build": "postcss styles.prefixed.css -o styles.min.css",
+    "css:prefix": "postcss styles.css --use autoprefixer --no-map -o styles.prefixed.css",
+    "css:build": "postcss styles.prefixed.css --no-map -o styles.min.css",
     "images:gen": "node tools/image-gen.js",
     "js:minify": "node tools/js-minify.js",
     "html:use-min": "node tools/html-use-min.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@lhci/cli": "0.15.1",
+    "@lhci/cli": "0.16.1",
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.1.2",
     "eslint": "^9.13.0",
